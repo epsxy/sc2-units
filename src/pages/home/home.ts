@@ -11,7 +11,7 @@ import { Storage } from '@ionic/storage';
 export class HomePage {
   private nav;
 
-  constructor(public navCtrl: NavController, public storage: Storage, private sqlite: SQLite) {
+  constructor(public navCtrl: NavController, public storage: Storage) {
     this.nav = navCtrl;
     // Local storage usage
     // storage.ready().then(() => {
