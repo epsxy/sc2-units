@@ -10,9 +10,9 @@
 
 ```docker run -it --privileged --volume=$(pwd):/opt/workspace -p 42000:8100 android-docker```
 
-    *`--privileged` Access the Android device
-    *`--volume`  Bind the development repository
-    *`-p 42000:8100` Bind your host port 42000 to your docker port 8100 (where the ionic app will be deployed) 
+* `--privileged` Access the Android device    
+* `--volume`  Bind the development repository
+* `-p 42000:8100` Bind your host port 42000 to your docker port 8100 (where the ionic app will be deployed) 
 
 ## Install 
 
