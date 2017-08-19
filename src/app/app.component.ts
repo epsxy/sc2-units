@@ -1,3 +1,5 @@
+import { SC2_RACES } from '../data/races/races';
+import { SC2Race } from '../model/sc2races';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -14,17 +16,12 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  racePages: Array<SC2Race>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
-    ];
-
+    this.racePages = SC2_RACES;
   }
 
   initializeApp() {
@@ -34,6 +31,16 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+
+  goToHomePage() {
+    this.nav.setRoot(HomePage);
+  }
+
+  goToListPage(race) {
+    this.nav.setRoot(ListPage, {
+      race: race.id
+    })
   }
 
   openPage(page) {
