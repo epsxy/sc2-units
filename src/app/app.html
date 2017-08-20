@@ -1,6 +1,6 @@
 <ion-menu [content]="content">
     <ion-header>
-        <ion-toolbar>
+        <ion-toolbar color='primary'>
             <ion-title>Menu</ion-title>
         </ion-toolbar>
     </ion-header>
@@ -11,9 +11,12 @@
             <button menuClose ion-item *ngFor="let race of races" (click)="goToListPage(race)">
                 {{race.name}}
             </button>
-            <button menuClose ion-item (click)="goToAboutPage()">About</button>
+            <!-- <button menuClose ion-item (click)="goToAboutPage()">About</button> -->
         </ion-list>
     </ion-content>
+    <ion-footer>
+        <button menuClose ion-item (click)="goToAboutPage()">About</button>
+    </ion-footer>
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
