@@ -15,13 +15,12 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
-
-  racePages: Array<SC2Race>;
+  races: Array<SC2Race>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+    this.races = SC2_RACES;
     this.initializeApp();
-
-    this.racePages = SC2_RACES;
+    console.log(this.races)
   }
 
   initializeApp() {
