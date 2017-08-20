@@ -12,7 +12,7 @@ import { SC2_UNITS } from '../../data/units/units';
   selector: 'page-list',
   templateUrl: 'list.html'
 })
-export class ListPage {
+export class RacePage {
   raceId: string;
   currentRace: SC2Race;
   pageTitle: string;

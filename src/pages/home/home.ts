@@ -1,4 +1,4 @@
-import { ListPage } from '../list/list';
+import { RacePage } from '../list/list';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
@@ -15,7 +15,7 @@ export class HomePage {
   }
 
   public navigateToListPage() {
-    this.nav.push(ListPage);
+    this.nav.push(RacePage);
   }
 
 }

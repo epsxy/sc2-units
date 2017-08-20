@@ -7,8 +7,11 @@
 
     <ion-content>
         <ion-list>
-            <button menuClose ion-item (click)="goToHomePage()">HomePage</button>
-            <button menuClose ion-item *ngFor="let race of races" (click)="goToListPage(race)">{{race.name}}</button>
+            <button menuClose ion-item (click)="goToHomePage()">Home</button>
+            <button menuClose ion-item *ngFor="let race of races" (click)="goToListPage(race)">
+                {{race.name}}
+            </button>
+            <button menuClose ion-item (click)="goToAboutPage()">About</button>
         </ion-list>
     </ion-content>
 </ion-menu>
@@ -18,4 +21,4 @@
 
 <!-- <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
-    </button> -->
+</button> -->

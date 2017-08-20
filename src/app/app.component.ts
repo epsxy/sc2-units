@@ -1,3 +1,4 @@
+import { AboutPage } from '../pages/about/about';
 import { SC2_RACES } from '../data/races/races';
 import { SC2Race } from '../model/sc2races';
 import { Component, ViewChild } from '@angular/core';
@@ -6,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { RacePage } from '../pages/list/list';
 
 @Component({
   templateUrl: 'app.html'
@@ -36,8 +37,12 @@ export class MyApp {
     this.nav.setRoot(HomePage);
   }
 
+  goToAboutPage() {
+    this.nav.setRoot(AboutPage);
+  }
+
   goToListPage(race) {
-    this.nav.setRoot(ListPage, {
+    this.nav.setRoot(RacePage, {
       race: race.id
     })
   }
