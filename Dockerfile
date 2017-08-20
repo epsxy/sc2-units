@@ -6,12 +6,6 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN apt-get install -y nodejs
 RUN npm install -g cordova ionic
 
-# Install java7
-# RUN \
-#   apt-get update && \
-#   apt-get install -y openjdk-7-jdk && \
-#   rm -rf /var/lib/apt/lists/*
-
 RUN \
     echo "===> add webupd8 repository..."  && \
     echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | tee /etc/apt/sources.list.d/webupd8team-java.list  && \
@@ -24,12 +18,6 @@ RUN echo "===> install Java"  && \
     echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections  && \
     echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections  && \
     DEBIAN_FRONTEND=noninteractive  apt-get install -y --force-yes oracle-java8-installer oracle-java8-set-default
-
-
-# RUN apt-get install -y openjdk-8-jdk && \
-# 	apt-get install -y ant && \
-# 	rm -rf /var/lib/apt/lists/* && \
-# 	rm -rf /var/cache/oracle-jdk8-installer;
 
 # Install Android SDK
 # Download and untar Android SDK tools
@@ -53,10 +41,6 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-26" "platforms;android
 RUN $ANDROID_HOME/tools/bin/sdkmanager "extras;android;m2repository" "extras;google;m2repository"
 RUN $ANDROID_HOME/tools/bin/sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2"
 RUN $ANDROID_HOME/tools/bin/sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2"
-
-# Setup environment
-
-# Install sdk elements
 
 # Cleaning
 RUN apt-get clean
