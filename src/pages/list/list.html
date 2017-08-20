@@ -8,6 +8,8 @@
 </ion-header>
 
 <ion-content>
+    <ion-searchbar [(ngModel)]="search" [showCancelButton]="True" (ionInput)="applySearch($event)" (ionCancel)="applySearch($event)">
+    </ion-searchbar>
     <ion-list>
         <ion-item *ngFor="let unit of units">
             <ion-thumbnail item-start>
@@ -15,7 +17,8 @@
             </ion-thumbnail>
             <h2>{{unit.name}}</h2>
             <p>{{unit.description}}</p>
-            <button ion-button clear item-end (click)="goToUnitPage(unit.id)">View</button>
+            <!-- clear class for no bg button -->
+            <button ion-button secondary item-end (click)="goToUnitPage(unit.id)">View</button>
         </ion-item>
     </ion-list>
     <div *ngIf="selectedItem" padding>

@@ -42,4 +42,10 @@ export class RacePage {
       id: id
     })
   }
+
+  applySearch($event) {
+    this.units = SC2_UNITS.filter(unit => 
+      unit.race.id == this.raceId && unit.name.toLowerCase().indexOf($event.target.value.toLowerCase()) > -1
+    );
+  }
 }
