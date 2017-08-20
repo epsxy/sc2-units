@@ -1,7 +1,7 @@
 import { SC2Source } from './sc2source';
 import { SC2Cost } from './sc2cost';
 import { SC2Ability } from './sc2ability';
-import { SC2Race, SC2RaceType } from './sc2races';
+import { SC2Race } from './sc2races';
 
 export class SC2Unit {
     id: string;

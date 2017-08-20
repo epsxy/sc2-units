@@ -1,5 +1,4 @@
 import { PROTOSS_RACE, TERRAN_RACE, ZERG_RACE } from '../races/races';
-import { SC2Race } from '../../model/sc2races';
 import { SC2Unit } from "../../model/sc2unit";
 
 export const SC2_UNITS = [
