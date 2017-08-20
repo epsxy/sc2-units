@@ -1,10 +1,12 @@
-import { NotFoundPage } from '../404NotFound/404';
-import { SC2_RACES } from '../../data/races/races';
-import { Component } from '@angular/core';
+import { UnitPage } from '../unit/unit';
 import { NavController, NavParams } from 'ionic-angular';
+import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { NotFoundPage } from '../404NotFound/404';
 import { SC2Race } from '../../model/sc2races';
 import { SC2Unit } from '../../model/sc2unit';
+import { SC2_RACES } from '../../data/races/races';
+import { SC2_UNITS } from '../../data/units/units';
 
 @Component({
   selector: 'page-list',
@@ -32,6 +34,12 @@ export class ListPage {
   }
 
   getUnits(id: string): Array<SC2Unit> {
-    return [];
+    return SC2_UNITS.filter(unit => unit.race.id == this.raceId);
+  }
+
+  goToUnitPage(id: string) {
+    this.nav.push(UnitPage, {
+      id: id
+    })
   }
 }

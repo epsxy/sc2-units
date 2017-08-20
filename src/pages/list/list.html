@@ -15,7 +15,7 @@
             </ion-thumbnail>
             <h2>{{unit.name}}</h2>
             <p>{{unit.description}}</p>
-            <button ion-button clear item-end>View</button>
+            <button ion-button clear item-end (click)="goToUnitPage(unit.id)">View</button>
         </ion-item>
     </ion-list>
     <div *ngIf="selectedItem" padding>

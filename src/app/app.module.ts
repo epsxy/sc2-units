@@ -1,3 +1,4 @@
+import { UnitPage } from '../pages/unit/unit';
 import { NotFoundPage } from '../pages/404NotFound/404';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -15,14 +16,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HomePage,
-    ListPage, NotFoundPage
+    ListPage, 
+    UnitPage,
+    NotFoundPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp, {}, {
       links: [
         {component: HomePage, name: 'Home', segment: 'home'},
-        {component: ListPage, name: 'List', segment: 'list/:race'}, 
+        {component: ListPage, name: 'List', segment: 'list/:race'},
+        {component: UnitPage, name: 'Unit', segment:'unit/:id'},
         {component: NotFoundPage, name: '404', segment: '404'}
       ]
     }),
