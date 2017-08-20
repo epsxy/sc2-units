@@ -1,8 +1,9 @@
+import { SC2Cost } from '../../model/sc2cost';
 import { PROTOSS_RACE, TERRAN_RACE, ZERG_RACE } from '../races/races';
 import { SC2Unit } from "../../model/sc2unit";
 
 export const SC2_UNITS = [
-    new SC2Unit('40afdbd9-9b18-455d-9b54-d55c568685ec', 'Probe', PROTOSS_RACE, 'The Probe is the Protoss worker unit, warped in at the Nexus. It harvests resources, has a low-powered melee attack, and can warp-in any Protoss building.', null, null, null, null),
+    new SC2Unit('40afdbd9-9b18-455d-9b54-d55c568685ec', 'Probe', PROTOSS_RACE, 'The Probe is the Protoss worker unit, warped in at the Nexus. It harvests resources, has a low-powered melee attack, and can warp-in any Protoss building.', new SC2Cost(50, 0, 12, 1), null, null, null),
     new SC2Unit('99eb6ce7-b9d7-401a-ae87-69d4a7317b8a', 'Zealot', PROTOSS_RACE, '', null, null, null, null),
     new SC2Unit('51365784-a83d-4b13-b201-cc9b47832665', 'Stalker', PROTOSS_RACE, '', null, null, null, null),
     new SC2Unit('28441b26-4967-4349-9f14-8dbaabcf0086', 'Sentry', PROTOSS_RACE, '', null, null, null, null),

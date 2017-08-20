@@ -20,6 +20,10 @@
 
 ## Disclaimer 
 
+*If there is any copyright infringement, any issue of that kind, please contact me. I do not own any right on Starcraft II or whatsoever and I will remove any content which does not respect your rights.*
+
+### Blizzard
+
 StarCraft®
 ©1998 Blizzard Entertainment, Inc. All rights reserved. StarCraft and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
 
@@ -32,7 +36,11 @@ StarCraft® II: Wings of Liberty®
 StarCraft® II: Heart of the Swarm®
 ©2013 Blizzard Entertainment, Inc. All rights reserved. Heart of the Swarm and StarCraft are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
 
-## Licence 
+### Liquipedia
+
+Some ressources of this application (images, descriptions, informations, ...) came from [Liquipedia Starcraft Encyclopedia](http://wiki.teamliquid.net/starcraft2/).
+
+## License
 
 The MIT License
 
