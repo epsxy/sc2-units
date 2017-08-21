@@ -21,189 +21,189 @@ export const SC2_UNITS = [
         'Zealot',
         PROTOSS_RACE,
         '',
+        new SC2Cost(100, 0, 27, 2),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/zealot.png', null)
+        new SC2Asset('assets/units/protoss/zealot.png', 'assets/units/protoss/huge/zealot.jpg')
     ),
     new SC2Unit(
         '51365784-a83d-4b13-b201-cc9b47832665',
         'Stalker',
         PROTOSS_RACE,
         '',
+        new SC2Cost(125, 50, 30, 2),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/stalker.png', null)
+        new SC2Asset('assets/units/protoss/stalker.png', 'assets/units/protoss/huge/stalker.jpg')
     ),
     new SC2Unit(
         '28441b26-4967-4349-9f14-8dbaabcf0086',
         'Sentry',
         PROTOSS_RACE,
         '',
+        new SC2Cost(50, 100, 26, 2),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/sentry.png', null)
+        new SC2Asset('assets/units/protoss/sentry.png', 'assets/units/protoss/huge/sentry.jpg')
     ),
     new SC2Unit('10efe000-4a8b-42cd-a59f-419a1923ce5e',
         'Adept',
         PROTOSS_RACE,
         '',
+        new SC2Cost(100, 25, 27, 2),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/adept.png', null)
+        new SC2Asset('assets/units/protoss/adept.png', 'assets/units/protoss/huge/adept.jpg')
     ),
     new SC2Unit(
         'fa2fdf4c-68c0-4e7f-b484-65f03fb93582',
         'High Templar',
         PROTOSS_RACE,
         '',
+        new SC2Cost(0, 0, 0, 0),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/high-templar.png', null)
+        new SC2Asset('assets/units/protoss/high-templar.png', 'assets/units/protoss/huge/high-templar.jpg')
     ),
     new SC2Unit(
         'b12440c6-dfd8-4ee8-b6ec-4fa377153d4b',
         'Dark Templar',
         PROTOSS_RACE,
         '',
+        new SC2Cost(0, 0, 0, 0),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/dark-templar.png', null)
+        new SC2Asset('assets/units/protoss/dark-templar.png', 'assets/units/protoss/huge/dark-templar.jpg')
     ),
     new SC2Unit(
         '3a9fac08-2181-46d8-bedd-cd593e1f11cd',
         'Immortal',
         PROTOSS_RACE,
         '',
+        new SC2Cost(0, 0, 0, 0),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/immortal.png', null)
+        new SC2Asset('assets/units/protoss/immortal.png', 'assets/units/protoss/huge/immortal.jpg')
     ),
     new SC2Unit(
         'd2aba0bd-4644-4858-b235-db41f5bb5bab',
         'Colossus',
         PROTOSS_RACE,
         '',
+        new SC2Cost(0, 0, 0, 0),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/colossus.png', null)
+        new SC2Asset('assets/units/protoss/colossus.png', 'assets/units/protoss/huge/colossus.jpg')
     ),
     new SC2Unit(
         'dd04db1e-92e5-4310-94ac-920f52ac069c',
         'Disruptor',
         PROTOSS_RACE,
         '',
+        new SC2Cost(0, 0, 0, 0),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/disruptor.png', null)
+        new SC2Asset('assets/units/protoss/disruptor.png', 'assets/units/protoss/huge/disruptor.jpg')
     ),
     new SC2Unit(
         '2a1a54cc-0d57-4a7c-a6eb-f411c7ae2d2e',
         'Archon',
         PROTOSS_RACE,
         '',
+        new SC2Cost(0, 0, 0, 0),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/archon.png', null)
+        new SC2Asset('assets/units/protoss/archon.png', 'assets/units/protoss/huge/archon.jpg')
     ),
     new SC2Unit(
         '16a3798f-f30d-4514-abc8-2baae2373318',
         'Observer',
         PROTOSS_RACE,
         '',
+        new SC2Cost(0, 0, 0, 0),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/observer.png', null)
+        new SC2Asset('assets/units/protoss/observer.png', 'assets/units/protoss/huge/observer.jpg')
     ),
     new SC2Unit(
         'c7963890-f3b2-46e6-b86d-8ae1668d2ade',
         'Warp Prism',
         PROTOSS_RACE,
         '',
+        new SC2Cost(0, 0, 0, 0),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/warp-prism.png', null)
+        new SC2Asset('assets/units/protoss/warp-prism.png', 'assets/units/protoss/huge/warp-prism.jpg')
     ),
     new SC2Unit(
         '448cd045-653c-43e9-936a-3878141aa4a8',
         'Phoenix',
         PROTOSS_RACE,
         '',
+        new SC2Cost(0, 0, 0, 0),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/phoenix.png', null)
+        new SC2Asset('assets/units/protoss/phoenix.png', 'assets/units/protoss/huge/phoenix.jpg')
     ),
     new SC2Unit(
         '1516d125-d178-4053-9c56-f7c06030209c', 
         'Void Ray', 
         PROTOSS_RACE, 
         '',
+        new SC2Cost(0, 0, 0, 0),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/void-ray.png', null)
+        new SC2Asset('assets/units/protoss/void-ray.png', 'assets/units/protoss/huge/void-ray.jpg')
     ),
     new SC2Unit(
         '17c76d99-a451-4987-9346-55971a5a8ab3',
         'Oracle',
         PROTOSS_RACE,
         '',
+        new SC2Cost(0, 0, 0, 0),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/oracle.png', null)
+        new SC2Asset('assets/units/protoss/oracle.png', 'assets/units/protoss/huge/oracle.jpg')
     ),
     new SC2Unit(
         '91844ecd-4e4d-4a09-ae51-e957cb91a539',
         'Carrier',
         PROTOSS_RACE,
         '',
+        new SC2Cost(0, 0, 0, 0),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/carrier.png', null)
+        new SC2Asset('assets/units/protoss/carrier.png', 'assets/units/protoss/huge/carrier.jpg')
     ),
     new SC2Unit(
         'a0446b8b-65fc-4837-9e22-2e8da3b7cf2c',
         'Tempest',
         PROTOSS_RACE,
         '',
+        new SC2Cost(0, 0, 0, 0),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/tempest.png', null)
+        new SC2Asset('assets/units/protoss/tempest.png', 'assets/units/protoss/huge/tempest.jpg')
     ),
     new SC2Unit(
         'fcfbc539-5ba0-4a01-a4fe-ec579414ddb4',
         'Mothership Core',
         PROTOSS_RACE,
         '',
+        new SC2Cost(0, 0, 0, 0),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/mothership-core.png', null)
+        new SC2Asset('assets/units/protoss/mothership-core.png', 'assets/units/protoss/huge/mothership-core.jpg')
     ),
     new SC2Unit(
         'eabd93e7-c5e3-4a07-9222-9c2c4d519246',
         'Mothership',
         PROTOSS_RACE,
         '',
+        new SC2Cost(0, 0, 0, 0),
         null,
         null,
-        null,
-        new SC2Asset('assets/units/protoss/mothership.png', null)
+        new SC2Asset('assets/units/protoss/mothership.png', 'assets/units/protoss/huge/mothership.jpg')
     ),
     // new SC2Unit('696afffa-a536-4360-a737-a0ca28e25471', 'Drone', ZERG_RACE, '', new SC2Cost(50, 0, 12, 1), null, null, null),
     // new SC2Unit('41a6dd8a-1913-47fb-9825-d13dff723ebb', 'Queen', ZERG_RACE, '', null, null, null, null),
