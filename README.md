@@ -4,12 +4,12 @@ This app has been created for educational purpose. I just wanted to learn Ionic 
 
 ## Todo
 
-- [] Disclaimer page
-- [] Home page
+- [ ] Disclaimer page
+- [ ] Home page
 - [x] Download images for races
-- [] Handle special units. Include them?
-- [] Finalize types and unit page (CSS, Infos to display)
-- [] Clean model files, add constants and ids for buildings?
+- [ ] Handle special units. Include them?
+- [ ] Finalize types and unit page (CSS, Infos to display)
+- [ ] Clean model files, add constants and ids for buildings?
 
 ## Docker 
 
