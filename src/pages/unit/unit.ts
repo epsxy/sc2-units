@@ -17,18 +17,34 @@ export class UnitPage {
   gas_img: string;
   buildtime_img: string;
   supply_img: string;
+  airBadge: string; 
+  groundBadge: string;
+  hasShield: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.nav = navCtrl
     this.id = this.navParams.get('id');
-    console.log(this.id);
+    this.hasShield = false;
     let unitsMatchingId = SC2_UNITS.filter(unit => unit.id == this.id);
     if (unitsMatchingId.length != 1) {
       this.nav.setRoot(NotFoundPage);
     }
     else {
       this.unit = unitsMatchingId[0];
+      if(this.unit.informations.canAttackAirUnits) {
+        this.airBadge = 'primary'
+      } 
+      else {
+        this.airBadge = 'danger'
+      }
+      if(this.unit.informations.canAttackGroundUnits) {
+        this.groundBadge = 'primary'
+      } 
+      else {
+        this.groundBadge = 'danger'
+      }
       if (this.unit.race.type == SC2RaceType.PROTOSS) {
+        this.hasShield = true;
         this.minerals_img = 'assets/icon/ressources/protoss/minerals.gif';
         this.gas_img = 'assets/icon/ressources/protoss/gas.gif';
         this.buildtime_img = 'assets/icon/ressources/protoss/buildtime.gif';

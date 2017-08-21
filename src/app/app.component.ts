@@ -21,7 +21,6 @@ export class MyApp {
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.races = SC2_RACES;
     this.initializeApp();
-    console.log(this.races)
   }
 
   initializeApp() {
