@@ -2,6 +2,15 @@
 
 This app has been created for educational purpose. I just wanted to learn Ionic 2 / Angular 2 / Typescript. This app may become available on the Google Store and it is the case, it will be 100% free and add-free. 
 
+## Todo
+
+- [] Disclaimer page
+- [] Home page
+- [x] Download images for races
+- [] Handle special units. Include them?
+- [] Finalize types and unit page (CSS, Infos to display)
+- [] Clean model files, add constants and ids for buildings?
+
 ## Docker 
 
 ### Build 
