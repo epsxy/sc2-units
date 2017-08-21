@@ -8,11 +8,12 @@
 
 ### Run the container
 
-```docker run -it --privileged --volume=$(pwd):/opt/workspace -p 42000:8100 android-docker```
+```docker run -it --privileged --volume=$(pwd):/opt/workspace -p 8100:8100 -p 35729:35729 -p 53703:53703 android-docker```
 
 * `--privileged` Access the Android device    
 * `--volume`  Bind the development repository
-* `-p 42000:8100` Bind your host port 42000 to your docker port 8100 (where the ionic app will be deployed) 
+* `-p 8100:8100` Bind your host port 42000 to your docker port 8100 (where the ionic app will be deployed) 
+* `-p 35729:35729 -p 53703:53703` This ports are required for live-reload. 
 
 ## Install 
 
