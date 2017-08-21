@@ -8,20 +8,20 @@
 </ion-header>
 
 <ion-content>
-    <ion-searchbar [(ngModel)]="search" [showCancelButton]="True" (ionInput)="applySearch(search)" (ionCancel)="applySearch('')">
+    <ion-searchbar [(ngModel)]="search" [showCancelButton]='True' (ionInput)='applySearch(search)' (ionCancel)="applySearch('')">
     </ion-searchbar>
     <ion-list>
-        <ion-item *ngFor="let unit of units">
+        <ion-item *ngFor='let unit of units'>
             <ion-thumbnail item-start>
-                <img src="assets/icon/favicon.ico">
+                <img src={{unit.assets.thumbnail}}>
             </ion-thumbnail>
             <h2>{{unit.name}}</h2>
             <p>{{unit.description}}</p>
             <!-- clear class for no bg button -->
-            <button ion-button secondary item-end (click)="goToUnitPage(unit.id)">View</button>
+            <button ion-button secondary item-end (click)='goToUnitPage(unit.id)'>View</button>
         </ion-item>
     </ion-list>
-    <div *ngIf="selectedItem" padding>
+    <div *ngIf='selectedItem' padding>
         You navigated here from <b>{{selectedItem.title}}</b>
     </div>
 </ion-content>

@@ -9,7 +9,7 @@
 
 <ion-content>
     <ion-card>
-        <img src="assets/icon/favicon.ico" />
+        <img src={{unit.assets.image}} />
         <ion-card-content>
             <ion-card-title text-center>{{unit.name}}</ion-card-title>
             {{unit.description}}
@@ -20,19 +20,55 @@
             <ion-card-title>Informations</ion-card-title>
             <ion-grid>
                 <ion-row>
-                    <ion-col text-center>
-                        <ion-img src={{mineral_img}}></ion-img> Minerals: {{unit.cost.minerals}}
+                    <ion-col text-center col-4>
+                        <h2>Cost</h2>
                     </ion-col>
-                    <ion-col text-center>
-                        <ion-img src={{gas_img}}></ion-img> Gas: {{unit.cost.gas}}
+                    <ion-col text-center col-2>
+                        <ion-img src={{minerals_img}}></ion-img>{{unit.cost.minerals}}
+                    </ion-col>
+                    <ion-col text-center col-2>
+                        <ion-img src={{gas_img}}></ion-img>{{unit.cost.gas}}
+                    </ion-col>
+                    <ion-col text-center col-2>
+                        <ion-img src={{buildtime_img}}></ion-img>{{unit.cost.time}}
+                    </ion-col>
+                    <ion-col text-center col-2>
+                        <ion-img src={{supply_img}}></ion-img>{{unit.cost.supply}}
                     </ion-col>
                 </ion-row>
                 <ion-row>
-                    <ion-col text-center>
-                        <ion-img src={{buildtime_img}}></ion-img> Time: {{unit.cost.time}}
+                    <ion-col text-center col-3>
+                        <h2>Attributes</h2>
                     </ion-col>
                     <ion-col text-center>
-                        <ion-img src={{supply_img}}></ion-img> Supply: {{unit.cost.supply}}
+                        Test
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col text-center col-3>
+                        <h2>Attack</h2>
+                    </ion-col>
+                    <ion-col text-center>
+                        Test
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col text-center col-3>
+                        <h2>Defence</h2>
+                    </ion-col>
+                    <ion-col text-center>
+                        Test
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col text-center col-3>
+                        <h2>Build</h2>
+                    </ion-col>
+                    <ion-col text-center>
+                        Building:
+                    </ion-col>
+                    <ion-col text-center>
+                        Hotkey:
                     </ion-col>
                 </ion-row>
             </ion-grid>

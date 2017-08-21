@@ -1,5 +1,7 @@
 # SC2 Units
 
+This app has been created for educational purpose. I just wanted to learn Ionic 2 / Angular 2 / Typescript. This app may become available on the Google Store and it is the case, it will be 100% free and add-free. 
+
 ## Docker 
 
 ### Build 
@@ -30,6 +32,10 @@
 *If there is any copyright infringement, any issue of that kind, please contact me. I do not own any right on Starcraft II or whatsoever and I will remove any content which does not respect your rights.*
 
 ### Blizzard
+
+Some ressources (images, informations) of this application have been extracted from [official Blizzard StarCraft® II website](http://eu.battle.net/sc2/fr/game/). I do not own any right on any of them. 
+
+You will found the official Blizzard disclaimer on StarCraft® bellow. 
 
 StarCraft®
 ©1998 Blizzard Entertainment, Inc. All rights reserved. StarCraft and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.

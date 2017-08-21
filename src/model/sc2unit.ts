@@ -1,3 +1,4 @@
+import { SC2Asset } from './sc2asset';
 import { SC2Source } from './sc2source';
 import { SC2Cost } from './sc2cost';
 import { SC2Ability } from './sc2ability';
@@ -11,7 +12,7 @@ export class SC2Unit {
     cost: SC2Cost;
     abilities: Array<SC2Ability>;
     source: SC2Source;
-    thumbnail: string;
+    assets: SC2Asset;
 
     constructor(id: string,
         name: string, 
@@ -20,7 +21,7 @@ export class SC2Unit {
         cost: SC2Cost, 
         abilities: Array<SC2Ability>, 
         source: SC2Source, 
-        thumbnail: string) {
+        assets: SC2Asset) {
         this.id = id;
         this.name = name;
         this.race = race; 
@@ -28,6 +29,6 @@ export class SC2Unit {
         this.cost = cost; 
         this.abilities = abilities; 
         this.source = source; 
-        this.thumbnail = thumbnail;
+        this.assets = assets;
     }
 }
