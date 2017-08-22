@@ -1,4 +1,5 @@
 import {
+    ATTR_ARMORED,
     ATTR_BIOLOGICAL,
     ATTR_LIGHT,
     ATTR_MECHANICAL,
@@ -49,7 +50,8 @@ export const SC2_UNITS = [
         '99eb6ce7-b9d7-401a-ae87-69d4a7317b8a',
         'Zealot',
         PROTOSS_RACE,
-        '',
+        'The first and strongest unit of direct army attacks. ' + 
+        'A strong brute-force unit and excellent mineral dump as well.',
         new SC2Cost(100, 0, 27, 2),
         new SC2UnitInformation(
             new SC2Target(true, false),
@@ -66,11 +68,13 @@ export const SC2_UNITS = [
         '51365784-a83d-4b13-b201-cc9b47832665',
         'Stalker',
         PROTOSS_RACE,
-        '',
+        'The Stalker is a fast-moving, ranged Protoss ground unit, ' +
+        'capable of hitting both air and ground targets. ' +
+        'They are warped in at the Gateway, and require a Cybernetics Core.',
         new SC2Cost(125, 50, 30, 2),
         new SC2UnitInformation(
             new SC2Target(true, false),
-            [ATTR_LIGHT, ATTR_MECHANICAL],
+            [ATTR_ARMORED, ATTR_MECHANICAL],
             new SC2Attack(10, 9.7, 1.03, 6),
             new SC2Defence(80, 80, 1),
             new SC2OtherInfo(null, 4.13, 10, 2)
@@ -83,11 +87,15 @@ export const SC2_UNITS = [
         '28441b26-4967-4349-9f14-8dbaabcf0086',
         'Sentry',
         PROTOSS_RACE,
-        '',
+        'The Sentry is an unusual Protoss spell-casting unit produced from the ' +
+        'Gateway after the Cybernetics Core has been built. The Sentry\'s spells ' +
+        'are very powerful: Force Field, Guardian Shield, and Hallucination. ' +
+        'These spells — Force Field in particular - are considered essential ' +
+        'capabilities in almost all Protoss strategies.',
         new SC2Cost(50, 100, 26, 2),
         new SC2UnitInformation(
             new SC2Target(true, false),
-            [ATTR_LIGHT, ATTR_MECHANICAL],
+            [ATTR_LIGHT, ATTR_MECHANICAL, ATTR_PSIONIC],
             new SC2Attack(8, 18.6, 0.86, 0.1),
             new SC2Defence(100, 50, 1),
             new SC2OtherInfo(new SC2Energy(50, 200), 3.15, 10, 2)
@@ -99,25 +107,31 @@ export const SC2_UNITS = [
     new SC2Unit('10efe000-4a8b-42cd-a59f-419a1923ce5e',
         'Adept',
         PROTOSS_RACE,
-        '',
+        'The Adept is a ranged Protoss ground unit with a ground-only '+
+        'attack, which is warped in at the Gateway.',
         new SC2Cost(100, 25, 27, 2),
         new SC2UnitInformation(
             new SC2Target(true, false),
-            [ATTR_LIGHT, ATTR_MECHANICAL],
+            [ATTR_LIGHT, ATTR_BIOLOGICAL],
             new SC2Attack(10, 6.2, 1.61, 4),
             new SC2Defence(70, 70, 1),
             new SC2OtherInfo(null, 3.5, 9, 2)
         ),
         null,
         new SC2Source(GATEWAY, KEY_H),
-        new SC2Asset('assets/units/protoss/thumbnail/adept.png', 'assets/units/protoss/image/adept.jpg')
+        new SC2Asset('assets/units/protoss/thumbnail/adept.png', 'assets/units/protoss/image/adept.png')
     ),
     new SC2Unit(
         'fa2fdf4c-68c0-4e7f-b484-65f03fb93582',
         'High Templar',
         PROTOSS_RACE,
-        '',
-        new SC2Cost(50, 150, 39, 2),
+        'The High Templar (often abbreviated to HT) is a spell-casting unit for the Protoss. ' + 
+        'The High Templar is warped in from a Gateway, with the Templar Archives as a prerequisite. ' +
+        'High Templar can cast Feedback to damage and drain the energy of enemy ' + 
+        'spellcasters. After an upgrade, High Templar can cast the devastating Psionic ' +
+        'Storm spell, wreaking damage to all units in an area of effect. Finally, ' + 
+        'any two High Templar and/or Dark Templar can merge to form an Archon.',
+        new SC2Cost(50, 150, 39, 2), 
         new SC2UnitInformation(
             new SC2Target(true, false),
             [ATTR_LIGHT, ATTR_BIOLOGICAL, ATTR_PSIONIC],
@@ -133,7 +147,9 @@ export const SC2_UNITS = [
         'b12440c6-dfd8-4ee8-b6ec-4fa377153d4b',
         'Dark Templar',
         PROTOSS_RACE,
-        '',
+        'The Dark Templar (often abbreviated to DT) is a permanently cloaked ' +
+        'Protoss assassin and a huge disruption to most standard builds for ' +
+        'both sides. Dark Templar are warped-in at the Gateway after a Dark Shrine is built.',
         new SC2Cost(125, 125, 39, 2),
         new SC2UnitInformation(
             new SC2Target(true, false),

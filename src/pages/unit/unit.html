@@ -17,10 +17,10 @@
     </ion-card>
     <ion-card>
         <ion-card-content>
-            <ion-card-title text-center>information</ion-card-title>
+            <ion-card-title text-center>Informations</ion-card-title>
             <ion-grid>
                 <ion-row>
-                    <ion-col text-center col-3>
+                    <ion-col text-center col-4>
                         <h2>Cost</h2>
                     </ion-col>
                     <ion-col text-center>
@@ -37,7 +37,7 @@
                     </ion-col>
                 </ion-row>
                 <ion-row>
-                    <ion-col text-center col-3>
+                    <ion-col text-center col-4>
                         <h2>Attributes</h2>
                     </ion-col>
                     <ion-col text-center>
@@ -45,7 +45,7 @@
                     </ion-col>
                 </ion-row>
                 <ion-row>
-                    <ion-col text-center col-3>
+                    <ion-col text-center col-4>
                         <h2>Target</h2>
                     </ion-col>
                     <ion-col text-center>
@@ -53,8 +53,8 @@
                         <ion-badge color={{airBadge}}>Air</ion-badge>
                     </ion-col>
                 </ion-row>
-                <ion-row>
-                    <ion-col text-center col-3>
+                <ion-row *ngIf='canAttack'>
+                    <ion-col text-center col-4>
                         <h2>Attack</h2>
                     </ion-col>
                     <ion-col text-center>
@@ -68,7 +68,7 @@
                         </ion-row>
                         <ion-row>
                             <ion-col>
-                                Cooldown: {{unit.information.attack.cooldown}}
+                                CD: {{unit.information.attack.cooldown}}
                             </ion-col>
                             <ion-col>
                                 Range: {{unit.information.attack.range}}
@@ -77,7 +77,7 @@
                     </ion-col>
                 </ion-row>
                 <ion-row>
-                    <ion-col text-center col-3>
+                    <ion-col text-center col-4>
                         <h2>Defence</h2>
                     </ion-col>
                     <ion-col text-center>
@@ -90,8 +90,19 @@
                         Armor: {{unit.information.defence.armor}}
                     </ion-col>
                 </ion-row>
+                <ion-row *ngIf='hasEnergy'>
+                    <ion-col text-center col-4>
+                        <h2>Energy</h2>
+                    </ion-col>
+                    <ion-col text-center>
+                        Spawn: {{unit.information.others.energy.spawn_energy}}
+                    </ion-col>
+                    <ion-col text-center *ngIf='hasShield'>
+                        Full: {{unit.information.others.energy.full_energy}}
+                    </ion-col>
+                </ion-row>
                 <ion-row>
-                    <ion-col text-center col-3>
+                    <ion-col text-center col-4>
                         <h2>Origin</h2>
                     </ion-col>
                     <ion-col text-center>
@@ -102,7 +113,7 @@
                     </ion-col>
                 </ion-row>
                 <ion-row>
-                    <ion-col text-center col-3>
+                    <ion-col text-center col-4>
                         <h2>Others</h2>
                     </ion-col>
                     <ion-col text-center>
@@ -120,9 +131,13 @@
                             </ion-col>
                         </ion-row>
                     </ion-col>
-
                 </ion-row>
             </ion-grid>
+        </ion-card-content>
+    </ion-card>
+    <!-- <ion-card>
+        <ion-card-content>
+            <ion-card-title text-center>Upgrades</ion-card-title>
         </ion-card-content>
     </ion-card>
     <ion-card>
@@ -132,12 +147,12 @@
     </ion-card>
     <ion-card>
         <ion-card-content>
-            <ion-card-title text-center>Counters</ion-card-title>
+            <ion-card-title text-center>Strong against</ion-card-title>
         </ion-card-content>
     </ion-card>
     <ion-card>
         <ion-card-content>
-            <ion-card-title text-center>Is countered by</ion-card-title>
+            <ion-card-title text-center>Weak against</ion-card-title>
         </ion-card-content>
-    </ion-card>
+    </ion-card> -->
 </ion-content>
