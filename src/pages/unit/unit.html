@@ -17,7 +17,7 @@
     </ion-card>
     <ion-card>
         <ion-card-content>
-            <ion-card-title text-center>Informations</ion-card-title>
+            <ion-card-title text-center>information</ion-card-title>
             <ion-grid>
                 <ion-row>
                     <ion-col text-center col-3>
@@ -41,7 +41,7 @@
                         <h2>Attributes</h2>
                     </ion-col>
                     <ion-col text-center>
-                        <ion-badge color='primary' class='badge-margin-right' *ngFor='let attribute of unit.informations.attributes'>{{attribute}}</ion-badge>
+                        <ion-badge color='primary' class='badge-margin-right' *ngFor='let attribute of unit.information.attributes'>{{attribute}}</ion-badge>
                     </ion-col>
                 </ion-row>
                 <ion-row>
@@ -60,18 +60,18 @@
                     <ion-col text-center>
                         <ion-row>
                             <ion-col>
-                                Damage: {{unit.informations.damage}}
+                                Damage: {{unit.information.attack.damage}}
                             </ion-col>
                             <ion-col>
-                                DPS: {{unit.informations.dps}}
+                                DPS: {{unit.information.attack.dps}}
                             </ion-col>
                         </ion-row>
                         <ion-row>
                             <ion-col>
-                                Cooldown: {{unit.informations.cooldown}}
+                                Cooldown: {{unit.information.attack.cooldown}}
                             </ion-col>
                             <ion-col>
-                                Range: {{unit.informations.range}}
+                                Range: {{unit.information.attack.range}}
                             </ion-col>
                         </ion-row>
                     </ion-col>
@@ -81,13 +81,13 @@
                         <h2>Defence</h2>
                     </ion-col>
                     <ion-col text-center>
-                        Life:
+                        Life: {{unit.information.defence.life}}
                     </ion-col>
                     <ion-col text-center *ngIf='hasShield'>
-                        Shield:
+                        Shield: {{unit.information.defence.shield}}
                     </ion-col>
                     <ion-col text-center>
-                        Armor:
+                        Armor: {{unit.information.defence.armor}}
                     </ion-col>
                 </ion-row>
                 <ion-row>
@@ -108,15 +108,15 @@
                     <ion-col text-center>
                         <ion-row>
                             <ion-col text-center>
-                                Sight:
+                                Sight: {{unit.information.others.sight}}
                             </ion-col>
                             <ion-col text-center>
-                                Speed:
+                                Speed: {{unit.information.others.speed}}
                             </ion-col>
                         </ion-row>
                         <ion-row>
                             <ion-col text-center>
-                                Cargo Size:
+                                Cargo Size: {{unit.information.others.cargo_size}}
                             </ion-col>
                         </ion-row>
                     </ion-col>

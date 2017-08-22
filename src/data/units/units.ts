@@ -1,9 +1,29 @@
+import {
+    ATTR_BIOLOGICAL,
+    ATTR_LIGHT,
+    ATTR_MECHANICAL,
+    ATTR_PSIONIC,
+    GATEWAY,
+    KEY_D,
+    KEY_E,
+    KEY_H,
+    KEY_T,
+    KEY_Z,
+    NEXUS,
+} from '../../model/const';
 import { SC2Source } from '../../model/sc2source';
-import { ATTR_LIGHT, ATTR_MECHANICAL, SC2UnitInformation } from '../../model/sc2unitinformation';
+import {
+    SC2Attack,
+    SC2Defence,
+    SC2Energy,
+    SC2OtherInfo,
+    SC2Target,
+    SC2UnitInformation,
+} from '../../model/sc2unitinformation';
 import { SC2Asset } from '../../model/sc2asset';
 import { SC2Cost } from '../../model/sc2cost';
 import { SC2Unit } from "../../model/sc2unit";
-import { PROTOSS_RACE, TERRAN_RACE, ZERG_RACE } from '../races/races';
+import { PROTOSS_RACE, SC2_RACES, TERRAN_RACE, ZERG_RACE } from '../races/races';
 
 export const SC2_UNITS = [
     new SC2Unit(
@@ -14,83 +34,125 @@ export const SC2_UNITS = [
         'It harvests resources, has a low-powered melee attack, and can ' +
         'warp-in any Protoss building.',
         new SC2Cost(50, 0, 12, 1),
-        new SC2UnitInformation(true, false, [ATTR_LIGHT, ATTR_MECHANICAL], 5, 4.67, 1.07, 0.1),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_LIGHT, ATTR_MECHANICAL],
+            new SC2Attack(5, 4.67, 1.07, 0.1),
+            new SC2Defence(20, 20, 0),
+            new SC2OtherInfo(null, 3.94, 8, 1)
+        ),
         null,
-        new SC2Source('Nexus', 'E'),
+        new SC2Source(NEXUS, KEY_E),
         new SC2Asset('assets/units/protoss/thumbnail/probe.png', 'assets/units/protoss/image/probe.jpg')
     ),
-    // new SC2Unit(
-    //     '99eb6ce7-b9d7-401a-ae87-69d4a7317b8a',
-    //     'Zealot',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(100, 0, 27, 2),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/zealot.png', 'assets/units/protoss/image/zealot.jpg')
-    // ),
-    // new SC2Unit(
-    //     '51365784-a83d-4b13-b201-cc9b47832665',
-    //     'Stalker',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(125, 50, 30, 2),
-    //     new SC2UnitInformation(true, true, 5, 4.67, 1.07, 0.1),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/stalker.png', 'assets/units/protoss/image/stalker.jpg')
-    // ),
-    // new SC2Unit(
-    //     '28441b26-4967-4349-9f14-8dbaabcf0086',
-    //     'Sentry',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(50, 100, 26, 2),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/sentry.png', 'assets/units/protoss/image/sentry.jpg')
-    // ),
-    // new SC2Unit('10efe000-4a8b-42cd-a59f-419a1923ce5e',
-    //     'Adept',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(100, 25, 27, 2),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/adept.png', 'assets/units/protoss/image/adept.jpg')
-    // ),
-    // new SC2Unit(
-    //     'fa2fdf4c-68c0-4e7f-b484-65f03fb93582',
-    //     'High Templar',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(50, 150, 39, 2),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/high-templar.png', 'assets/units/protoss/image/high-templar.jpg')
-    // ),
-    // new SC2Unit(
-    //     'b12440c6-dfd8-4ee8-b6ec-4fa377153d4b',
-    //     'Dark Templar',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(125, 125, 39, 2),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/dark-templar.png', 'assets/units/protoss/image/dark-templar.jpg')
-    // ),
+    new SC2Unit(
+        '99eb6ce7-b9d7-401a-ae87-69d4a7317b8a',
+        'Zealot',
+        PROTOSS_RACE,
+        '',
+        new SC2Cost(100, 0, 27, 2),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_LIGHT, ATTR_MECHANICAL],
+            new SC2Attack(8, 18.6, 0.86, 0.1),
+            new SC2Defence(100, 50, 1),
+            new SC2OtherInfo(null, 3.15, 9, 2)
+        ),
+        null,
+        new SC2Source(GATEWAY, KEY_Z),
+        new SC2Asset('assets/units/protoss/thumbnail/zealot.png', 'assets/units/protoss/image/zealot.jpg')
+    ),
+    new SC2Unit(
+        '51365784-a83d-4b13-b201-cc9b47832665',
+        'Stalker',
+        PROTOSS_RACE,
+        '',
+        new SC2Cost(125, 50, 30, 2),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_LIGHT, ATTR_MECHANICAL],
+            new SC2Attack(10, 9.7, 1.03, 6),
+            new SC2Defence(80, 80, 1),
+            new SC2OtherInfo(null, 4.13, 10, 2)
+        ),
+        null,
+        new SC2Source(GATEWAY, KEY_H),
+        new SC2Asset('assets/units/protoss/thumbnail/stalker.png', 'assets/units/protoss/image/stalker.jpg')
+    ),
+    new SC2Unit(
+        '28441b26-4967-4349-9f14-8dbaabcf0086',
+        'Sentry',
+        PROTOSS_RACE,
+        '',
+        new SC2Cost(50, 100, 26, 2),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_LIGHT, ATTR_MECHANICAL],
+            new SC2Attack(8, 18.6, 0.86, 0.1),
+            new SC2Defence(100, 50, 1),
+            new SC2OtherInfo(new SC2Energy(50, 200), 3.15, 10, 2)
+        ),
+        null,
+        new SC2Source(GATEWAY, KEY_E),
+        new SC2Asset('assets/units/protoss/thumbnail/sentry.png', 'assets/units/protoss/image/sentry.jpg')
+    ),
+    new SC2Unit('10efe000-4a8b-42cd-a59f-419a1923ce5e',
+        'Adept',
+        PROTOSS_RACE,
+        '',
+        new SC2Cost(100, 25, 27, 2),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_LIGHT, ATTR_MECHANICAL],
+            new SC2Attack(10, 6.2, 1.61, 4),
+            new SC2Defence(70, 70, 1),
+            new SC2OtherInfo(null, 3.5, 9, 2)
+        ),
+        null,
+        new SC2Source(GATEWAY, KEY_H),
+        new SC2Asset('assets/units/protoss/thumbnail/adept.png', 'assets/units/protoss/image/adept.jpg')
+    ),
+    new SC2Unit(
+        'fa2fdf4c-68c0-4e7f-b484-65f03fb93582',
+        'High Templar',
+        PROTOSS_RACE,
+        '',
+        new SC2Cost(50, 150, 39, 2),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_LIGHT, ATTR_BIOLOGICAL, ATTR_PSIONIC],
+            null,
+            new SC2Defence(40, 40, 0),
+            new SC2OtherInfo(new SC2Energy(50, 200), 2.62, 10, 2)
+        ),
+        null,
+        new SC2Source(GATEWAY, KEY_T),
+        new SC2Asset('assets/units/protoss/thumbnail/high-templar.png', 'assets/units/protoss/image/high-templar.jpg')
+    ),
+    new SC2Unit(
+        'b12440c6-dfd8-4ee8-b6ec-4fa377153d4b',
+        'Dark Templar',
+        PROTOSS_RACE,
+        '',
+        new SC2Cost(125, 125, 39, 2),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_LIGHT, ATTR_BIOLOGICAL, ATTR_PSIONIC],
+            new SC2Attack(45, 37.2, 1.21, 0.1),
+            new SC2Defence(40, 80, 1),
+            new SC2OtherInfo(null, 3.94, 8, 2)
+        ),
+        null,
+        new SC2Source(GATEWAY, KEY_D),
+        new SC2Asset('assets/units/protoss/thumbnail/dark-templar.png', 'assets/units/protoss/image/dark-templar.jpg')
+    ),
     // new SC2Unit(
     //     '3a9fac08-2181-46d8-bedd-cd593e1f11cd',
     //     'Immortal',
     //     PROTOSS_RACE,
     //     '',
     //     new SC2Cost(250, 100, 39, 4),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/protoss/thumbnail/immortal.png', 'assets/units/protoss/image/immortal.jpg')
@@ -101,7 +163,7 @@ export const SC2_UNITS = [
     //     PROTOSS_RACE,
     //     '',
     //     new SC2Cost(300, 200, 54, 6),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/protoss/thumbnail/colossus.png', 'assets/units/protoss/image/colossus.jpg')
@@ -112,7 +174,7 @@ export const SC2_UNITS = [
     //     PROTOSS_RACE,
     //     '',
     //     new SC2Cost(150, 150, 36, 3),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/protoss/thumbnail/disruptor.png', 'assets/units/protoss/image/disruptor.jpg')
@@ -123,7 +185,7 @@ export const SC2_UNITS = [
     //     PROTOSS_RACE,
     //     '',
     //     new SC2Cost(0, 0, 9, 4),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/protoss/thumbnail/archon.png', 'assets/units/protoss/image/archon.jpg')
@@ -134,7 +196,7 @@ export const SC2_UNITS = [
     //     PROTOSS_RACE,
     //     '',
     //     new SC2Cost(25, 75, 21, 1),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/protoss/thumbnail/observer.png', 'assets/units/protoss/image/observer.jpg')
@@ -145,7 +207,7 @@ export const SC2_UNITS = [
     //     PROTOSS_RACE,
     //     '',
     //     new SC2Cost(200, 0, 36, 2),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/protoss/thumbnail/warp-prism.png', 'assets/units/protoss/image/warp-prism.jpg')
@@ -156,7 +218,7 @@ export const SC2_UNITS = [
     //     PROTOSS_RACE,
     //     '',
     //     new SC2Cost(150, 100, 25, 2),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/protoss/thumbnail/phoenix.png', 'assets/units/protoss/image/phoenix.jpg')
@@ -167,7 +229,7 @@ export const SC2_UNITS = [
     //     PROTOSS_RACE,
     //     '',
     //     new SC2Cost(250, 150, 43, 4),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/protoss/thumbnail/void-ray.png', 'assets/units/protoss/image/void-ray.jpg')
@@ -178,7 +240,7 @@ export const SC2_UNITS = [
     //     PROTOSS_RACE,
     //     '',
     //     new SC2Cost(150, 150, 36, 3),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/protoss/thumbnail/oracle.png', 'assets/units/protoss/image/oracle.jpg')
@@ -189,7 +251,7 @@ export const SC2_UNITS = [
     //     PROTOSS_RACE,
     //     '',
     //     new SC2Cost(350, 250, 86, 6),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/protoss/thumbnail/carrier.png', 'assets/units/protoss/image/carrier.jpg')
@@ -200,7 +262,7 @@ export const SC2_UNITS = [
     //     PROTOSS_RACE,
     //     '',
     //     new SC2Cost(300, 200, 43, 6),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/protoss/thumbnail/tempest.png', 'assets/units/protoss/image/tempest.jpg')
@@ -211,7 +273,7 @@ export const SC2_UNITS = [
     //     PROTOSS_RACE,
     //     '',
     //     new SC2Cost(100, 100, 21, 2),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/protoss/thumbnail/mothership-core.png', 'assets/units/protoss/image/mothership-core.jpg')
@@ -222,7 +284,7 @@ export const SC2_UNITS = [
     //     PROTOSS_RACE,
     //     '',
     //     new SC2Cost(300, 300, 100, 6),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/protoss/thumbnail/mothership.png', 'assets/units/protoss/image/mothership.jpg')
@@ -233,7 +295,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/larva.png', 'assets/units/zerg/image/larva.jpg')
@@ -244,7 +306,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(50, 0, 12, 1),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/drone.png', 'assets/units/zerg/image/drone.jpg')
@@ -255,7 +317,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/queen.png', 'assets/units/zerg/image/queen.jpg')
@@ -266,7 +328,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/zergling.png', 'assets/units/zerg/image/zergling.jpg')
@@ -277,7 +339,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/baneling.png', 'assets/units/zerg/image/baneling.jpg')
@@ -288,7 +350,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/roach.png', 'assets/units/zerg/image/roach.jpg')
@@ -299,7 +361,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/ravager.png', 'assets/units/zerg/image/ravager.png')
@@ -310,7 +372,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/hydralisk.png', 'assets/units/zerg/image/hydralisk.jpg')
@@ -321,7 +383,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/lurker.png', 'assets/units/zerg/image/lurker.png')
@@ -332,7 +394,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/infestor.png', 'assets/units/zerg/image/infestor.jpg')
@@ -343,7 +405,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/swarm-host.png', 'assets/units/zerg/image/swarm-host.jpg')
@@ -354,7 +416,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/ultralisk.png', 'assets/units/zerg/image/ultralisk.jpg')
@@ -365,7 +427,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/locust.png', 'assets/units/zerg/image/locust.jpg')
@@ -376,7 +438,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/broodling.png', 'assets/units/zerg/image/broodling.jpg')
@@ -387,7 +449,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/changeling.png', 'assets/units/zerg/image/changeling.jpg')
@@ -408,7 +470,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/nydus-worm.png', 'assets/units/zerg/image/nydus-worm.jpg')
@@ -419,7 +481,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/overlord.png', 'assets/units/zerg/image/overlord.jpg')
@@ -430,7 +492,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/overseer.png', 'assets/units/zerg/image/overseer.jpg')
@@ -441,7 +503,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/mutalisk.png', 'assets/units/zerg/image/mutalisk.jpg')
@@ -452,7 +514,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/corruptor.png', 'assets/units/zerg/image/corruptor.jpg')
@@ -463,7 +525,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/brood-lord.png', 'assets/units/zerg/image/brood-lord.jpg')
@@ -474,7 +536,7 @@ export const SC2_UNITS = [
     //     ZERG_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/viper.png', 'assets/units/zerg/image/viper.jpg')
@@ -485,7 +547,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/scv.png', 'assets/units/terran/image/scv.jpg')
@@ -506,7 +568,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/marine.png', 'assets/units/terran/image/marine.jpg')
@@ -517,7 +579,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/marauder.png', 'assets/units/terran/image/marauder.jpg')
@@ -528,7 +590,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/reaper.png', 'assets/units/terran/image/reaper.jpg')
@@ -539,7 +601,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/ghost.png', 'assets/units/terran/image/ghost.jpg')
@@ -550,7 +612,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/hellion.png', 'assets/units/terran/image/hellion.jpg')
@@ -561,7 +623,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/hellbat.png', 'assets/units/terran/image/hellbat.jpg')
@@ -572,7 +634,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/siege-tank.png', 'assets/units/terran/image/siege-tank.jpg')
@@ -583,7 +645,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/cyclone.png', 'assets/units/terran/image/cyclone.png')
@@ -594,7 +656,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/widow-mine.png', 'assets/units/terran/image/widow-mine.jpg')
@@ -605,7 +667,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/thor.png', 'assets/units/terran/image/thor.jpg')
@@ -616,7 +678,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/viking.png', 'assets/units/terran/image/viking.jpg')
@@ -627,7 +689,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/medivac.png', 'assets/units/terran/image/medivac.jpg')
@@ -638,7 +700,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/liberator.png', 'assets/units/terran/image/liberator.png')
@@ -649,7 +711,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/raven.png', 'assets/units/terran/image/raven.jpg')
@@ -660,7 +722,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/banshee.png', 'assets/units/terran/image/banshee.jpg')
@@ -671,7 +733,7 @@ export const SC2_UNITS = [
     //     TERRAN_RACE,
     //     '',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false, 5, 4.67, 1.07, 0.1),
+    //     new SC2UnitInformation(true, false),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/terran/thumbnail/battlecruiser.png', 'assets/units/terran/image/battlecruiser.jpg')

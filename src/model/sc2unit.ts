@@ -11,7 +11,7 @@ export class SC2Unit {
     race: SC2Race;
     description: string;
     cost: SC2Cost;
-    informations: SC2UnitInformation;
+    information: SC2UnitInformation;
     abilities: Array<SC2Ability>;
     source: SC2Source;
     assets: SC2Asset;
@@ -21,7 +21,7 @@ export class SC2Unit {
         race: SC2Race, 
         description: string, 
         cost: SC2Cost, 
-        informations: SC2UnitInformation,
+        information: SC2UnitInformation,
         abilities: Array<SC2Ability>, 
         source: SC2Source, 
         assets: SC2Asset) {
@@ -30,7 +30,7 @@ export class SC2Unit {
         this.race = race; 
         this.description = description;
         this.cost = cost; 
-        this.informations = informations
+        this.information = information
         this.abilities = abilities; 
         this.source = source; 
         this.assets = assets;

@@ -31,13 +31,14 @@ export class UnitPage {
     }
     else {
       this.unit = unitsMatchingId[0];
-      if(this.unit.informations.canAttackAirUnits) {
+      console.log(this.unit);
+      if(this.unit.information.target.canAttackAirUnits) {
         this.airBadge = 'primary'
       } 
       else {
         this.airBadge = 'danger'
       }
-      if(this.unit.informations.canAttackGroundUnits) {
+      if(this.unit.information.target.canAttackGroundUnits) {
         this.groundBadge = 'primary'
       } 
       else {
