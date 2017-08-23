@@ -1,15 +1,13 @@
 import {
     ATTR_ARMORED,
     ATTR_BIOLOGICAL,
+    ATTR_DETECTOR,
     ATTR_LIGHT,
+    ATTR_MASSIVE,
     ATTR_MECHANICAL,
     ATTR_PSIONIC,
-    ATTR_MASSIVE,
-    ATTR_DETECTOR,
-    NEXUS,
     GATEWAY,
-    ROBOTICS,
-    STARGATE,
+    HATCHERY,
     KEY_A,
     KEY_B,
     KEY_C,
@@ -18,10 +16,15 @@ import {
     KEY_H,
     KEY_I,
     KEY_M,
+    KEY_Q,
+    KEY_S,
     KEY_T,
-    KEY_X,
     KEY_V,
-    KEY_Z
+    KEY_X,
+    KEY_Z,
+    NEXUS,
+    ROBOTICS,
+    STARGATE,
 } from '../../model/const';
 import { SC2Source } from '../../model/sc2source';
 import {
@@ -430,50 +433,86 @@ export const SC2_UNITS = [
         null,
         new SC2Asset('assets/units/protoss/thumbnail/mothership.png', 'assets/units/protoss/image/mothership.jpg')
     ),
-    // new SC2Unit(
-    //     '71239ff5-a24e-4d17-b103-65660b190642',
-    //     'Larva',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/larva.png', 'assets/units/zerg/image/larva.jpg')
-    // ),
-    // new SC2Unit(
-    //     '696afffa-a536-4360-a737-a0ca28e25471',
-    //     'Drone',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(50, 0, 12, 1),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/drone.png', 'assets/units/zerg/image/drone.jpg')
-    // ),
-    // new SC2Unit(
-    //     '41a6dd8a-1913-47fb-9825-d13dff723ebb',
-    //     'Queen',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/queen.png', 'assets/units/zerg/image/queen.jpg')
-    // ),
-    // new SC2Unit(
-    //     'c1a2f2ca-a586-4c4f-b40e-3485c0de8c20',
-    //     'Zergling',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/zergling.png', 'assets/units/zerg/image/zergling.jpg')
-    // ),
+    new SC2Unit(
+        '71239ff5-a24e-4d17-b103-65660b190642',
+        'Larva',
+        ZERG_RACE,
+        'The Larva is the base unit for Zerg. It can morph into a lot of units.' + 
+        'There can be a maximum of 19 Larva on one Hatchery. ' +
+        'Additional Larvae produced at that Hatchery instantly die.',
+        new SC2Cost(0, 0, 0, 0),
+        new SC2UnitInformation(
+            new SC2Target(false, false),
+            [ATTR_LIGHT, ATTR_BIOLOGICAL],
+            null,
+            new SC2Defence(25, 0, 10),
+            new SC2OtherInfo(null, 0.79, 5, null)
+        ),
+        null,
+        new SC2Source(HATCHERY, KEY_S),
+        new SC2Asset('assets/units/zerg/thumbnail/larva.png', 'assets/units/zerg/image/larva.jpg')
+    ),
+    new SC2Unit(
+        '696afffa-a536-4360-a737-a0ca28e25471',
+        'Drone',
+        ZERG_RACE,
+        'The Drone is the basic worker unit for Zerg. It can harvest Minerals and ' +
+        'Vespene Gas as well as build any Zerg structure at the cost of its life. ' +
+        'Drones differ from Probes and SCVs in that they can only slowly regenerate ' +
+        'health as opposed to the fast recharging shields of the Probe or the repairable ' +
+        '45 hit points of the SCV.',
+        new SC2Cost(50, 0, 12, 1),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_LIGHT, ATTR_BIOLOGICAL],
+            new SC2Attack(5, 4.67, 1.07, 0.1),
+            new SC2Defence(40, 0, 0),
+            new SC2OtherInfo(null, 3.94, 8, 1)
+        ),
+        null,
+        new SC2Source(HATCHERY, KEY_D),
+        new SC2Asset('assets/units/zerg/thumbnail/drone.png', 'assets/units/zerg/image/drone.jpg')
+    ),
+    // TODO: Add 2 types of attack for queen
+    new SC2Unit(
+        '41a6dd8a-1913-47fb-9825-d13dff723ebb',
+        'Queen',
+        ZERG_RACE,
+        'The Queen is an essential unit for the Zerg base, capable of being spawned ' +
+        'from any Hatchery after a Spawning Pool has been built. The unit provides ' +
+        'light defense against both ground and air threats.',
+        new SC2Cost(150, 0, 36, 2),
+        new SC2UnitInformation(
+            new SC2Target(true, true),
+            [ATTR_BIOLOGICAL, ATTR_PSIONIC],
+            new SC2Attack(4, 11.2, 0.71, 5),
+            new SC2Defence(175, 0, 1),
+            new SC2OtherInfo(null, 1.31, 9, 2)
+        ),
+        null,
+        new SC2Source(HATCHERY, KEY_Q),
+        new SC2Asset('assets/units/zerg/thumbnail/queen.png', 'assets/units/zerg/image/queen.jpg')
+    ),
+    new SC2Unit(
+        'c1a2f2ca-a586-4c4f-b40e-3485c0de8c20',
+        'Zergling',
+        ZERG_RACE,
+        'The Zergling is a small and fast melee attacker and the backbone of the Zerg ' +
+        'army. Individual Zerglings are weak, but large groups can surround and terrorize ' +
+        'enemy ground forces. In such groups, they soak a lot of incoming damage and provide ' +
+        'a shield for more expensive units.',
+        new SC2Cost(25, 0, 17, 0.5),
+        new SC2UnitInformation(
+            new SC2Target(true, true),
+            [ATTR_LIGHT, ATTR_BIOLOGICAL],
+            new SC2Attack(5, 10, 0.497, 0.1),
+            new SC2Defence(35, 0, 0),
+            new SC2OtherInfo(null, 4.13, 8, 1)
+        ),
+        null,
+        new SC2Source(HATCHERY, KEY_Z),
+        new SC2Asset('assets/units/zerg/thumbnail/zergling.png', 'assets/units/zerg/image/zergling.jpg')
+    ),
     // new SC2Unit(
     //     'c40959e8-31ae-49bf-8a3a-eb6e127c58f6',
     //     'Baneling',

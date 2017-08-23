@@ -24,6 +24,7 @@ export class UnitPage {
   canAttack: boolean;
   hasShield: boolean;
   hasEnergy: boolean;
+  hasCargo: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.nav = navCtrl
@@ -36,11 +37,19 @@ export class UnitPage {
       // development only
       this.unit = unitsMatchingId[0];
       console.log(this.unit);
+      this.initCargo();
       this.initShield();
       this.initEnergy();
       this.initAttack();
       this.initTargets();
       this.initAssets();
+    }
+  }
+
+  initCargo() {
+    this.hasCargo = false; 
+    if(this.unit.information.others.cargo_size != null) {
+      this.hasCargo = true;
     }
   }
 

@@ -82,11 +82,7 @@
                     </ion-col>
                     <ion-col text-center>
                         <ion-badge color='sc2-life'>Life: {{unit.information.defence.life}}</ion-badge>
-                    </ion-col>
-                    <ion-col text-center *ngIf='hasShield'>
-                        <ion-badge color='sc2-shield'>Shield: {{unit.information.defence.shield}}</ion-badge>
-                    </ion-col>
-                    <ion-col text-center>
+                        <ion-badge *ngIf='hasShield' color='sc2-shield'>Shield: {{unit.information.defence.shield}}</ion-badge>
                         <ion-badge color='sc2-armor'>Armor: {{unit.information.defence.armor}}</ion-badge>
                     </ion-col>
                 </ion-row>
@@ -125,7 +121,7 @@
                                 Speed: {{unit.information.others.speed}}
                             </ion-col>
                         </ion-row>
-                        <ion-row>
+                        <ion-row *ngIf='hasCargo'>
                             <ion-col text-center>
                                 Cargo Size: {{unit.information.others.cargo_size}}
                             </ion-col>
