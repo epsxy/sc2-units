@@ -1,9 +1,16 @@
 
 // Hotkeys
+export const KEY_A = 'A'
+export const KEY_B = 'B'
+export const KEY_C = 'C'
 export const KEY_D = 'D'
 export const KEY_E = 'E'
 export const KEY_H = 'H'
+export const KEY_I = 'I'
+export const KEY_M = 'M'
 export const KEY_T = 'T'
+export const KEY_X = 'X'
+export const KEY_V = 'V'
 export const KEY_Z = 'Z'
 
 // Attributes

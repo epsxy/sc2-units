@@ -81,13 +81,13 @@
                         <h2>Defence</h2>
                     </ion-col>
                     <ion-col text-center>
-                        Life: {{unit.information.defence.life}}
+                        <ion-badge color='sc2-life'>Life: {{unit.information.defence.life}}</ion-badge>
                     </ion-col>
                     <ion-col text-center *ngIf='hasShield'>
-                        Shield: {{unit.information.defence.shield}}
+                        <ion-badge color='sc2-shield'>Shield: {{unit.information.defence.shield}}</ion-badge>
                     </ion-col>
                     <ion-col text-center>
-                        Armor: {{unit.information.defence.armor}}
+                        <ion-badge color='sc2-armor'>Armor: {{unit.information.defence.armor}}</ion-badge>
                     </ion-col>
                 </ion-row>
                 <ion-row *ngIf='hasEnergy'>
@@ -95,10 +95,10 @@
                         <h2>Energy</h2>
                     </ion-col>
                     <ion-col text-center>
-                        Spawn: {{unit.information.others.energy.spawn_energy}}
+                        <ion-badge color='sc2-energy'>Spawn: {{unit.information.others.energy.spawn_energy}}</ion-badge>
                     </ion-col>
                     <ion-col text-center *ngIf='hasShield'>
-                        Full: {{unit.information.others.energy.full_energy}}
+                        <ion-badge color='sc2-energy'>Full: {{unit.information.others.energy.full_energy}}</ion-badge>
                     </ion-col>
                 </ion-row>
                 <ion-row>

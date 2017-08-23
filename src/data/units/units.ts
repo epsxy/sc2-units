@@ -4,13 +4,24 @@ import {
     ATTR_LIGHT,
     ATTR_MECHANICAL,
     ATTR_PSIONIC,
+    ATTR_MASSIVE,
+    ATTR_DETECTOR,
+    NEXUS,
     GATEWAY,
+    ROBO, 
+    STARGATE,
+    KEY_A,
+    KEY_B,
+    KEY_C,
     KEY_D,
     KEY_E,
     KEY_H,
+    KEY_I,
+    KEY_M,
     KEY_T,
-    KEY_Z,
-    NEXUS,
+    KEY_X,
+    KEY_V,
+    KEY_Z
 } from '../../model/const';
 import { SC2Source } from '../../model/sc2source';
 import {
@@ -162,149 +173,263 @@ export const SC2_UNITS = [
         new SC2Source(GATEWAY, KEY_D),
         new SC2Asset('assets/units/protoss/thumbnail/dark-templar.png', 'assets/units/protoss/image/dark-templar.jpg')
     ),
-    // new SC2Unit(
-    //     '3a9fac08-2181-46d8-bedd-cd593e1f11cd',
-    //     'Immortal',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(250, 100, 39, 4),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/immortal.png', 'assets/units/protoss/image/immortal.jpg')
-    // ),
-    // new SC2Unit(
-    //     'd2aba0bd-4644-4858-b235-db41f5bb5bab',
-    //     'Colossus',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(300, 200, 54, 6),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/colossus.png', 'assets/units/protoss/image/colossus.jpg')
-    // ),
-    // new SC2Unit(
-    //     'dd04db1e-92e5-4310-94ac-920f52ac069c',
-    //     'Disruptor',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(150, 150, 36, 3),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/disruptor.png', 'assets/units/protoss/image/disruptor.jpg')
-    // ),
-    // new SC2Unit(
-    //     '2a1a54cc-0d57-4a7c-a6eb-f411c7ae2d2e',
-    //     'Archon',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 9, 4),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/archon.png', 'assets/units/protoss/image/archon.jpg')
-    // ),
-    // new SC2Unit(
-    //     '16a3798f-f30d-4514-abc8-2baae2373318',
-    //     'Observer',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(25, 75, 21, 1),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/observer.png', 'assets/units/protoss/image/observer.jpg')
-    // ),
-    // new SC2Unit(
-    //     'c7963890-f3b2-46e6-b86d-8ae1668d2ade',
-    //     'Warp Prism',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(200, 0, 36, 2),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/warp-prism.png', 'assets/units/protoss/image/warp-prism.jpg')
-    // ),
-    // new SC2Unit(
-    //     '448cd045-653c-43e9-936a-3878141aa4a8',
-    //     'Phoenix',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(150, 100, 25, 2),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/phoenix.png', 'assets/units/protoss/image/phoenix.jpg')
-    // ),
-    // new SC2Unit(
-    //     '1516d125-d178-4053-9c56-f7c06030209c',
-    //     'Void Ray',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(250, 150, 43, 4),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/void-ray.png', 'assets/units/protoss/image/void-ray.jpg')
-    // ),
-    // new SC2Unit(
-    //     '17c76d99-a451-4987-9346-55971a5a8ab3',
-    //     'Oracle',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(150, 150, 36, 3),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/oracle.png', 'assets/units/protoss/image/oracle.jpg')
-    // ),
-    // new SC2Unit(
-    //     '91844ecd-4e4d-4a09-ae51-e957cb91a539',
-    //     'Carrier',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(350, 250, 86, 6),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/carrier.png', 'assets/units/protoss/image/carrier.jpg')
-    // ),
-    // new SC2Unit(
-    //     'a0446b8b-65fc-4837-9e22-2e8da3b7cf2c',
-    //     'Tempest',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(300, 200, 43, 6),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/tempest.png', 'assets/units/protoss/image/tempest.jpg')
-    // ),
-    // new SC2Unit(
-    //     'fcfbc539-5ba0-4a01-a4fe-ec579414ddb4',
-    //     'Mothership Core',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(100, 100, 21, 2),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/mothership-core.png', 'assets/units/protoss/image/mothership-core.jpg')
-    // ),
-    // new SC2Unit(
-    //     'eabd93e7-c5e3-4a07-9222-9c2c4d519246',
-    //     'Mothership',
-    //     PROTOSS_RACE,
-    //     '',
-    //     new SC2Cost(300, 300, 100, 6),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/protoss/thumbnail/mothership.png', 'assets/units/protoss/image/mothership.jpg')
-    // ),
+    new SC2Unit(
+        '3a9fac08-2181-46d8-bedd-cd593e1f11cd',
+        'Immortal',
+        PROTOSS_RACE,
+        'The Immortal is a powerful, ranged, mechanized assault strider for the Protoss' + 
+        'army, produced at the Robotics Facility. Their Barrier ability makes them ' +
+        'specialists at dealing with any high-powered armored unit whose attack deals ' + 
+        'a large amount of damage such as Siege Tanks, Ultralisks, or Marauders.',
+        new SC2Cost(250, 100, 39, 4),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_ARMORED, ATTR_MECHANICAL],
+            new SC2Attack(20, 19.2, 1.04, 6),
+            new SC2Defence(200, 100, 1),
+            new SC2OtherInfo(null, 3.15, 9, 4)
+        ),
+        null,
+        new SC2Source(ROBO, KEY_I),
+        new SC2Asset('assets/units/protoss/thumbnail/immortal.png', 'assets/units/protoss/image/immortal.jpg')
+    ),
+    new SC2Unit(
+        'd2aba0bd-4644-4858-b235-db41f5bb5bab',
+        'Colossus',
+        PROTOSS_RACE,
+        'The Colossus is a massive Protoss battle strider that towers ' +
+        'over all other ground units on the battlefield.',
+        new SC2Cost(300, 200, 54, 6),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_ARMORED, ATTR_MECHANICAL,ATTR_MASSIVE],
+            new SC2Attack(12, 22.4, 1.07, 6),
+            new SC2Defence(200, 150, 1),
+            new SC2OtherInfo(null, 3.15, 10, 8)
+        ),
+        null,
+        new SC2Source(ROBO, KEY_C),
+        new SC2Asset('assets/units/protoss/thumbnail/colossus.png', 'assets/units/protoss/image/colossus.jpg')
+    ),
+    new SC2Unit(
+        'dd04db1e-92e5-4310-94ac-920f52ac069c',
+        'Disruptor',
+        PROTOSS_RACE,
+        'The Disruptor is a robotic disruption unit. The Disruptor is extremely potent ' +
+        'versus any force that clumps its units together, as well as against worker lines.',
+        new SC2Cost(150, 150, 36, 3),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_ARMORED, ATTR_MECHANICAL],
+            null,
+            new SC2Defence(100, 100, 1),
+            new SC2OtherInfo(null, 3.15, 9, 4)
+        ),
+        null,
+        new SC2Source(ROBO, KEY_D),
+        new SC2Asset('assets/units/protoss/thumbnail/disruptor.png', 'assets/units/protoss/image/disruptor.png')
+    ),
+    new SC2Unit(
+        '2a1a54cc-0d57-4a7c-a6eb-f411c7ae2d2e',
+        'Archon',
+        PROTOSS_RACE,
+        'The Archon is a powerful Protoss short-range unit. It excels against ' +
+        'biological units and structures. An Archon is created when two of either ' + 
+        'Dark Templar or High Templar merge together on the battlefield; ' +
+        'the Archon cannot be produced at any building. Archons can attack air '+
+        'or ground units and deal area-of-effect damage.',
+        new SC2Cost(0, 0, 9, 4),
+        new SC2UnitInformation(
+            new SC2Target(true, true),
+            [ATTR_PSIONIC, ATTR_MASSIVE],
+            new SC2Attack(25, 20, 1.25, 3),
+            new SC2Defence(10, 350, 0),
+            new SC2OtherInfo(null, 3.94, 9, 4)
+        ),
+        null,
+        null,
+        new SC2Asset('assets/units/protoss/thumbnail/archon.png', 'assets/units/protoss/image/archon.jpg')
+    ),
+    new SC2Unit(
+        '16a3798f-f30d-4514-abc8-2baae2373318',
+        'Observer',
+        PROTOSS_RACE,
+        'The Observer is a flying cloaked spy drone and Detector for the Protoss, ' + 
+        'built at the Robotics Facility. It is permanently cloaked, so opponents ' +
+        'need detection in order to see and kill the Observer.',
+        new SC2Cost(25, 75, 21, 1),
+        new SC2UnitInformation(
+            new SC2Target(false, false),
+            [ATTR_LIGHT, ATTR_MECHANICAL, ATTR_DETECTOR],
+            null,
+            new SC2Defence(40, 20, 0),
+            new SC2OtherInfo(null, 2.62, 11, null)
+        ),
+        null,
+        new SC2Source(ROBO, KEY_B),
+        new SC2Asset('assets/units/protoss/thumbnail/observer.png', 'assets/units/protoss/image/observer.jpg')
+    ),
+    new SC2Unit(
+        'c7963890-f3b2-46e6-b86d-8ae1668d2ade',
+        'Warp Prism',
+        PROTOSS_RACE,
+        'The Warp Prism is a Protoss transport unit, produced at the Robotics Facility. In Legacy of the ' +
+        'Void, it can pickup units from a larger distance (6 range away). The Warp Prism can shuttle up ' +
+        'to eight cargo of Protoss units while in Transport Mode (see table below). Unlike other transports, ' +
+        'the Warp Prism can convert to Phasing Mode, which renders it stationary while it provides the ' +
+        'Psionic Matrix in an area around it. This allows units from Warp Gates to warp in around ' +
+        'the Warp Prism, and it can even allow buildings to be powered or warped in without ' +
+        'the need for a nearby Pylon.',
+        new SC2Cost(200, 0, 36, 2),
+        new SC2UnitInformation(
+            new SC2Target(false, false),
+            [ATTR_ARMORED, ATTR_MECHANICAL, ATTR_PSIONIC],
+            null,
+            new SC2Defence(80, 100, 0),
+            // TODO: Add cargo capacity
+            // Cargo capacity: 8
+            new SC2OtherInfo(null, 4.13, 10, null)
+        ),
+        null,
+        new SC2Source(ROBO, KEY_A),
+        new SC2Asset('assets/units/protoss/thumbnail/warp-prism.png', 'assets/units/protoss/image/warp-prism.jpg')
+    ),
+    new SC2Unit(
+        '448cd045-653c-43e9-936a-3878141aa4a8',
+        'Phoenix',
+        PROTOSS_RACE,
+        'The Phoenix is a speedy Protoss air-to-air fighter, which warps in at ' +
+        'the Stargate. Phoenixes can attack other air units while moving, granting ' +
+        'an upper hand against enemy air units that rely on hit and away tactics.',
+        new SC2Cost(150, 100, 25, 2),
+        new SC2UnitInformation(
+            new SC2Target(false, true),
+            [ATTR_LIGHT, ATTR_MECHANICAL],
+            new SC2Attack(5, 12.7, 0.79, 5),
+            new SC2Defence(120, 60, 0),
+            new SC2OtherInfo(new SC2Energy(50, 200), 0, 0, 0)
+        ),
+        null,
+        new SC2Source(STARGATE, KEY_X),
+        new SC2Asset('assets/units/protoss/thumbnail/phoenix.png', 'assets/units/protoss/image/phoenix.jpg')
+    ),
+    new SC2Unit(
+        '1516d125-d178-4053-9c56-f7c06030209c',
+        'Void Ray',
+        PROTOSS_RACE,
+        'The Void Ray is an airborne siege cannon for the Protoss ' +
+        'that is built at the Stargate. ',
+        new SC2Cost(250, 150, 43, 4),
+        new SC2UnitInformation(
+            new SC2Target(true, true),
+            [ATTR_ARMORED, ATTR_MECHANICAL],
+            new SC2Attack(6, 16.8, 0.36, 6),
+            new SC2Defence(150, 100, 0),
+            new SC2OtherInfo(null, 3.5, 10, null)
+        ),
+        null,
+        new SC2Source(STARGATE, KEY_V),
+        new SC2Asset('assets/units/protoss/thumbnail/void-ray.png', 'assets/units/protoss/image/void-ray.jpg')
+    ),
+    new SC2Unit(
+        '17c76d99-a451-4987-9346-55971a5a8ab3',
+        'Oracle',
+        PROTOSS_RACE,
+        'The Oracle is a flying harassment and support caster for the Protoss that is produced ' +
+        'from the Stargate. While fairly expensive and fragile, the Oracle is a very ' +
+        'mobile unit and has several useful spells.',
+        new SC2Cost(150, 150, 36, 3),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_LIGHT, ATTR_MECHANICAL, ATTR_PSIONIC],
+            new SC2Attack(15, 24.4, 0.61, 4),
+            new SC2Defence(100, 60, 0),
+            new SC2OtherInfo(null, 5.6, 10, null)
+        ),
+        null,
+        new SC2Source(STARGATE, KEY_E),
+        new SC2Asset('assets/units/protoss/thumbnail/oracle.png', 'assets/units/protoss/image/oracle.jpg')
+    ),
+    // TODO: Better handle carrier interceptors and whatever
+    new SC2Unit(
+        '91844ecd-4e4d-4a09-ae51-e957cb91a539',
+        'Carrier',
+        PROTOSS_RACE,
+        'Carriers are the capital ships in the Protoss air force, built at the Stargate with the ' +
+        'Fleet Beacon as a prerequisite. Unlike other units, Carriers do not engage the enemy directly. ' +
+        'Instead, they launch tiny Interceptors that attack in a swarm around the Carrier.',
+        new SC2Cost(350, 250, 86, 6),
+        new SC2UnitInformation(
+            new SC2Target(true, true),
+            [ATTR_ARMORED, ATTR_MECHANICAL, ATTR_MASSIVE],
+            new SC2Attack(5, 37.4, 2.14, 8),
+            new SC2Defence(250, 150, 0),
+            new SC2OtherInfo(null, 2.62, 12, null)
+        ),
+        null,
+        new SC2Source(STARGATE, KEY_C),
+        new SC2Asset('assets/units/protoss/thumbnail/carrier.png', 'assets/units/protoss/image/carrier.jpg')
+    ),
+    new SC2Unit(
+        'a0446b8b-65fc-4837-9e22-2e8da3b7cf2c',
+        'Tempest',
+        PROTOSS_RACE,
+        'The Tempest is a powerful capital ship for the Protoss that can be built from the Stargate ' +
+        'once the Fleet Beacon has been completed. Its primary role is as a heavy bombardment unit, ' + 
+        'using its incredible range to attack air and ground targets from a safe distance. ',
+        new SC2Cost(300, 200, 43, 6),
+        new SC2UnitInformation(
+            new SC2Target(true, true),
+            [ATTR_ARMORED, ATTR_MECHANICAL, ATTR_MASSIVE],
+            // TODO: Handle 2 attacks of Tempest (air/ground)
+            new SC2Attack(0, 0, 0, 0),
+            new SC2Defence(300, 150, 2),
+            new SC2OtherInfo(null, 2.62, 12, null)
+        ),
+        null,
+        new SC2Source(STARGATE, KEY_T),
+        new SC2Asset('assets/units/protoss/thumbnail/tempest.png', 'assets/units/protoss/image/tempest.jpg')
+    ),
+    new SC2Unit(
+        'fcfbc539-5ba0-4a01-a4fe-ec579414ddb4',
+        'Mothership Core',
+        PROTOSS_RACE,
+        'The Mothership Core is a flying support caster for the Protoss that can be built ' +
+        'from the Nexus once the Cybernetics Core is finished. Its primary roles are base ' +
+        'defence and army support. Like the Mothership, the Mothership Core is a unique unit ' +
+        'that a player can only have one of at any time.',
+        new SC2Cost(100, 100, 21, 2),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_ARMORED, ATTR_MECHANICAL, ATTR_PSIONIC],
+            new SC2Attack(8, 13.1, 0.61, 5),
+            new SC2Defence(130, 60, 1),
+            new SC2OtherInfo(new SC2Energy(50, 200), 2.62, 9, null)
+        ),
+        null,
+        new SC2Source(NEXUS, KEY_M),
+        new SC2Asset('assets/units/protoss/thumbnail/mothership-core.png', 'assets/units/protoss/image/mothership-core.jpg')
+    ),
+    new SC2Unit(
+        'eabd93e7-c5e3-4a07-9222-9c2c4d519246',
+        'Mothership',
+        PROTOSS_RACE,
+        'The Mothership is the most powerful unit in the Protoss arsenal: Once a Fleet Beacon ' +
+        'has been built, it may be transformed from the Mothership Core. Because of its extensive ' + 
+        'capabilities, the Mothership has a unique restriction: only one can be deployed by each player at a time.',
+        new SC2Cost(300, 300, 100, 6),
+        new SC2UnitInformation(
+            new SC2Target(true, true),
+            [ATTR_ARMORED, ATTR_MECHANICAL, ATTR_MASSIVE, ATTR_PSIONIC],
+            new SC2Attack(6, 22.8, 1.58, 7),
+            new SC2Defence(350, 350, 2),
+            new SC2OtherInfo(new SC2Energy(50, 200), 2.62, 14, null)
+        ),
+        null,
+        // TODO: Add source for mothership
+        null,
+        new SC2Asset('assets/units/protoss/thumbnail/mothership.png', 'assets/units/protoss/image/mothership.jpg')
+    ),
     // new SC2Unit(
     //     '71239ff5-a24e-4d17-b103-65660b190642',
     //     'Larva',
