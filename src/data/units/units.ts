@@ -8,7 +8,7 @@ import {
     ATTR_DETECTOR,
     NEXUS,
     GATEWAY,
-    ROBO, 
+    ROBOTICS,
     STARGATE,
     KEY_A,
     KEY_B,
@@ -61,7 +61,7 @@ export const SC2_UNITS = [
         '99eb6ce7-b9d7-401a-ae87-69d4a7317b8a',
         'Zealot',
         PROTOSS_RACE,
-        'The first and strongest unit of direct army attacks. ' + 
+        'The first and strongest unit of direct army attacks. ' +
         'A strong brute-force unit and excellent mineral dump as well.',
         new SC2Cost(100, 0, 27, 2),
         new SC2UnitInformation(
@@ -118,7 +118,7 @@ export const SC2_UNITS = [
     new SC2Unit('10efe000-4a8b-42cd-a59f-419a1923ce5e',
         'Adept',
         PROTOSS_RACE,
-        'The Adept is a ranged Protoss ground unit with a ground-only '+
+        'The Adept is a ranged Protoss ground unit with a ground-only ' +
         'attack, which is warped in at the Gateway.',
         new SC2Cost(100, 25, 27, 2),
         new SC2UnitInformation(
@@ -136,13 +136,13 @@ export const SC2_UNITS = [
         'fa2fdf4c-68c0-4e7f-b484-65f03fb93582',
         'High Templar',
         PROTOSS_RACE,
-        'The High Templar (often abbreviated to HT) is a spell-casting unit for the Protoss. ' + 
+        'The High Templar (often abbreviated to HT) is a spell-casting unit for the Protoss. ' +
         'The High Templar is warped in from a Gateway, with the Templar Archives as a prerequisite. ' +
-        'High Templar can cast Feedback to damage and drain the energy of enemy ' + 
+        'High Templar can cast Feedback to damage and drain the energy of enemy ' +
         'spellcasters. After an upgrade, High Templar can cast the devastating Psionic ' +
-        'Storm spell, wreaking damage to all units in an area of effect. Finally, ' + 
+        'Storm spell, wreaking damage to all units in an area of effect. Finally, ' +
         'any two High Templar and/or Dark Templar can merge to form an Archon.',
-        new SC2Cost(50, 150, 39, 2), 
+        new SC2Cost(50, 150, 39, 2),
         new SC2UnitInformation(
             new SC2Target(true, false),
             [ATTR_LIGHT, ATTR_BIOLOGICAL, ATTR_PSIONIC],
@@ -177,9 +177,9 @@ export const SC2_UNITS = [
         '3a9fac08-2181-46d8-bedd-cd593e1f11cd',
         'Immortal',
         PROTOSS_RACE,
-        'The Immortal is a powerful, ranged, mechanized assault strider for the Protoss' + 
+        'The Immortal is a powerful, ranged, mechanized assault strider for the Protoss' +
         'army, produced at the Robotics Facility. Their Barrier ability makes them ' +
-        'specialists at dealing with any high-powered armored unit whose attack deals ' + 
+        'specialists at dealing with any high-powered armored unit whose attack deals ' +
         'a large amount of damage such as Siege Tanks, Ultralisks, or Marauders.',
         new SC2Cost(250, 100, 39, 4),
         new SC2UnitInformation(
@@ -190,7 +190,7 @@ export const SC2_UNITS = [
             new SC2OtherInfo(null, 3.15, 9, 4)
         ),
         null,
-        new SC2Source(ROBO, KEY_I),
+        new SC2Source(ROBOTICS, KEY_I),
         new SC2Asset('assets/units/protoss/thumbnail/immortal.png', 'assets/units/protoss/image/immortal.jpg')
     ),
     new SC2Unit(
@@ -202,13 +202,13 @@ export const SC2_UNITS = [
         new SC2Cost(300, 200, 54, 6),
         new SC2UnitInformation(
             new SC2Target(true, false),
-            [ATTR_ARMORED, ATTR_MECHANICAL,ATTR_MASSIVE],
+            [ATTR_ARMORED, ATTR_MECHANICAL, ATTR_MASSIVE],
             new SC2Attack(12, 22.4, 1.07, 6),
             new SC2Defence(200, 150, 1),
             new SC2OtherInfo(null, 3.15, 10, 8)
         ),
         null,
-        new SC2Source(ROBO, KEY_C),
+        new SC2Source(ROBOTICS, KEY_C),
         new SC2Asset('assets/units/protoss/thumbnail/colossus.png', 'assets/units/protoss/image/colossus.jpg')
     ),
     new SC2Unit(
@@ -226,7 +226,7 @@ export const SC2_UNITS = [
             new SC2OtherInfo(null, 3.15, 9, 4)
         ),
         null,
-        new SC2Source(ROBO, KEY_D),
+        new SC2Source(ROBOTICS, KEY_D),
         new SC2Asset('assets/units/protoss/thumbnail/disruptor.png', 'assets/units/protoss/image/disruptor.png')
     ),
     new SC2Unit(
@@ -234,9 +234,9 @@ export const SC2_UNITS = [
         'Archon',
         PROTOSS_RACE,
         'The Archon is a powerful Protoss short-range unit. It excels against ' +
-        'biological units and structures. An Archon is created when two of either ' + 
+        'biological units and structures. An Archon is created when two of either ' +
         'Dark Templar or High Templar merge together on the battlefield; ' +
-        'the Archon cannot be produced at any building. Archons can attack air '+
+        'the Archon cannot be produced at any building. Archons can attack air ' +
         'or ground units and deal area-of-effect damage.',
         new SC2Cost(0, 0, 9, 4),
         new SC2UnitInformation(
@@ -254,7 +254,7 @@ export const SC2_UNITS = [
         '16a3798f-f30d-4514-abc8-2baae2373318',
         'Observer',
         PROTOSS_RACE,
-        'The Observer is a flying cloaked spy drone and Detector for the Protoss, ' + 
+        'The Observer is a flying cloaked spy drone and Detector for the Protoss, ' +
         'built at the Robotics Facility. It is permanently cloaked, so opponents ' +
         'need detection in order to see and kill the Observer.',
         new SC2Cost(25, 75, 21, 1),
@@ -266,7 +266,7 @@ export const SC2_UNITS = [
             new SC2OtherInfo(null, 2.62, 11, null)
         ),
         null,
-        new SC2Source(ROBO, KEY_B),
+        new SC2Source(ROBOTICS, KEY_B),
         new SC2Asset('assets/units/protoss/thumbnail/observer.png', 'assets/units/protoss/image/observer.jpg')
     ),
     new SC2Unit(
@@ -291,7 +291,7 @@ export const SC2_UNITS = [
             new SC2OtherInfo(null, 4.13, 10, null)
         ),
         null,
-        new SC2Source(ROBO, KEY_A),
+        new SC2Source(ROBOTICS, KEY_A),
         new SC2Asset('assets/units/protoss/thumbnail/warp-prism.png', 'assets/units/protoss/image/warp-prism.jpg')
     ),
     new SC2Unit(
@@ -375,7 +375,7 @@ export const SC2_UNITS = [
         'Tempest',
         PROTOSS_RACE,
         'The Tempest is a powerful capital ship for the Protoss that can be built from the Stargate ' +
-        'once the Fleet Beacon has been completed. Its primary role is as a heavy bombardment unit, ' + 
+        'once the Fleet Beacon has been completed. Its primary role is as a heavy bombardment unit, ' +
         'using its incredible range to attack air and ground targets from a safe distance. ',
         new SC2Cost(300, 200, 43, 6),
         new SC2UnitInformation(
@@ -415,7 +415,7 @@ export const SC2_UNITS = [
         'Mothership',
         PROTOSS_RACE,
         'The Mothership is the most powerful unit in the Protoss arsenal: Once a Fleet Beacon ' +
-        'has been built, it may be transformed from the Mothership Core. Because of its extensive ' + 
+        'has been built, it may be transformed from the Mothership Core. Because of its extensive ' +
         'capabilities, the Mothership has a unique restriction: only one can be deployed by each player at a time.',
         new SC2Cost(300, 300, 100, 6),
         new SC2UnitInformation(

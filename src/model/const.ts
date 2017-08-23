@@ -27,5 +27,5 @@ export const ATTR_STRUCTURE = 'Structure'
 // Protoss buildings
 export const NEXUS = 'Nexus'
 export const GATEWAY = 'Gateway'
-export const ROBO = 'Robotics Facility'
+export const ROBOTICS = 'Robotics Facility'
 export const STARGATE = 'Stargate'
