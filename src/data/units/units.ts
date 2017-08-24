@@ -17,6 +17,7 @@ import {
     KEY_I,
     KEY_M,
     KEY_Q,
+    KEY_R,
     KEY_S,
     KEY_T,
     KEY_V,
@@ -433,6 +434,7 @@ export const SC2_UNITS = [
         null,
         new SC2Asset('assets/units/protoss/thumbnail/mothership.png', 'assets/units/protoss/image/mothership.jpg')
     ),
+    // TODO: Add special speed for zerg (on creep)
     new SC2Unit(
         '71239ff5-a24e-4d17-b103-65660b190642',
         'Larva',
@@ -513,50 +515,86 @@ export const SC2_UNITS = [
         new SC2Source(HATCHERY, KEY_Z),
         new SC2Asset('assets/units/zerg/thumbnail/zergling.png', 'assets/units/zerg/image/zergling.jpg')
     ),
-    // new SC2Unit(
-    //     'c40959e8-31ae-49bf-8a3a-eb6e127c58f6',
-    //     'Baneling',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/baneling.png', 'assets/units/zerg/image/baneling.jpg')
-    // ),
-    // new SC2Unit(
-    //     'd41fae3e-c6a7-4d84-81ed-0da67b9de9a5',
-    //     'Roach',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/roach.png', 'assets/units/zerg/image/roach.jpg')
-    // ),
-    // new SC2Unit(
-    //     'fbd2f216-7310-47b4-8b46-23e12983e455',
-    //     'Ravager',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/ravager.png', 'assets/units/zerg/image/ravager.png')
-    // ),
-    // new SC2Unit(
-    //     'bfde4655-c848-43da-9305-4d11e13b9609',
-    //     'Hydralisk',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/hydralisk.png', 'assets/units/zerg/image/hydralisk.jpg')
-    // ),
+    // TODO: Source
+    // TODO: 2 attacks
+    new SC2Unit(
+        'c40959e8-31ae-49bf-8a3a-eb6e127c58f6',
+        'Baneling',
+        ZERG_RACE,
+        'The Baneling is a suicide bomber unit morphed from Zerglings after a Baneling Nest has been ' +
+        'constructed. Similar to the Infested Terran from Brood War, the Baneling is a suicidal unit ' +
+        'that deals significant splash damage.',
+        new SC2Cost(25, 25, 14, 0.5),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_BIOLOGICAL],
+            new SC2Attack(20, 0, 0, 0.25/*/2.20*/),
+            new SC2Defence(30, 0, 0),
+            new SC2OtherInfo(null, 4.55, 8, 2)
+        ),
+        null,
+        null,
+        new SC2Asset('assets/units/zerg/thumbnail/baneling.png', 'assets/units/zerg/image/baneling.jpg')
+    ),
+    new SC2Unit(
+        'd41fae3e-c6a7-4d84-81ed-0da67b9de9a5',
+        'Roach',
+        ZERG_RACE,
+        'The Roach is an Armored-ground unit that can be produced after a Roach Warren has been built. ' +
+        'With the Tunneling Claws upgrade, the Roach becomes one of two units (the other being the Infestor) ' +
+        'that is able to move while burrowed. This is also indicated by the appearance of crystals on ' +
+        'the backs of the Roaches.',
+        new SC2Cost(75, 25, 19, 2),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_ARMORED, ATTR_BIOLOGICAL],
+            new SC2Attack(16, 11.2, 1.43, 4),
+            new SC2Defence(145, 0, 1),
+            new SC2OtherInfo(null, 3.15, 9, 2)
+        ),
+        null,
+        new SC2Source(HATCHERY, KEY_R),
+        new SC2Asset('assets/units/zerg/thumbnail/roach.png', 'assets/units/zerg/image/roach.jpg')
+    ),
+    new SC2Unit(
+        'fbd2f216-7310-47b4-8b46-23e12983e455',
+        'Ravager',
+        ZERG_RACE,
+        'The Ravager is a ground Zerg unit, morphed out of the Roach. Its effectiveness heavily relies ' +
+        'on player micro due to its corrosive bile ability. This ability can destroy Force Fields and ' +
+        'can be used for harassment, e.g. if the spell is cast on workers (mineral line).',
+        new SC2Cost(25, 75, 9, 1),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_BIOLOGICAL],
+            new SC2Attack(16, 14.04, 1.14, 6),
+            new SC2Defence(120, 0, 1),
+            new SC2OtherInfo(null, 3.85, 9, 4)
+        ),
+        null,
+        new SC2Source(HATCHERY, KEY_V),
+        new SC2Asset('assets/units/zerg/thumbnail/ravager.png', 'assets/units/zerg/image/ravager.png')
+    ),
+    new SC2Unit(
+        'bfde4655-c848-43da-9305-4d11e13b9609',
+        'Hydralisk',
+        ZERG_RACE,
+        'The Hydralisk is a ranged Lair-tech unit that can be after building a Hydralisk Den. The ' +
+        'Hydralisk\'s fast attack and high damage make it effective at dealing consistent to ground ' + 
+        'and air unit in the game. Can morph into the Lurker after morphing the Hydralisk Den into a ' +
+        'Lurker Den.',
+        new SC2Cost(100, 50, 24, 2),
+        new SC2UnitInformation(
+            new SC2Target(true, true),
+            [ATTR_LIGHT, ATTR_BIOLOGICAL],
+            new SC2Attack(12, 22.4, 0.54, 5),
+            new SC2Defence(90, 0, 0),
+            new SC2OtherInfo(null, 3.15, 9, 2)
+        ),
+        null,
+        new SC2Source(HATCHERY, KEY_H),
+        new SC2Asset('assets/units/zerg/thumbnail/hydralisk.png', 'assets/units/zerg/image/hydralisk.jpg')
+    ),
     // new SC2Unit(
     //     '66bcdc15-8b11-425b-bde1-da294bb26647',
     //     'Lurker',
