@@ -13,6 +13,7 @@ export const KEY_T = 'T'
 export const KEY_X = 'X'
 export const KEY_R = 'R'
 export const KEY_S = 'S'
+export const KEY_U = 'U'
 export const KEY_V = 'V'
 export const KEY_Z = 'Z'
 

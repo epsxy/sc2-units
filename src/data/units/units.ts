@@ -20,6 +20,7 @@ import {
     KEY_R,
     KEY_S,
     KEY_T,
+    KEY_U,
     KEY_V,
     KEY_X,
     KEY_Z,
@@ -595,68 +596,124 @@ export const SC2_UNITS = [
         new SC2Source(HATCHERY, KEY_H),
         new SC2Asset('assets/units/zerg/thumbnail/hydralisk.png', 'assets/units/zerg/image/hydralisk.jpg')
     ),
-    // new SC2Unit(
-    //     '66bcdc15-8b11-425b-bde1-da294bb26647',
-    //     'Lurker',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/lurker.png', 'assets/units/zerg/image/lurker.png')
-    // ),
-    // new SC2Unit(
-    //     'afadd0eb-d5a4-4ae7-9dac-1accc3cd8799',
-    //     'Infestor',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/infestor.png', 'assets/units/zerg/image/infestor.jpg')
-    // ),
-    // new SC2Unit(
-    //     'e1f0f8ec-3976-4efb-bc52-fbc5cf2600a2',
-    //     'Swarm Host',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/swarm-host.png', 'assets/units/zerg/image/swarm-host.jpg')
-    // ),
-    // new SC2Unit(
-    //     '6a9c23c9-a203-4a0c-b4f6-bbc1490d14b8',
-    //     'Ultralisk',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/ultralisk.png', 'assets/units/zerg/image/ultralisk.jpg')
-    // ),
+    // Sight null ?
+    new SC2Unit(
+        '66bcdc15-8b11-425b-bde1-da294bb26647',
+        'Lurker',
+        ZERG_RACE,
+        'The Lurker is a Zerg unit that may attack only when burrowed, and are able to burrow ' + 
+        'without the mutation being evolved. A Hydralisk can be morphed to a Lurker, but a Lurker ' + 
+        'Den is required. The Lurker deals damage to all enemy units and buildings that enter ' + 
+        'the line splash radius, similar to a Hellion. Each spine that spikes out of the ground ' +
+        'is an individual splash zone.',
+        new SC2Cost(50, 100, 18, 1),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_ARMORED, ATTR_BIOLOGICAL],
+            new SC2Attack(20, 14.0, 1.43, 9),
+            new SC2Defence(200, 0, 1),
+            new SC2OtherInfo(null, 4.13, null, 4)
+        ),
+        null,
+        new SC2Source(HATCHERY, KEY_E),
+        new SC2Asset('assets/units/zerg/thumbnail/lurker.png', 'assets/units/zerg/image/lurker.png')
+    ),
+    new SC2Unit(
+        'afadd0eb-d5a4-4ae7-9dac-1accc3cd8799',
+        'Infestor',
+        ZERG_RACE,
+        'The Infestor is an offensive spellcaster, meaning that its abilities are used to ' + 
+        'harm enemy units rather than support the player\'s units. It can be built after the ' +
+        'Zerg player has an Infestation Pit. Infestors have three abilities: Neural Parasite, ' + 
+        'Fungal Growth, and Infested Terran. They can move while burrowed if Burrow is researched, ' + 
+        'but with a small collision radius.',
+        new SC2Cost(100, 150, 36, 2),
+        new SC2UnitInformation(
+            new SC2Target(true, true),
+            [ATTR_ARMORED, ATTR_BIOLOGICAL, ATTR_PSIONIC],
+            new SC2Attack(12, 22.4, 0.54, 5),
+            new SC2Defence(90, 0, 0),
+            new SC2OtherInfo(new SC2Energy(50, 200), 3.15, 10, 2)
+        ),
+        null,
+        new SC2Source(HATCHERY, KEY_H),
+        new SC2Asset('assets/units/zerg/thumbnail/infestor.png', 'assets/units/zerg/image/infestor.jpg')
+    ),
+    new SC2Unit(
+        'e1f0f8ec-3976-4efb-bc52-fbc5cf2600a2',
+        'Swarm Host',
+        ZERG_RACE,
+        'The Swarm Host is a Zerg siege unit that requires an Infestation Pit. It attacks ' +
+        'in the form of waves of two Locusts that spawn with a manually cast ability. The ' +
+        'Locusts are slow moving ground-to-ground units with a timed life that nonetheless ' +
+        'extend the range of the Swarm Host beyond that of any other unit. The Locusts are ' +
+        'able to spawn as flying units.',
+        new SC2Cost(100, 75, 29, 3),
+        new SC2UnitInformation(
+            null,
+            [ATTR_ARMORED, ATTR_BIOLOGICAL],
+            null,
+            new SC2Defence(160, 0, 1),
+            new SC2OtherInfo(null, 4.13, 10, 4)
+        ),
+        null,
+        new SC2Source(HATCHERY, KEY_A),
+        new SC2Asset('assets/units/zerg/thumbnail/swarm-host.png', 'assets/units/zerg/image/swarm-host.jpg')
+    ),
+    new SC2Unit(
+        '6a9c23c9-a203-4a0c-b4f6-bbc1490d14b8',
+        'Ultralisk',
+        ZERG_RACE,
+        'The Ultralisk is the Zerg\'s toughest late-game unit in StarCraft II. It ' +
+        'can only be made once the Hive is researched and an Ultralisk Cavern is made.',
+        new SC2Cost(300, 200, 39, 6),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_ARMORED, ATTR_BIOLOGICAL, ATTR_MASSIVE],
+            new SC2Attack(35, 57.38, 0.61, 1),
+            new SC2Defence(500, 0, 2),
+            new SC2OtherInfo(null, 4.13, 9, 8)
+        ),
+        null,
+        new SC2Source(HATCHERY, KEY_U),
+        new SC2Asset('assets/units/zerg/thumbnail/ultralisk.png', 'assets/units/zerg/image/ultralisk.jpg')
+    ),
     // new SC2Unit(
     //     '3e80bfee-1cdf-45b3-aa38-4bb1ef50ab9b',
     //     'Locust',
     //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
+    //     'The Locust is a timed life unit that is spawned in pairs by a Swarm Host. After ' +
+    //     'spawning, Locusts begin in their flying form, and though unable to attack, can ' +
+    //     'fly over terrain and use the Swoop ability to land and engage targets. The Spawn ' +
+    //     'Locust ability has a cooldown of 43 seconds after birthing Locusts.',
+    //     new SC2Cost(0, 0, 3.6, 0),
+    //     new SC2UnitInformation(
+    //         new SC2Target(true, false),
+    //         [ATTR_LIGHT, ATTR_BIOLOGICAL],
+    //         new SC2Attack(10, 23.25, 0.43, 6),
+    //         new SC2Defence(50, 0, 0),
+    //         new SC2OtherInfo(null, 2.62, 6, null)
+    //     ),
     //     null,
-    //     null,
+    //     new SC2Source(HATCHERY, KEY_C),
     //     new SC2Asset('assets/units/zerg/thumbnail/locust.png', 'assets/units/zerg/image/locust.jpg')
     // ),
     // new SC2Unit(
     //     '42995dff-9e7c-4f43-a1c8-fdb7305dd80e',
     //     'Broodling',
     //     ZERG_RACE,
-    //     '',
+    //     'The Broodling is a small Zerg unit that is spawned when either a Zerg tech building, ' +
+    //     'for example a Hatchery or Spawning Pool, is destroyed, or when a Brood Lord attacks ' +
+    //     'an enemy unit. A Broodling is a temporary unit and once its duration bar (by default ' +
+    //     '8 game seconds) is depleted the unit will die, regardless of health.',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
+    //     new SC2UnitInformation(
+    //         new SC2Target(true, false),
+    //         [ATTR_LIGHT, ATTR_BIOLOGICAL],
+    //         new SC2Attack(4, 8.7, 0.46, 0.1),
+    //         new SC2Defence(30, 0, 0),
+    //         new SC2OtherInfo(null, 5.37, 7, null)
+    //     ),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/broodling.png', 'assets/units/zerg/image/broodling.jpg')
@@ -665,9 +722,18 @@ export const SC2_UNITS = [
     //     'd8784044-1f70-453c-b715-0e8adc3f6a72',
     //     'Changeling',
     //     ZERG_RACE,
-    //     '',
+    //     'The Changeling is a temporary Zerg unit spawned by an Overseer that lasts for 150 ' +
+    //     'seconds. The Changeling spawns as a Zerg-looking unit, but upon seeing an enemy ' +
+    //     'unit or building it will automatically transform into the basic unit of that enemy\'s ' +
+    //     'race (Marine, Zergling, or Zealot)',
     //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
+    //     new SC2UnitInformation(
+    //         new SC2Target(false, false),
+    //         [ATTR_LIGHT, ATTR_BIOLOGICAL],
+    //         null,
+    //         new SC2Defence(5, 0, 0),
+    //         new SC2OtherInfo(null, 3.15 /*4.13 zergling*/, 8 /* 9 marine/zealot*/, null)
+    //     ),
     //     null,
     //     null,
     //     new SC2Asset('assets/units/zerg/thumbnail/changeling.png', 'assets/units/zerg/image/changeling.jpg')
@@ -682,83 +748,151 @@ export const SC2_UNITS = [
     // //     null,
     // //     new SC2Asset('assets/units/zerg/thumbnail/scv.png', 'assets/units/zerg/image/')
     // // ),
-    // new SC2Unit(
-    //     '9acd24e5-f25f-4f1b-b174-d7a897c6c755',
-    //     'Nydus Worm',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/nydus-worm.png', 'assets/units/zerg/image/nydus-worm.jpg')
-    // ),
-    // new SC2Unit(
-    //     'a0d0978d-bacd-45b4-b325-4db81cdd1bc0',
-    //     'Overlord',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/overlord.png', 'assets/units/zerg/image/overlord.jpg')
-    // ),
-    // new SC2Unit(
-    //     '774abc95-9b07-4908-97ee-c09fc8c892f4',
-    //     'Overseer',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/overseer.png', 'assets/units/zerg/image/overseer.jpg')
-    // ),
-    // new SC2Unit(
-    //     '31719cf6-32b8-44a3-8669-6eacec963093',
-    //     'Mutalisk',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/mutalisk.png', 'assets/units/zerg/image/mutalisk.jpg')
-    // ),
-    // new SC2Unit(
-    //     'db05e2df-47f1-404f-a99c-a962f3bc81e5',
-    //     'Corruptor',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/corruptor.png', 'assets/units/zerg/image/corruptor.jpg')
-    // ),
-    // new SC2Unit(
-    //     '0c28d5dc-8e40-404c-9845-0bd9c5aebe49',
-    //     'Brood Lord',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/brood-lord.png', 'assets/units/zerg/image/brood-lord.jpg')
-    // ),
-    // new SC2Unit(
-    //     '5e5dfa1a-5137-4183-912d-fbe8c7ef137f',
-    //     'Viper',
-    //     ZERG_RACE,
-    //     '',
-    //     new SC2Cost(0, 0, 0, 0),
-    //     new SC2UnitInformation(true, false),
-    //     null,
-    //     null,
-    //     new SC2Asset('assets/units/zerg/thumbnail/viper.png', 'assets/units/zerg/image/viper.jpg')
-    // ),
+    new SC2Unit(
+        '9acd24e5-f25f-4f1b-b174-d7a897c6c755',
+        'Nydus Worm',
+        ZERG_RACE,
+        'The Nydus Worm is a Zerg structure used to move units quickly around the map. In ' +
+        'LotV, the Nydus Worm was changed. Nydus Worms are invincible while emerging. ' +
+        'The main effect of this change is that workers will no longer be a viable defense ' +
+        'against nydus worms.',
+        new SC2Cost(100, 100, 14, 0),
+        new SC2UnitInformation(
+            new SC2Target(false, false),
+            [ATTR_ARMORED],
+            null,
+            new SC2Defence(200, 0, 1),
+            new SC2OtherInfo(null, null, 10, null)
+        ),
+        null,
+        null,
+        new SC2Asset('assets/units/zerg/thumbnail/nydus-worm.png', 'assets/units/zerg/image/nydus-worm.jpg')
+    ),
+    new SC2Unit(
+        'a0d0978d-bacd-45b4-b325-4db81cdd1bc0',
+        'Overlord',
+        ZERG_RACE,
+        'The Overlord is the Zerg\'s supply unit and is the equivalent of the Terran\'s Supply Depot ' +
+        'and the Protoss Pylon. The Overlord provides the Zerg player with 8 supply. More must ' +
+        'be built to create additional units.',
+        new SC2Cost(100, 0, 18, 0),
+        new SC2UnitInformation(
+            new SC2Target(false, false),
+            [ATTR_ARMORED, ATTR_BIOLOGICAL],
+            null,
+            new SC2Defence(200, 0, 0),
+            new SC2OtherInfo(null, 0.82, 11, null)
+        ),
+        null,
+        new SC2Source(HATCHERY, KEY_V),
+        new SC2Asset('assets/units/zerg/thumbnail/overlord.png', 'assets/units/zerg/image/overlord.jpg')
+    ),
+    new SC2Unit(
+        '774abc95-9b07-4908-97ee-c09fc8c892f4',
+        'Overseer',
+        ZERG_RACE,
+        'The Overseer is a Zerg unit that is morphed from an Overlord. The Overseer has some ' +
+        'abilities which the Overlord does not have: the ability to Detect invisible units, ' +
+        'spawn Changelings and Contaminate. The Overseer is extremely useful for scouting ' +
+        'and detecting enemy units/positions. The Overseer moves faster than the Overlord ' +
+        'and also receives the benefit of the Pneumatized Carapace upgrade.',
+        new SC2Cost(50, 50, 12, 0),
+        new SC2UnitInformation(
+            new SC2Target(false, false),
+            [ATTR_ARMORED, ATTR_BIOLOGICAL],
+            null,
+            new SC2Defence(200, 0, 1),
+            new SC2OtherInfo(new SC2Energy(50, 200), 2.62, 11, null)
+        ),
+        null,
+        null,
+        new SC2Asset('assets/units/zerg/thumbnail/overseer.png', 'assets/units/zerg/image/overseer.jpg')
+    ),
+    new SC2Unit(
+        '31719cf6-32b8-44a3-8669-6eacec963093',
+        'Mutalisk',
+        ZERG_RACE,
+        'The Mutalisk is an extremely fast air attack unit capable of attacking both air and ' + 
+        'ground units. The Mutalisk\'s projectile, called "Glaive Wurm", hits the target and ' + 
+        'then two subsequent targets (each for a third of the damage of the previous hit). ' + 
+        'Mutalisks make effective scouts and skirmishers, able to slow/disrupt mining operations, ' + 
+        'incoming forces, or enemy expansions.',
+        new SC2Cost(100, 100, 24, 2),
+        new SC2UnitInformation(
+            new SC2Target(true, true),
+            [ATTR_LIGHT, ATTR_BIOLOGICAL],
+            new SC2Attack(9, 8.26, 1.09, 3),
+            new SC2Defence(120, 0, 1),
+            new SC2OtherInfo(null, 5.6, 11, null)
+        ),
+        null,
+        // new SC2Source(HATCHERY, KEY_T),
+        null,
+        new SC2Asset('assets/units/zerg/thumbnail/mutalisk.png', 'assets/units/zerg/image/mutalisk.jpg')
+    ),
+    new SC2Unit(
+        'db05e2df-47f1-404f-a99c-a962f3bc81e5',
+        'Corruptor',
+        ZERG_RACE,
+        'The Corruptor is a flying Zerg unit that has strong anti-air capabilities but slow speed. ' + 
+        'They are also distinguished from Mutalisk by their greater range and huge health pool, ' + 
+        'as well as their inability to attack ground. They are effective in any case where they ' +
+        'can force engagements: against capital ships, for example; inversely, when they cannot, ' + 
+        'and especially when they are outranged, as by Phoenixes, they tend to be a weak air ' + 
+        'unit for that situation.',
+        new SC2Cost(150, 100, 29, 2),
+        new SC2UnitInformation(
+            new SC2Target(false, true),
+            [ATTR_LIGHT, ATTR_BIOLOGICAL],
+            new SC2Attack(9, 8.26, 1.09, 3),
+            new SC2Defence(200, 0, 2),
+            new SC2OtherInfo(null, 4.725, 10, null)
+        ),
+        null,
+        // new SC2Source(HATCHERY, KEY_C),
+        null,
+        new SC2Asset('assets/units/zerg/thumbnail/corruptor.png', 'assets/units/zerg/image/corruptor.jpg')
+    ),
+    new SC2Unit(
+        '0c28d5dc-8e40-404c-9845-0bd9c5aebe49',
+        'Brood Lord',
+        ZERG_RACE,
+        'The Brood Lord is a flying heavy-assault Zerg air-to-ground unit that spawns Broodlings ' + 
+        'when it attacks. The Brood Lord can be morphed from a Corruptor once the Zerg player ' + 
+        'has made a Greater Spire.',
+        new SC2Cost(150, 150, 24, 2),
+        new SC2UnitInformation(
+            new SC2Target(true, false),
+            [ATTR_ARMORED, ATTR_BIOLOGICAL, ATTR_MASSIVE],
+            new SC2Attack(20, 11.2, 1.79, 10),
+            new SC2Defence(225, 0, 1),
+            new SC2OtherInfo(null, 1.97, 12, null)
+        ),
+        null,
+        null,
+        new SC2Asset('assets/units/zerg/thumbnail/brood-lord.png', 'assets/units/zerg/image/brood-lord.jpg')
+    ),
+    new SC2Unit(
+        '5e5dfa1a-5137-4183-912d-fbe8c7ef137f',
+        'Viper',
+        ZERG_RACE,
+        'The Viper is a Zerg flying support caster that requires a Hive. The Viper does not attack. ' + 
+        'Instead, it uses its spells to disrupt the positioning of enemy units. The Viper is ' + 
+        'particularly effective against entrenched positions and clustered armies. It can also ' + 
+        'separate high value targets such as Thors and Colossi from a group so they can be ' + 
+        'surrounded and killed more easily.',
+        new SC2Cost(100, 200, 29, 3),
+        new SC2UnitInformation(
+            new SC2Target(false, false),
+            [ATTR_ARMORED, ATTR_BIOLOGICAL, ATTR_PSIONIC],
+            null,
+            new SC2Defence(150, 0, 1),
+            new SC2OtherInfo(new SC2Energy(50, 200), 4.13, 11, null)
+        ),
+        null,
+        null,
+        new SC2Asset('assets/units/zerg/thumbnail/viper.png', 'assets/units/zerg/image/viper.jpg')
+    ),
     // new SC2Unit(
     //     '1342531e-45e0-4d18-b6bd-bad14609514d',
     //     'SCV',
