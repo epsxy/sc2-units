@@ -62,23 +62,60 @@ export class SC2OtherInfo {
     }
 }
 
+export class SC2Speed {
+    value: string; 
+
+    constructor(value: string) {
+        this.value = value;
+    }
+}
+
+export class SC2Sight {
+    radius: string; 
+
+    constructor(radius: string) {
+        this.radius = radius;
+    }
+}
+
+export enum SC2CargoType {
+    INCLUDE_OTHER_UNITS = 0, 
+    IS_INCLUDED_IN_OTHER_UNITS = 1
+}
+export class SC2Cargo {
+    type: SC2CargoType; 
+    size: string; 
+
+    constructor(type: SC2CargoType, 
+        size: string) {
+        this.type = type; 
+        this.size = size
+    }
+}
+
 export class SC2UnitInformation {
-    // target: SC2Target;
     attributes: Array<string>;
     attacks: Array<SC2Attack>;
     defence: SC2Defence;
-    others: SC2OtherInfo;
+    energy: SC2Energy;
+    speed: SC2Speed;
+    sight: SC2Sight;
+    cargo: SC2Cargo;
 
     constructor(
-        // target: SC2Target,
         attributes: Array<string>,
         attacks: Array<SC2Attack>,
         defence: SC2Defence,
-        others: SC2OtherInfo) {
-        // this.target = target;
+        energy: SC2Energy,
+        speed: SC2Speed, 
+        sight: SC2Sight,
+        cargo: SC2Cargo) {
         this.attributes = attributes;
         this.attacks = attacks;
         this.defence = defence;
-        this.others = others;
+        this.energy = energy; 
+        this.speed = speed; 
+        this.sight = sight; 
+        this.cargo = cargo;
     }
 }

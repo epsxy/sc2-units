@@ -31,9 +31,13 @@ import {
 import { SC2Source } from '../../model/sc2source';
 import {
     SC2Attack,
+    SC2Cargo,
+    SC2CargoType,
     SC2Defence,
     SC2Energy,
     SC2OtherInfo,
+    SC2Sight,
+    SC2Speed,
     SC2Target,
     SC2UnitInformation,
 } from '../../model/sc2unitinformation';
@@ -55,7 +59,10 @@ export const SC2_UNITS = [
             [ATTR_LIGHT, ATTR_MECHANICAL],
             [new SC2Attack(SC2Target.GROUND, '5', '4.67', '1.07', '0.1')],
             new SC2Defence('20', '20', '0'),
-            new SC2OtherInfo(null, '3.94', '8', '1')
+            null,
+            new SC2Speed('3.94'), 
+            new SC2Sight('8'),
+            new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '1')
         ),
         null,
         new SC2Source(NEXUS, KEY_E),

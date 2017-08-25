@@ -92,10 +92,10 @@
                         <h2>Energy</h2>
                     </ion-col>
                     <ion-col text-center>
-                        <ion-badge color='sc2-energy'>Spawn: {{unit.information.others.energy.spawn_energy}}</ion-badge>
+                        <ion-badge color='sc2-energy'>Spawn: {{unit.information.energy.spawn_energy}}</ion-badge>
                     </ion-col>
                     <ion-col text-center *ngIf='hasShield'>
-                        <ion-badge color='sc2-energy'>Full: {{unit.information.others.energy.full_energy}}</ion-badge>
+                        <ion-badge color='sc2-energy'>Full: {{unit.information.energy.full_energy}}</ion-badge>
                     </ion-col>
                 </ion-row>
                 <ion-row>
@@ -116,15 +116,15 @@
                     <ion-col text-center>
                         <ion-row>
                             <ion-col text-center>
-                                Sight: {{unit.information.others.sight}}
+                                Sight: {{unit.information.sight.radius}}
                             </ion-col>
                             <ion-col text-center>
-                                Speed: {{unit.information.others.speed}}
+                                Speed: {{unit.information.speed.value}}
                             </ion-col>
                         </ion-row>
                         <ion-row *ngIf='hasCargo'>
                             <ion-col text-center>
-                                Cargo Size: {{unit.information.others.cargo_size}}
+                                Cargo Size: {{unit.information.cargo.size}}
                             </ion-col>
                         </ion-row>
                     </ion-col>

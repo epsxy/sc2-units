@@ -75,7 +75,7 @@ export class UnitPage {
 
   initCargo() {
     this.hasCargo = false; 
-    if(this.unit.information.others.cargo_size != null) {
+    if(this.unit.information.cargo != null) {
       this.hasCargo = true;
     }
   }
@@ -89,7 +89,7 @@ export class UnitPage {
 
   initEnergy() {
     this.hasEnergy = false;
-    if(this.unit.information.others.energy != null) {
+    if(this.unit.information.energy != null) {
       this.hasEnergy = true;
     }
   }
