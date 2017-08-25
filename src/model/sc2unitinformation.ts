@@ -1,22 +1,18 @@
 
-export class SC2Target {
-    canAttackGroundUnits: boolean;
-    canAttackAirUnits: boolean;
-
-    constructor(canAttackGroundUnits: boolean,
-        canAttackAirUnits: boolean) {
-        this.canAttackGroundUnits = canAttackGroundUnits;
-        this.canAttackAirUnits = canAttackAirUnits;
-    }
+export enum SC2Target {
+    GROUND = 0,
+    AIR = 1
 }
 
 export class SC2Attack {
-    damage: number;
-    dps: number;
-    cooldown: number;
-    range: number;
+    target: SC2Target;
+    damage: string;
+    dps: string;
+    cooldown: string;
+    range: string;
 
-    constructor(damage: number, dps: number, cooldown: number, range: number) {
+    constructor(target: SC2Target, damage: string, dps: string, cooldown: string, range: string) {
+        this.target = target;
         this.damage = damage;
         this.dps = dps;
         this.cooldown = cooldown;
@@ -25,13 +21,13 @@ export class SC2Attack {
 }
 
 export class SC2Defence {
-    life: number;
-    shield: number;
-    armor: number;
+    life: string;
+    shield: string;
+    armor: string;
 
-    constructor(life: number,
-        shield: number,
-        armor: number) {
+    constructor(life: string,
+        shield: string,
+        armor: string) {
         this.life = life;
         this.shield = shield;
         this.armor = armor;
@@ -39,11 +35,11 @@ export class SC2Defence {
 }
 
 export class SC2Energy {
-    spawn_energy: number; 
-    full_energy: number; 
+    spawn_energy: string; 
+    full_energy: string; 
 
-    constructor(spawn_energy: number, 
-        full_energy: number ) {
+    constructor(spawn_energy: string, 
+        full_energy: string ) {
         this.spawn_energy = spawn_energy;
         this.full_energy = full_energy;
     }
@@ -51,14 +47,14 @@ export class SC2Energy {
 
 export class SC2OtherInfo {
     energy: SC2Energy;
-    speed: number;
-    sight: number;
-    cargo_size: number;
+    speed: string;
+    sight: string;
+    cargo_size: string;
 
     constructor(energy: SC2Energy,
-        speed: number,
-        sight: number,
-        cargo_size: number) {
+        speed: string,
+        sight: string,
+        cargo_size: string) {
         this.energy = energy;
         this.speed = speed;
         this.sight = sight;
@@ -67,20 +63,21 @@ export class SC2OtherInfo {
 }
 
 export class SC2UnitInformation {
-    target: SC2Target;
+    // target: SC2Target;
     attributes: Array<string>;
-    attack: SC2Attack;
+    attacks: Array<SC2Attack>;
     defence: SC2Defence;
     others: SC2OtherInfo;
 
-    constructor(target: SC2Target,
+    constructor(
+        // target: SC2Target,
         attributes: Array<string>,
-        attack: SC2Attack,
+        attacks: Array<SC2Attack>,
         defence: SC2Defence,
         others: SC2OtherInfo) {
-        this.target = target;
+        // this.target = target;
         this.attributes = attributes;
-        this.attack = attack;
+        this.attacks = attacks;
         this.defence = defence;
         this.others = others;
     }

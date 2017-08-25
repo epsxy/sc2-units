@@ -1,3 +1,4 @@
+import { SC2Target } from '../../model/sc2unitinformation';
 import { NavController, NavParams } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { NotFoundPage } from '../404NotFound/404';
@@ -25,6 +26,8 @@ export class UnitPage {
   hasShield: boolean;
   hasEnergy: boolean;
   hasCargo: boolean;
+  canAttackAirUnits: boolean;
+  canAttackGroundUnits: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.nav = navCtrl
@@ -43,6 +46,30 @@ export class UnitPage {
       this.initAttack();
       this.initTargets();
       this.initAssets();
+    }
+  }
+
+  initTargets() {
+    this.canAttackAirUnits = false; 
+    this.canAttackGroundUnits = false;
+    for(let attack of this.unit.information.attacks) {
+      if(attack.target == SC2Target.AIR) {
+        this.canAttackAirUnits = true; 
+      } else if(attack.target == SC2Target.GROUND) {
+        this.canAttackGroundUnits = true;
+      }
+    }
+    if(this.canAttackAirUnits) {
+      this.airBadge = 'primary'
+    } 
+    else {
+      this.airBadge = 'danger'
+    }
+    if(this.canAttackGroundUnits) {
+      this.groundBadge = 'primary'
+    } 
+    else {
+      this.groundBadge = 'danger'
     }
   }
 
@@ -69,23 +96,8 @@ export class UnitPage {
 
   initAttack() {
     this.canAttack = true
-    if(this.unit.information.attack == null) {
+    if(this.unit.information.attacks == null) {
       this.canAttack = false;
-    }
-  }
-
-  initTargets() {
-    if(this.unit.information.target.canAttackAirUnits) {
-      this.airBadge = 'primary'
-    } 
-    else {
-      this.airBadge = 'danger'
-    }
-    if(this.unit.information.target.canAttackGroundUnits) {
-      this.groundBadge = 'primary'
-    } 
-    else {
-      this.groundBadge = 'danger'
     }
   }
   
@@ -107,6 +119,18 @@ export class UnitPage {
       this.gas_img = 'assets/icon/ressources/terran/gas.gif';
       this.buildtime_img = 'assets/icon/ressources/terran/buildtime.gif';
       this.supply_img = 'assets/icon/ressources/terran/supply.gif';
+    }
+  }
+
+  parseTarget(target: SC2Target): string {
+    if(target == SC2Target.GROUND) {
+      return 'Ground';
+    }
+    else if(target == SC2Target.AIR) {
+      return 'Air';
+    }
+    else {
+      return null
     }
   }
 }

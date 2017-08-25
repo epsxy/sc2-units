@@ -57,21 +57,22 @@
                     <ion-col text-center col-4>
                         <h2>Attack</h2>
                     </ion-col>
-                    <ion-col text-center>
+                    <ion-col text-center *ngFor='let attack of unit.information.attacks'>
                         <ion-row>
                             <ion-col>
-                                Damage: {{unit.information.attack.damage}}
+                                Target: {{parseTarget(attack.target)}}
                             </ion-col>
                             <ion-col>
-                                DPS: {{unit.information.attack.dps}}
-                            </ion-col>
-                        </ion-row>
-                        <ion-row>
-                            <ion-col>
-                                CD: {{unit.information.attack.cooldown}}
+                                Damage: {{attack.damage}}
                             </ion-col>
                             <ion-col>
-                                Range: {{unit.information.attack.range}}
+                                DPS: {{attack.dps}}
+                            </ion-col>
+                            <ion-col>
+                                CD: {{attack.cooldown}}
+                            </ion-col>
+                            <ion-col>
+                                Range: {{attack.range}}
                             </ion-col>
                         </ion-row>
                     </ion-col>
