@@ -57,10 +57,10 @@
                     <ion-col text-center col-4>
                         <h2>Attack</h2>
                     </ion-col>
-                    <ion-col text-center *ngFor='let attack of unit.information.attacks'>
-                        <ion-row>
+                    <ion-col text-center>
+                        <ion-row *ngFor='let attack of unit.information.attacks'>
                             <ion-col>
-                                Target: {{parseTarget(attack.target)}}
+                                Target: <span *ngFor='let target of attack.target'>{{parseTarget(target)}} </span>
                             </ion-col>
                             <ion-col>
                                 Damage: {{attack.damage}}

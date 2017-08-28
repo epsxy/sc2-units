@@ -18,9 +18,9 @@ export class UnitPage {
   gas_img: string;
   buildtime_img: string;
   supply_img: string;
-  airBadge: string; 
+  airBadge: string;
   groundBadge: string;
-  
+
   // booleans to dynamically display informations on units
   canAttack: boolean;
   hasShield: boolean;
@@ -50,57 +50,48 @@ export class UnitPage {
   }
 
   initTargets() {
-    this.canAttackAirUnits = false; 
+    this.canAttackAirUnits = false;
+    this.airBadge = 'danger';
     this.canAttackGroundUnits = false;
-    for(let attack of this.unit.information.attacks) {
-      if(attack.target == SC2Target.AIR) {
-        this.canAttackAirUnits = true; 
-      } else if(attack.target == SC2Target.GROUND) {
-        this.canAttackGroundUnits = true;
-      }
-    }
-    if(this.canAttackAirUnits) {
-      this.airBadge = 'primary'
+    this.groundBadge = 'danger';
+    if (this.unit.information.targets.indexOf(SC2Target.AIR) !== -1) {
+      this.canAttackAirUnits = true;
+      this.airBadge = 'primary';
     } 
-    else {
-      this.airBadge = 'danger'
-    }
-    if(this.canAttackGroundUnits) {
-      this.groundBadge = 'primary'
-    } 
-    else {
-      this.groundBadge = 'danger'
+    if (this.unit.information.targets.indexOf(SC2Target.GROUND) !== -1) {
+      this.canAttackGroundUnits = true;
+      this.groundBadge = 'primary';
     }
   }
 
   initCargo() {
-    this.hasCargo = false; 
-    if(this.unit.information.cargo != null) {
+    this.hasCargo = false;
+    if (this.unit.information.cargo != null) {
       this.hasCargo = true;
     }
   }
 
   initShield() {
     this.hasShield = false;
-    if(this.unit.race.type == SC2RaceType.PROTOSS) {
+    if (this.unit.race.type == SC2RaceType.PROTOSS) {
       this.hasShield = true;
     }
   }
 
   initEnergy() {
     this.hasEnergy = false;
-    if(this.unit.information.energy != null) {
+    if (this.unit.information.energy != null) {
       this.hasEnergy = true;
     }
   }
 
   initAttack() {
     this.canAttack = true
-    if(this.unit.information.attacks == null) {
+    if (this.unit.information.attacks == null) {
       this.canAttack = false;
     }
   }
-  
+
   initAssets() {
     if (this.unit.race.type == SC2RaceType.PROTOSS) {
       this.minerals_img = 'assets/icon/ressources/protoss/minerals.gif';
@@ -123,10 +114,10 @@ export class UnitPage {
   }
 
   parseTarget(target: SC2Target): string {
-    if(target == SC2Target.GROUND) {
+    if (target == SC2Target.GROUND) {
       return 'Ground';
     }
-    else if(target == SC2Target.AIR) {
+    else if (target == SC2Target.AIR) {
       return 'Air';
     }
     else {

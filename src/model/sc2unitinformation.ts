@@ -5,13 +5,13 @@ export enum SC2Target {
 }
 
 export class SC2Attack {
-    target: SC2Target;
+    target: Array<SC2Target>;
     damage: string;
     dps: string;
     cooldown: string;
     range: string;
 
-    constructor(target: SC2Target, damage: string, dps: string, cooldown: string, range: string) {
+    constructor(target: Array<SC2Target>, damage: string, dps: string, cooldown: string, range: string) {
         this.target = target;
         this.damage = damage;
         this.dps = dps;
@@ -94,6 +94,7 @@ export class SC2Cargo {
 }
 
 export class SC2UnitInformation {
+    targets: Array<SC2Target>;
     attributes: Array<string>;
     attacks: Array<SC2Attack>;
     defence: SC2Defence;
@@ -103,6 +104,7 @@ export class SC2UnitInformation {
     cargo: SC2Cargo;
 
     constructor(
+        targets: Array<SC2Target>,
         attributes: Array<string>,
         attacks: Array<SC2Attack>,
         defence: SC2Defence,
@@ -110,6 +112,7 @@ export class SC2UnitInformation {
         speed: SC2Speed, 
         sight: SC2Sight,
         cargo: SC2Cargo) {
+        this.targets = targets;
         this.attributes = attributes;
         this.attacks = attacks;
         this.defence = defence;

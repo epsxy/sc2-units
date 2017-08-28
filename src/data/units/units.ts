@@ -56,8 +56,9 @@ export const SC2_UNITS = [
         'warp-in any Protoss building.',
         new SC2Cost(50, 0, 12, 1),
         new SC2UnitInformation(
+            [SC2Target.GROUND],
             [ATTR_LIGHT, ATTR_MECHANICAL],
-            [new SC2Attack(SC2Target.GROUND, '5', '4.67', '1.07', '0.1')],
+            [new SC2Attack([SC2Target.GROUND], '5', '4.67', '1.07', '0.1')],
             new SC2Defence('20', '20', '0'),
             null,
             new SC2Speed('3.94'), 
@@ -324,43 +325,49 @@ export const SC2_UNITS = [
     //     new SC2Source(STARGATE, KEY_X),
     //     new SC2Asset('assets/units/protoss/thumbnail/phoenix.png', 'assets/units/protoss/image/phoenix.jpg')
     // ),
-    // new SC2Unit(
-    //     '1516d125-d178-4053-9c56-f7c06030209c',
-    //     'Void Ray',
-    //     PROTOSS_RACE,
-    //     'The Void Ray is an airborne siege cannon for the Protoss ' +
-    //     'that is built at the Stargate. ',
-    //     new SC2Cost(250, 150, 43, 4),
-    //     new SC2UnitInformation(
-    //         new SC2Target(true, true),
-    //         [ATTR_ARMORED, ATTR_MECHANICAL],
-    //         [new SC2Attack(6, 16.8, 0.36, 6)],
-    //         new SC2Defence(150, 100, 0),
-    //         new SC2OtherInfo(null, 3.5, 10, null)
-    //     ),
-    //     null,
-    //     new SC2Source(STARGATE, KEY_V),
-    //     new SC2Asset('assets/units/protoss/thumbnail/void-ray.png', 'assets/units/protoss/image/void-ray.jpg')
-    // ),
-    // new SC2Unit(
-    //     '17c76d99-a451-4987-9346-55971a5a8ab3',
-    //     'Oracle',
-    //     PROTOSS_RACE,
-    //     'The Oracle is a flying harassment and support caster for the Protoss that is produced ' +
-    //     'from the Stargate. While fairly expensive and fragile, the Oracle is a very ' +
-    //     'mobile unit and has several useful spells.',
-    //     new SC2Cost(150, 150, 36, 3),
-    //     new SC2UnitInformation(
-    //         new SC2Target(true, false),
-    //         [ATTR_LIGHT, ATTR_MECHANICAL, ATTR_PSIONIC],
-    //         [new SC2Attack(15, 24.4, 0.61, 4)],
-    //         new SC2Defence(100, 60, 0),
-    //         new SC2OtherInfo(null, 5.6, 10, null)
-    //     ),
-    //     null,
-    //     new SC2Source(STARGATE, KEY_E),
-    //     new SC2Asset('assets/units/protoss/thumbnail/oracle.png', 'assets/units/protoss/image/oracle.jpg')
-    // ),
+    new SC2Unit(
+        '1516d125-d178-4053-9c56-f7c06030209c',
+        'Void Ray',
+        PROTOSS_RACE,
+        'The Void Ray is an airborne siege cannon for the Protoss ' +
+        'that is built at the Stargate. ',
+        new SC2Cost(250, 150, 43, 4),
+        new SC2UnitInformation(
+            [SC2Target.GROUND, SC2Target.AIR],
+            [ATTR_ARMORED, ATTR_MECHANICAL],
+            [new SC2Attack([SC2Target.GROUND, SC2Target.AIR], '6', '16.8', '0.36', '6')],
+            new SC2Defence('150', '100', '0'),
+            null, 
+            new SC2Speed('3.5'), 
+            new SC2Sight('10'), 
+            null
+        ),
+        null,
+        new SC2Source(STARGATE, KEY_V),
+        new SC2Asset('assets/units/protoss/thumbnail/void-ray.png', 'assets/units/protoss/image/void-ray.jpg')
+    ),
+    new SC2Unit(
+        '17c76d99-a451-4987-9346-55971a5a8ab3',
+        'Oracle',
+        PROTOSS_RACE,
+        'The Oracle is a flying harassment and support caster for the Protoss that is produced ' +
+        'from the Stargate. While fairly expensive and fragile, the Oracle is a very ' +
+        'mobile unit and has several useful spells.',
+        new SC2Cost(150, 150, 36, 3),
+        new SC2UnitInformation(
+            [SC2Target.GROUND],
+            [ATTR_LIGHT, ATTR_MECHANICAL, ATTR_PSIONIC],
+            [new SC2Attack([SC2Target.GROUND], '15', '24.4', '0.61', '4')],
+            new SC2Defence('100', '60', '0'),
+            new SC2Energy('50', '200'),
+            new SC2Speed('5.6'), 
+            new SC2Sight('10'), 
+            null
+        ),
+        null,
+        new SC2Source(STARGATE, KEY_E),
+        new SC2Asset('assets/units/protoss/thumbnail/oracle.png', 'assets/units/protoss/image/oracle.jpg')
+    ),
     // // TODO: Better handle carrier interceptors and whatever
     // new SC2Unit(
     //     '91844ecd-4e4d-4a09-ae51-e957cb91a539',
@@ -381,26 +388,31 @@ export const SC2_UNITS = [
     //     new SC2Source(STARGATE, KEY_C),
     //     new SC2Asset('assets/units/protoss/thumbnail/carrier.png', 'assets/units/protoss/image/carrier.jpg')
     // ),
-    // new SC2Unit(
-    //     'a0446b8b-65fc-4837-9e22-2e8da3b7cf2c',
-    //     'Tempest',
-    //     PROTOSS_RACE,
-    //     'The Tempest is a powerful capital ship for the Protoss that can be built from the Stargate ' +
-    //     'once the Fleet Beacon has been completed. Its primary role is as a heavy bombardment unit, ' +
-    //     'using its incredible range to attack air and ground targets from a safe distance. ',
-    //     new SC2Cost(300, 200, 43, 6),
-    //     new SC2UnitInformation(
-    //         new SC2Target(true, true),
-    //         [ATTR_ARMORED, ATTR_MECHANICAL, ATTR_MASSIVE],
-    //         // TODO: Handle 2 attacks of Tempest (air/ground)
-    //         [new SC2Attack(0, 0, 0, 0)],
-    //         new SC2Defence(300, 150, 2),
-    //         new SC2OtherInfo(null, 2.62, 12, null)
-    //     ),
-    //     null,
-    //     new SC2Source(STARGATE, KEY_T),
-    //     new SC2Asset('assets/units/protoss/thumbnail/tempest.png', 'assets/units/protoss/image/tempest.jpg')
-    // ),
+    new SC2Unit(
+        'a0446b8b-65fc-4837-9e22-2e8da3b7cf2c',
+        'Tempest',
+        PROTOSS_RACE,
+        'The Tempest is a powerful capital ship for the Protoss that can be built from the Stargate ' +
+        'once the Fleet Beacon has been completed. Its primary role is as a heavy bombardment unit, ' +
+        'using its incredible range to attack air and ground targets from a safe distance. ',
+        new SC2Cost(300, 200, 43, 6),
+        new SC2UnitInformation(
+            [SC2Target.GROUND, SC2Target.AIR],
+            [ATTR_ARMORED, ATTR_MECHANICAL, ATTR_MASSIVE],
+            [
+                new SC2Attack([SC2Target.GROUND], '40', '16.97', '2.36', '10'), 
+                new SC2Attack([SC2Target.AIR], '30', '12.73', '2.36', '15')
+            ],
+            new SC2Defence('300', '150', '2'),
+            null,
+            new SC2Speed('2.62'), 
+            new SC2Sight('12'),
+            null
+        ),
+        null,
+        new SC2Source(STARGATE, KEY_T),
+        new SC2Asset('assets/units/protoss/thumbnail/tempest.png', 'assets/units/protoss/image/tempest.jpg')
+    ),
     // new SC2Unit(
     //     'fcfbc539-5ba0-4a01-a4fe-ec579414ddb4',
     //     'Mothership Core',
