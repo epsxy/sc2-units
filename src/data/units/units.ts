@@ -28,7 +28,7 @@ import {
     ROBOTICS,
     STARGATE,
 } from '../../model/const';
-import { SC2Source } from '../../model/sc2source';
+import { SC2Source, SourceType } from '../../model/sc2source';
 import {
     SC2Attack,
     SC2Cargo,
@@ -45,6 +45,7 @@ import { SC2Asset } from '../../model/sc2asset';
 import { SC2Cost } from '../../model/sc2cost';
 import { SC2Unit } from "../../model/sc2unit";
 import { PROTOSS_RACE, SC2_RACES, TERRAN_RACE, ZERG_RACE } from '../races/races';
+import { SC2UnitLink } from "../../model/sc2unitlink";
 
 export const SC2_UNITS = [
     new SC2Unit(
@@ -66,7 +67,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '1')
         ),
         null,
-        new SC2Source(NEXUS, KEY_E),
+        new SC2Source(NEXUS, SourceType.BUILDING, KEY_E),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/probe.png', 'assets/units/protoss/image/probe.jpg')
     ),
     new SC2Unit(
@@ -87,7 +90,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '2')
         ),
         null,
-        new SC2Source(GATEWAY, KEY_Z),
+        new SC2Source(GATEWAY, SourceType.BUILDING, KEY_Z),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/zealot.png', 'assets/units/protoss/image/zealot.jpg')
     ),
     new SC2Unit(
@@ -109,7 +114,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '2')
         ),
         null,
-        new SC2Source(GATEWAY, KEY_H),
+        new SC2Source(GATEWAY, SourceType.BUILDING, KEY_H),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/stalker.png', 'assets/units/protoss/image/stalker.jpg')
     ),
     new SC2Unit(
@@ -133,7 +140,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '2')
         ),
         null,
-        new SC2Source(GATEWAY, KEY_E),
+        new SC2Source(GATEWAY, SourceType.BUILDING, KEY_E),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/sentry.png', 'assets/units/protoss/image/sentry.jpg')
     ),
     new SC2Unit('10efe000-4a8b-42cd-a59f-419a1923ce5e',
@@ -153,7 +162,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '2')
         ),
         null,
-        new SC2Source(GATEWAY, KEY_H),
+        new SC2Source(GATEWAY, SourceType.BUILDING, KEY_H),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/adept.png', 'assets/units/protoss/image/adept.png')
     ),
     new SC2Unit(
@@ -178,7 +189,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '2')
         ),
         null,
-        new SC2Source(GATEWAY, KEY_T),
+        new SC2Source(GATEWAY, SourceType.BUILDING, KEY_T),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/high-templar.png', 'assets/units/protoss/image/high-templar.jpg')
     ),
     new SC2Unit(
@@ -200,7 +213,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '2')
         ),
         null,
-        new SC2Source(GATEWAY, KEY_D),
+        new SC2Source(GATEWAY, SourceType.BUILDING, KEY_D),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/dark-templar.png', 'assets/units/protoss/image/dark-templar.jpg')
     ),
     new SC2Unit(
@@ -223,7 +238,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '4')
         ),
         null,
-        new SC2Source(ROBOTICS, KEY_I),
+        new SC2Source(ROBOTICS, SourceType.BUILDING, KEY_I),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/immortal.png', 'assets/units/protoss/image/immortal.jpg')
     ),
     new SC2Unit(
@@ -244,7 +261,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '8')
         ),
         null,
-        new SC2Source(ROBOTICS, KEY_C),
+        new SC2Source(ROBOTICS, SourceType.BUILDING, KEY_C),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/colossus.png', 'assets/units/protoss/image/colossus.jpg')
     ),
     new SC2Unit(
@@ -265,7 +284,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '4')
         ),
         null,
-        new SC2Source(ROBOTICS, KEY_D),
+        new SC2Source(ROBOTICS, SourceType.BUILDING, KEY_D),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/disruptor.png', 'assets/units/protoss/image/disruptor.png')
     ),
     new SC2Unit(
@@ -289,7 +310,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '4')
         ),
         null,
-        null,
+        new SC2Source('Dark templar / High templar', SourceType.UNIT, KEY_C),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/archon.png', 'assets/units/protoss/image/archon.jpg')
     ),
     new SC2Unit(
@@ -311,7 +334,9 @@ export const SC2_UNITS = [
             null
         ),
         null,
-        new SC2Source(ROBOTICS, KEY_B),
+        new SC2Source(ROBOTICS, SourceType.BUILDING, KEY_B),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/observer.png', 'assets/units/protoss/image/observer.jpg')
     ),
     new SC2Unit(
@@ -337,7 +362,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.INCLUDE_OTHER_UNITS, '8')
         ),
         null,
-        new SC2Source(ROBOTICS, KEY_A),
+        new SC2Source(ROBOTICS, SourceType.BUILDING, KEY_A),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/warp-prism.png', 'assets/units/protoss/image/warp-prism.jpg')
     ),
     new SC2Unit(
@@ -359,7 +386,9 @@ export const SC2_UNITS = [
             null
         ),
         null,
-        new SC2Source(STARGATE, KEY_X),
+        new SC2Source(STARGATE, SourceType.BUILDING, KEY_X),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/phoenix.png', 'assets/units/protoss/image/phoenix.jpg')
     ),
     new SC2Unit(
@@ -380,7 +409,9 @@ export const SC2_UNITS = [
             null
         ),
         null,
-        new SC2Source(STARGATE, KEY_V),
+        new SC2Source(STARGATE, SourceType.BUILDING, KEY_V),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/void-ray.png', 'assets/units/protoss/image/void-ray.jpg')
     ),
     new SC2Unit(
@@ -402,7 +433,9 @@ export const SC2_UNITS = [
             null
         ),
         null,
-        new SC2Source(STARGATE, KEY_E),
+        new SC2Source(STARGATE, SourceType.BUILDING, KEY_E),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/oracle.png', 'assets/units/protoss/image/oracle.jpg')
     ),
     // // TODO: Better handle carrier interceptors and whatever
@@ -425,7 +458,9 @@ export const SC2_UNITS = [
             null
         ),
         null,
-        new SC2Source(STARGATE, KEY_C),
+        new SC2Source(STARGATE, SourceType.BUILDING, KEY_C),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/carrier.png', 'assets/units/protoss/image/carrier.jpg')
     ),
     new SC2Unit(
@@ -450,7 +485,9 @@ export const SC2_UNITS = [
             null
         ),
         null,
-        new SC2Source(STARGATE, KEY_T),
+        new SC2Source(STARGATE, SourceType.BUILDING, KEY_T),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/tempest.png', 'assets/units/protoss/image/tempest.jpg')
     ),
     new SC2Unit(
@@ -473,7 +510,9 @@ export const SC2_UNITS = [
             null
         ),
         null,
-        new SC2Source(NEXUS, KEY_M),
+        new SC2Source(NEXUS, SourceType.BUILDING, KEY_M),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/mothership-core.png', 'assets/units/protoss/image/mothership-core.jpg')
     ),
     new SC2Unit(
@@ -497,6 +536,8 @@ export const SC2_UNITS = [
         null,
         // TODO: Add source for mothership
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/protoss/thumbnail/mothership.png', 'assets/units/protoss/image/mothership.jpg')
     ),
     // TODO: Add special speed for zerg (on creep)
@@ -519,7 +560,9 @@ export const SC2_UNITS = [
             null
         ),
         null,
-        new SC2Source(HATCHERY, KEY_S),
+        new SC2Source(HATCHERY, SourceType.BUILDING, KEY_S),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/larva.png', 'assets/units/zerg/image/larva.jpg')
     ),
     new SC2Unit(
@@ -543,7 +586,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '1')
         ),
         null,
-        new SC2Source(HATCHERY, KEY_D),
+        new SC2Source(HATCHERY, SourceType.BUILDING, KEY_D),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/drone.png', 'assets/units/zerg/image/drone.jpg')
     ),
     // TODO: Add 2 types of attack for queen
@@ -569,7 +614,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '2')
         ),
         null,
-        new SC2Source(HATCHERY, KEY_Q),
+        new SC2Source(HATCHERY, SourceType.BUILDING, KEY_Q),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/queen.png', 'assets/units/zerg/image/queen.jpg')
     ),
     new SC2Unit(
@@ -592,7 +639,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '1')
         ),
         null,
-        new SC2Source(HATCHERY, KEY_Z),
+        new SC2Source(HATCHERY, SourceType.BUILDING, KEY_Z),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/zergling.png', 'assets/units/zerg/image/zergling.jpg')
     ),
     // TODO: Source
@@ -620,6 +669,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/baneling.png', 'assets/units/zerg/image/baneling.jpg')
     ),
     new SC2Unit(
@@ -642,7 +693,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '2')
         ),
         null,
-        new SC2Source(HATCHERY, KEY_R),
+        new SC2Source(HATCHERY, SourceType.BUILDING, KEY_R),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/roach.png', 'assets/units/zerg/image/roach.jpg')
     ),
     new SC2Unit(
@@ -664,7 +717,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '4')
         ),
         null,
-        new SC2Source(HATCHERY, KEY_V),
+        new SC2Source(HATCHERY, SourceType.BUILDING, KEY_V),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/ravager.png', 'assets/units/zerg/image/ravager.png')
     ),
     new SC2Unit(
@@ -687,7 +742,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '2')
         ),
         null,
-        new SC2Source(HATCHERY, KEY_H),
+        new SC2Source(HATCHERY, SourceType.BUILDING, KEY_H),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/hydralisk.png', 'assets/units/zerg/image/hydralisk.jpg')
     ),
     // Sight null ?
@@ -712,7 +769,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '4')
         ),
         null,
-        new SC2Source(HATCHERY, KEY_E),
+        new SC2Source(HATCHERY, SourceType.BUILDING, KEY_E),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/lurker.png', 'assets/units/zerg/image/lurker.png')
     ),
     new SC2Unit(
@@ -736,7 +795,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '2')
         ),
         null,
-        new SC2Source(HATCHERY, KEY_H),
+        new SC2Source(HATCHERY, SourceType.BUILDING, KEY_H),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/infestor.png', 'assets/units/zerg/image/infestor.jpg')
     ),
     new SC2Unit(
@@ -760,7 +821,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '4')
         ),
         null,
-        new SC2Source(HATCHERY, KEY_A),
+        new SC2Source(HATCHERY, SourceType.BUILDING, KEY_A),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/swarm-host.png', 'assets/units/zerg/image/swarm-host.jpg')
     ),
     new SC2Unit(
@@ -781,7 +844,9 @@ export const SC2_UNITS = [
             new SC2Cargo(SC2CargoType.IS_INCLUDED_IN_OTHER_UNITS, '8')
         ),
         null,
-        new SC2Source(HATCHERY, KEY_U),
+        new SC2Source(HATCHERY, SourceType.BUILDING, KEY_U),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/ultralisk.png', 'assets/units/zerg/image/ultralisk.jpg')
     ),
     new SC2Unit(
@@ -804,7 +869,9 @@ export const SC2_UNITS = [
             null
         ),
         null,
-        new SC2Source(HATCHERY, KEY_C),
+        new SC2Source(HATCHERY, SourceType.BUILDING, KEY_C),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/locust.png', 'assets/units/zerg/image/locust.jpg')
     ),
     new SC2Unit(
@@ -828,6 +895,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/broodling.png', 'assets/units/zerg/image/broodling.jpg')
     ),
     new SC2Unit(
@@ -851,6 +920,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/changeling.png', 'assets/units/zerg/image/changeling.jpg')
     ),
     // new SC2Unit(
@@ -884,6 +955,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/nydus-worm.png', 'assets/units/zerg/image/nydus-worm.jpg')
     ),
     new SC2Unit(
@@ -905,7 +978,9 @@ export const SC2_UNITS = [
             null
         ),
         null,
-        new SC2Source(HATCHERY, KEY_V),
+        new SC2Source(HATCHERY, SourceType.BUILDING, KEY_V),
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/overlord.png', 'assets/units/zerg/image/overlord.jpg')
     ),
     new SC2Unit(
@@ -930,6 +1005,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/overseer.png', 'assets/units/zerg/image/overseer.jpg')
     ),
     new SC2Unit(
@@ -955,6 +1032,8 @@ export const SC2_UNITS = [
         null,
         // new SC2Source(HATCHERY, KEY_T),
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/mutalisk.png', 'assets/units/zerg/image/mutalisk.jpg')
     ),
     new SC2Unit(
@@ -981,6 +1060,8 @@ export const SC2_UNITS = [
         null,
         // new SC2Source(HATCHERY, KEY_C),
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/corruptor.png', 'assets/units/zerg/image/corruptor.jpg')
     ),
     new SC2Unit(
@@ -1003,6 +1084,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/brood-lord.png', 'assets/units/zerg/image/brood-lord.jpg')
     ),
     new SC2Unit(
@@ -1027,6 +1110,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/zerg/thumbnail/viper.png', 'assets/units/zerg/image/viper.jpg')
     ),
     new SC2Unit(
@@ -1052,6 +1137,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/scv.png', 'assets/units/terran/image/scv.jpg')
     ),
     // new SC2Unit(
@@ -1086,6 +1173,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/marine.png', 'assets/units/terran/image/marine.jpg')
     ),
     new SC2Unit(
@@ -1110,6 +1199,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/marauder.png', 'assets/units/terran/image/marauder.jpg')
     ),
     new SC2Unit(
@@ -1133,6 +1224,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/reaper.png', 'assets/units/terran/image/reaper.jpg')
     ),
     new SC2Unit(
@@ -1155,6 +1248,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/ghost.png', 'assets/units/terran/image/ghost.jpg')
     ),
     new SC2Unit(
@@ -1178,6 +1273,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/hellion.png', 'assets/units/terran/image/hellion.jpg')
     ),
     new SC2Unit(
@@ -1202,6 +1299,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/hellbat.png', 'assets/units/terran/image/hellbat.jpg')
     ),
     new SC2Unit(
@@ -1227,6 +1326,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/siege-tank.png', 'assets/units/terran/image/siege-tank.jpg')
     ),
     new SC2Unit(
@@ -1250,6 +1351,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/cyclone.png', 'assets/units/terran/image/cyclone.png')
     ),
     new SC2Unit(
@@ -1276,6 +1379,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/widow-mine.png', 'assets/units/terran/image/widow-mine.jpg')
     ),
     // 
@@ -1302,6 +1407,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/thor.png', 'assets/units/terran/image/thor.jpg')
     ),
     new SC2Unit(
@@ -1331,6 +1438,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/viking.png', 'assets/units/terran/image/viking.jpg')
     ),
     new SC2Unit(
@@ -1341,7 +1450,7 @@ export const SC2_UNITS = [
         'from the Starport with the Ignite Afterburners ability ready right away. Ignite Afterburners ' +
         'increases the Medivacs movement speed to 5.94 (faster than a Mutalisk and equal to a Phoenix) ' +
         'for a quick escape or running past anti-air units and defence.',
-        new SC2Cost(0, 0, 0, 0),
+        new SC2Cost(100, 100, 30, 2),
         new SC2UnitInformation(
             [],
             [ATTR_ARMORED, ATTR_MECHANICAL],
@@ -1350,10 +1459,12 @@ export const SC2_UNITS = [
             new SC2Energy('50', '200'), 
             new SC2Speed('3.5'), 
             new SC2Sight('11'), 
-            null
+            new SC2Cargo(SC2CargoType.INCLUDE_OTHER_UNITS, '8')
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/medivac.png', 'assets/units/terran/image/medivac.jpg')
     ),
     new SC2Unit(
@@ -1381,6 +1492,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/liberator.png', 'assets/units/terran/image/liberator.png')
     ),
     new SC2Unit(
@@ -1407,6 +1520,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/raven.png', 'assets/units/terran/image/raven.jpg')
     ),
     new SC2Unit(
@@ -1431,6 +1546,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/banshee.png', 'assets/units/terran/image/banshee.jpg')
     ),
     new SC2Unit(
@@ -1457,6 +1574,8 @@ export const SC2_UNITS = [
         ),
         null,
         null,
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
         new SC2Asset('assets/units/terran/thumbnail/battlecruiser.png', 'assets/units/terran/image/battlecruiser.jpg')
     )
     // new SC2Unit(

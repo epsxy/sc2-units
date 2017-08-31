@@ -1,10 +1,17 @@
+export enum SourceType {
+    BUILDING = 0, 
+    UNIT = 1
+}
+
 export class SC2Source {
-    building: string;
+    name: string;
+    type: SourceType;
     hotkey: string;
 
-    constructor(building: string,
+    constructor(name: string,
+        type: SourceType,
         hotkey: string) {
-        this.building = building;
+        this.name = name;
         this.hotkey = hotkey;
     }
 }

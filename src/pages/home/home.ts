@@ -32,7 +32,6 @@ export class HomePage {
     if(race.type == SC2RaceType.TERRAN) {
       return 'assets/icon/terran-logo.png'
     }
-
   }
 
   goToListPage(race) {

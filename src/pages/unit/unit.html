@@ -103,7 +103,7 @@
                         <h2>Origin</h2>
                     </ion-col>
                     <ion-col text-center>
-                        Building: {{unit.source.building}}
+                        Building: {{unit.source.name}}
                     </ion-col>
                     <ion-col text-center>
                         Hotkey: {{unit.source.hotkey}}
@@ -132,7 +132,7 @@
             </ion-grid>
         </ion-card-content>
     </ion-card>
-    <!-- <ion-card>
+    <ion-card>
         <ion-card-content>
             <ion-card-title text-center>Upgrades</ion-card-title>
         </ion-card-content>
@@ -145,11 +145,29 @@
     <ion-card>
         <ion-card-content>
             <ion-card-title text-center>Strong against</ion-card-title>
+            <ion-list>
+                <ion-item *ngFor='let strongAgainst of unit.strongAgainst'>
+                    <ion-thumbnail item-start>
+                        <img src={{unit.assets.thumbnail}}>
+                    </ion-thumbnail>
+                    <h2>{{unit.name}}</h2>
+                    <p>{{unit.description}}</p>
+                    <button ion-button secondary item-end (click)='goToUnitPage(unit.id)'>View</button>
+                </ion-item>
+            </ion-list>
         </ion-card-content>
     </ion-card>
     <ion-card>
         <ion-card-content>
             <ion-card-title text-center>Weak against</ion-card-title>
+            <ion-item *ngFor='let strongAgainst of unit.strongAgainst'>
+                <ion-thumbnail item-start>
+                    <img src={{unit.assets.thumbnail}}>
+                </ion-thumbnail>
+                <h2>{{unit.name}}</h2>
+                <p>{{unit.description}}</p>
+                <button ion-button secondary item-end (click)='goToUnitPage(unit.id)'>View</button>
+            </ion-item>
         </ion-card-content>
-    </ion-card> -->
+    </ion-card>
 </ion-content>
