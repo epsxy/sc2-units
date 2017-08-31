@@ -94,11 +94,11 @@
                     <ion-col text-center>
                         <ion-badge color='sc2-energy'>Spawn: {{unit.information.energy.spawn_energy}}</ion-badge>
                     </ion-col>
-                    <ion-col text-center *ngIf='hasShield'>
+                    <ion-col text-center>
                         <ion-badge color='sc2-energy'>Full: {{unit.information.energy.full_energy}}</ion-badge>
                     </ion-col>
                 </ion-row>
-                <ion-row>
+                <ion-row *ngIf='hasBuilding'>
                     <ion-col text-center col-4>
                         <h2>Origin</h2>
                     </ion-col>

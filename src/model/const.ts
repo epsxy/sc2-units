@@ -35,3 +35,5 @@ export const ROBOTICS = 'Robotics Facility'
 export const STARGATE = 'Stargate'
 // Zerg buildings
 export const HATCHERY = 'Hatchery'
+// Terran buildings
+export const COMMAND_CENTER = 'Command Center'

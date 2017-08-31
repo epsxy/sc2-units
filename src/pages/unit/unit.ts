@@ -26,6 +26,7 @@ export class UnitPage {
   hasShield: boolean;
   hasEnergy: boolean;
   hasCargo: boolean;
+  hasBuilding: boolean;
   canAttackAirUnits: boolean;
   canAttackGroundUnits: boolean;
 
@@ -46,6 +47,7 @@ export class UnitPage {
       this.initAttack();
       this.initTargets();
       this.initAssets();
+      this.initBuilding();
     }
   }
 
@@ -113,12 +115,24 @@ export class UnitPage {
     }
   }
 
+  initBuilding() {
+    if (this.unit.source == null) {
+      this.hasBuilding = false;
+    }
+    else {
+      this.hasBuilding = true;
+    }
+  }
+
   parseTarget(target: SC2Target): string {
     if (target == SC2Target.GROUND) {
       return 'Ground';
     }
     else if (target == SC2Target.AIR) {
       return 'Air';
+    }
+    else if (target == SC2Target.BUILDING) {
+      return 'Building';
     }
     else {
       return null

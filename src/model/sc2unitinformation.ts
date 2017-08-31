@@ -1,7 +1,8 @@
 
 export enum SC2Target {
     GROUND = 0,
-    AIR = 1
+    AIR = 1,
+    BUILDING = 2
 }
 
 export class SC2Attack {
