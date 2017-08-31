@@ -1,5 +1,6 @@
 FROM debian:jessie
 
+RUN alias ll='ls -l'
 RUN apt-get update
 RUN apt-get install -y npm sudo curl wget unzip
 RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
