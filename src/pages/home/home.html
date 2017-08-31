@@ -9,13 +9,20 @@
 
 <ion-content padding>
     <h2 text-center>SC2 Units</h2>
-    <ion-list>
-        <ion-item *ngFor="let race of races" (click)="goToListPage(race)">
+    <ion-card *ngFor="let race of races">
+        <ion-card-content>
             <ion-thumbnail item-start>
                 <img src={{generateThumbnail(race)}} />
             </ion-thumbnail>
-            <h2>{{race.name}}</h2>
-            <p><button ion-button secondary item-end (click)='goToListPage(race)'>View {{race.name}} Units</button></p>
-        </ion-item>
-    </ion-list>
+            <ion-card-title text-center> {{race.name}}</ion-card-title>
+                <ion-row>
+                    <ion-col>
+                        {{race.description}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <button ion-button full (click)='goToListPage(race)'>View {{race.name}} units</button>
+                </ion-row>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
