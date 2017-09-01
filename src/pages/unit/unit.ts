@@ -20,6 +20,8 @@ export class UnitPage {
   supply_img: string;
   airBadge: string;
   groundBadge: string;
+  strongAgainst: Array<SC2Unit> = [];
+  weakAgainst: Array<SC2Unit> = [];
 
   // booleans to dynamically display informations on units
   canAttack: boolean;
@@ -33,13 +35,13 @@ export class UnitPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.nav = navCtrl
     this.id = this.navParams.get('id');
-    let unitsMatchingId = SC2_UNITS.filter(unit => unit.id == this.id);
-    if (unitsMatchingId.length != 1) {
+    let unitMatchingId = this.getUnitFromId(this.id);
+    if (unitMatchingId == null || unitMatchingId == undefined) {
       this.nav.setRoot(NotFoundPage);
     }
     else {
       // development only
-      this.unit = unitsMatchingId[0];
+      this.unit = unitMatchingId;
       console.log(this.unit);
       this.initCargo();
       this.initShield();
@@ -48,6 +50,18 @@ export class UnitPage {
       this.initTargets();
       this.initAssets();
       this.initBuilding();
+      for(let link of this.unit.strongAgainst) {
+        let strongUnit = this.getUnitFromId(link.id)
+        if (strongUnit != null) {
+          this.strongAgainst.push(strongUnit);
+        }
+      }
+      for(let link of this.unit.weakAgainst) {
+        let weakUnit = this.getUnitFromId(link.id)
+        if (weakUnit != null) {
+          this.weakAgainst.push(weakUnit);
+        }
+      }
     }
   }
 
@@ -137,5 +151,25 @@ export class UnitPage {
     else {
       return null
     }
+  }
+
+  getUnitFromId(id: string): SC2Unit {
+    let unitsMatchingId = SC2_UNITS.filter(unit => unit.id == id);
+    if(unitsMatchingId.length > 1) {
+      // > 1 unit matching provided id
+      console.log('Multiple units matching provided id!');
+      return null
+    } 
+    else if (unitsMatchingId.length == -1) {
+      // 0 unit matching provided id
+      return null
+    }
+    return unitsMatchingId[0];
+  }
+
+  goToUnitPage(id: string) {
+    this.nav.push(UnitPage, {
+      id: id
+    })
   }
 }

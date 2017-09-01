@@ -91,8 +91,16 @@ export const SC2_UNITS = [
         ),
         null,
         new SC2Source(GATEWAY, SourceType.BUILDING, KEY_Z),
-        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
-        [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')], 
+        [
+            new SC2UnitLink('f064ac69-e4c1-4d23-90dd-26002bba354f'), 
+            new SC2UnitLink('3a9fac08-2181-46d8-bedd-cd593e1f11cd'), 
+            new SC2UnitLink('c1a2f2ca-a586-4c4f-b40e-3485c0de8c20')
+        ], 
+        [
+            new SC2UnitLink('4100a23b-9d42-42b1-9958-06c022e85cc4'), 
+            new SC2UnitLink('d41fae3e-c6a7-4d84-81ed-0da67b9de9a5'), 
+            new SC2UnitLink('d2aba0bd-4644-4858-b235-db41f5bb5bab')
+        ], 
         new SC2Asset('assets/units/protoss/thumbnail/zealot.png', 'assets/units/protoss/image/zealot.jpg')
     ),
     new SC2Unit(

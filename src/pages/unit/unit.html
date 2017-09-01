@@ -146,13 +146,13 @@
         <ion-card-content>
             <ion-card-title text-center>Strong against</ion-card-title>
             <ion-list>
-                <ion-item *ngFor='let strongAgainst of unit.strongAgainst'>
+                <ion-item *ngFor='let strongUnit of strongAgainst'>
                     <ion-thumbnail item-start>
-                        <img src={{unit.assets.thumbnail}}>
+                        <img src={{strongUnit.assets.thumbnail}}>
                     </ion-thumbnail>
-                    <h2>{{unit.name}}</h2>
-                    <p>{{unit.description}}</p>
-                    <button ion-button secondary item-end (click)='goToUnitPage(unit.id)'>View</button>
+                    <h2>{{strongUnit.name}}</h2>
+                    <p>{{strongUnit.description}}</p>
+                    <button ion-button secondary item-end (click)='goToUnitPage(strongUnit.id)'>View</button>
                 </ion-item>
             </ion-list>
         </ion-card-content>
@@ -160,14 +160,16 @@
     <ion-card>
         <ion-card-content>
             <ion-card-title text-center>Weak against</ion-card-title>
-            <ion-item *ngFor='let strongAgainst of unit.strongAgainst'>
-                <ion-thumbnail item-start>
-                    <img src={{unit.assets.thumbnail}}>
-                </ion-thumbnail>
-                <h2>{{unit.name}}</h2>
-                <p>{{unit.description}}</p>
-                <button ion-button secondary item-end (click)='goToUnitPage(unit.id)'>View</button>
-            </ion-item>
+            <ion-list>
+                <ion-item *ngFor='let weakUnit of weakAgainst'>
+                    <ion-thumbnail item-start>
+                        <img src={{weakUnit.assets.thumbnail}}>
+                    </ion-thumbnail>
+                    <h2>{{weakUnit.name}}</h2>
+                    <p>{{weakUnit.description}}</p>
+                    <button ion-button secondary item-end (click)='goToUnitPage(weakUnit.id)'>View</button>
+                </ion-item>
+            </ion-list>
         </ion-card-content>
     </ion-card>
 </ion-content>
