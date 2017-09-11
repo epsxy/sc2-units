@@ -1,0 +1,35 @@
+import { SC2Unit } from "../../../model/sc2unit";
+import { ZERG_RACE } from "../../races/races";
+import { SC2Cost } from "../../../model/sc2cost";
+import { SC2UnitInformation, SC2Defence, SC2Speed, SC2Sight, SC2Target, SC2Attack } from "../../../model/sc2unitinformation";
+import { SC2Source, SourceType } from "../../../model/sc2source";
+import { SC2UnitLink } from "../../../model/sc2unitlink";
+import { SC2Asset } from "../../../model/sc2asset";
+import { ATTR_LIGHT, ATTR_BIOLOGICAL, HATCHERY, KEY_C } from "../../../model/const";
+
+
+export const ZERG_LOCUST = new SC2Unit(
+    '3e80bfee-1cdf-45b3-aa38-4bb1ef50ab9b',
+    'Locust',
+    ZERG_RACE,
+    'The Locust is a timed life unit that is spawned in pairs by a Swarm Host. After ' +
+    'spawning, Locusts begin in their flying form, and though unable to attack, can ' +
+    'fly over terrain and use the Swoop ability to land and engage targets. The Spawn ' +
+    'Locust ability has a cooldown of 43 seconds after birthing Locusts.',
+    new SC2Cost(0, 0, 3.6, 0),
+    new SC2UnitInformation(
+        [SC2Target.GROUND],
+        [ATTR_LIGHT, ATTR_BIOLOGICAL],
+        [new SC2Attack([SC2Target.GROUND], '10', '23.25', '0.43', '6')],
+        new SC2Defence('50', '0', '0'),
+        null,
+        new SC2Speed('2.62'),
+        new SC2Sight('6'),
+        null
+    ),
+    null,
+    new SC2Source(HATCHERY, SourceType.BUILDING, KEY_C),
+    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    new SC2Asset('assets/units/zerg/thumbnail/locust.png', 'assets/units/zerg/image/locust.jpg')
+);

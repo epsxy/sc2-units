@@ -1,0 +1,35 @@
+import { SC2Unit } from "../../../model/sc2unit";
+import { ZERG_RACE } from "../../races/races";
+import { SC2Cost } from "../../../model/sc2cost";
+import { SC2UnitInformation, SC2Defence, SC2Speed, SC2Sight } from "../../../model/sc2unitinformation";
+import { SC2Source, SourceType } from "../../../model/sc2source";
+import { SC2UnitLink } from "../../../model/sc2unitlink";
+import { SC2Asset } from "../../../model/sc2asset";
+import { ATTR_LIGHT, ATTR_BIOLOGICAL } from "../../../model/const";
+
+
+export const ZERG_CHANGELING = new SC2Unit(
+    'd8784044-1f70-453c-b715-0e8adc3f6a72',
+    'Changeling',
+    ZERG_RACE,
+    'The Changeling is a temporary Zerg unit spawned by an Overseer that lasts for 150 ' +
+    'seconds. The Changeling spawns as a Zerg-looking unit, but upon seeing an enemy ' +
+    'unit or building it will automatically transform into the basic unit of that enemy\'s ' +
+    'race (Marine, Zergling, or Zealot)',
+    new SC2Cost(0, 0, 0, 0),
+    new SC2UnitInformation(
+        [],
+        [ATTR_LIGHT, ATTR_BIOLOGICAL],
+        [],
+        new SC2Defence('5', '0', '0'),
+        null,
+        new SC2Speed('3.15 (4.13 zergling)'),
+        new SC2Sight('8 (9 marine/zealot)'),
+        null
+    ),
+    null,
+    null,
+    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    new SC2Asset('assets/units/zerg/thumbnail/changeling.png', 'assets/units/zerg/image/changeling.jpg')
+);
