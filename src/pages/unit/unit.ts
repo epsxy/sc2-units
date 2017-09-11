@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import { NotFoundPage } from '../404NotFound/404';
 import { SC2_UNITS } from '../../data/units/units';
 import { SC2Unit } from '../../model/sc2unit';
-import { SC2Race, SC2RaceType } from '../../model/sc2races';
+import { SC2RaceType } from '../../model/sc2races';
 
 @Component({
   selector: 'page-unit',

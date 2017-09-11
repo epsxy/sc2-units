@@ -1,11 +1,10 @@
-import { SC2Unit } from "../../../model/sc2unit";
-import { ZERG_RACE } from "../../races/races";
-import { SC2Cost } from "../../../model/sc2cost";
-import { SC2UnitInformation, SC2Defence, SC2Speed, SC2Sight } from "../../../model/sc2unitinformation";
-import { SC2Source, SourceType } from "../../../model/sc2source";
-import { SC2UnitLink } from "../../../model/sc2unitlink";
-import { SC2Asset } from "../../../model/sc2asset";
-import { ATTR_LIGHT, ATTR_BIOLOGICAL } from "../../../model/const";
+import { SC2Unit } from '../../../model/sc2unit';
+import { ZERG_RACE } from '../../races/races';
+import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Defence, SC2Sight, SC2Speed, SC2UnitInformation } from '../../../model/sc2unitinformation';
+import { ATTR_BIOLOGICAL, ATTR_LIGHT } from '../../../model/const';
+import { SC2UnitLink } from '../../../model/sc2unitlink';
+import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const ZERG_CHANGELING = new SC2Unit(

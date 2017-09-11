@@ -1,3 +1,19 @@
+import { SC2Unit } from '../../model/sc2unit';
+import { TERRAN_RACE } from '../races/races';
+import { SC2Cost } from '../../model/sc2cost';
+import {
+    SC2Attack,
+    SC2Cargo,
+    SC2CargoType,
+    SC2Defence,
+    SC2Energy,
+    SC2Sight,
+    SC2Speed,
+    SC2Target,
+    SC2UnitInformation,
+} from '../../model/sc2unitinformation';
+import { SC2UnitLink } from '../../model/sc2unitlink';
+import { SC2Asset } from '../../model/sc2asset';
 import {
     ATTR_ARMORED,
     ATTR_BIOLOGICAL,
@@ -6,100 +22,49 @@ import {
     ATTR_MASSIVE,
     ATTR_MECHANICAL,
     ATTR_PSIONIC,
-    GATEWAY,
-    HATCHERY,
-    KEY_A,
-    KEY_B,
-    KEY_C,
-    KEY_D,
-    KEY_E,
-    KEY_H,
-    KEY_I,
-    KEY_M,
-    KEY_Q,
-    KEY_R,
-    KEY_S,
-    KEY_T,
-    KEY_U,
-    KEY_V,
-    KEY_X,
-    KEY_Z,
-    NEXUS,
-    ROBOTICS,
-    STARGATE,
 } from '../../model/const';
-import { SC2Source, SourceType } from '../../model/sc2source';
-import {
-    SC2Attack,
-    SC2Cargo,
-    SC2CargoType,
-    SC2Defence,
-    SC2Energy,
-    SC2OtherInfo,
-    SC2Sight,
-    SC2Speed,
-    SC2Target,
-    SC2UnitInformation,
-} from '../../model/sc2unitinformation';
-import { SC2Asset } from '../../model/sc2asset';
-import { SC2Cost } from '../../model/sc2cost';
-import { SC2Unit } from "../../model/sc2unit";
-import { PROTOSS_RACE, SC2_RACES, TERRAN_RACE, ZERG_RACE } from '../races/races';
-import { SC2UnitLink } from "../../model/sc2unitlink";
-import { PROTOSS_PROBE } from "./protoss/probe";
-import { PROTOSS_ZEALOT } from "./protoss/zealot";
-import { PROTOSS_STALKER } from "./protoss/stalker";
-import { PROTOSS_SENTRY } from "./protoss/sentry";
-import { PROTOSS_ADEPT } from "./protoss/adept";
-import { PROTOSS_HIGH_TEMPLAR } from "./protoss/high-templar";
-import { PROTOSS_DARK_TEMPLAR } from "./protoss/dark-templar";
-import { PROTOSS_IMMORTAL } from "./protoss/immortal";
-import { PROTOSS_COLOSSUS } from "./protoss/colossus";
-import { PROTOSS_DISRUPTOR } from "./protoss/disruptor";
-import { PROTOSS_ARCHON } from "./protoss/archon";
-import { PROTOSS_OBSERVER } from "./protoss/observer";
-import { PROTOSS_WARP_PRISM } from "./protoss/warp-prism";
-import { PROTOSS_PHOENIX } from "./protoss/phoenix";
-import { PROTOSS_VOID_RAY } from "./protoss/void-ray";
-import { PROTOSS_ORACLE } from "./protoss/oracle";
-import { PROTOSS_CARRIER } from "./protoss/carrier";
-import { PROTOSS_TEMPEST } from "./protoss/tempest";
-import { PROTOSS_MOTHERSHIP_CORE } from "./protoss/mothership-core";
-import { PROTOSS_MOTHERSHIP } from "./protoss/mothership";
-import { ZERG_LARVA } from "./zerg/larva";
-import { ZERG_DRONE } from "./zerg/drone";
-import { ZERG_QUEEN } from "./zerg/queen";
-import { ZERG_ZERGLING } from "./zerg/zergling";
-import { ZERG_BANELING } from "./zerg/baneling";
-import { ZERG_ROACH } from "./zerg/roach";
-import { ZERG_RAVAGER } from "./zerg/ravager";
-import { ZERG_HYDRALISK } from "./zerg/hydralisk";
-import { ZERG_LURKER } from "./zerg/lurker";
-import { ZERG_INFESTOR } from "./zerg/infestor";
-import { ZERG_SWARM_HOST } from "./zerg/swarm-host";
-import { ZERG_ULTRALISK } from "./zerg/ultralisk";
-import { ZERG_LOCUST } from "./zerg/locust";
-import { ZERG_BROODLING } from "./zerg/broodling";
-import { ZERG_CHANGELING } from "./zerg/changeling";
-import { ZERG_NYDUS_WORM } from "./zerg/nydus-worm";
-import { ZERG_OVERLORD } from "./zerg/overlord";
-import { ZERG_OVERSEER } from "./zerg/overseer";
-import { ZERG_MUTALISK } from "./zerg/mutalisk";
-import { ZERG_CORRUPTOR } from "./zerg/corruptor";
-import { ZERG_BROODLORD } from "./zerg/broodlord";
-import { ZERG_VIPER } from "./zerg/viper";
-
-
-// new SC2Unit(
-//     'e82d6ea5-7904-4a49-b52b-2825191c4f88', 
-//     'Infested Terran',
-//     ZERG_RACE,
-//     '',
-//     new SC2Cost(0, 0, 0, 0),
-//     null,
-//     null,
-//     new SC2Asset('assets/units/zerg/thumbnail/scv.png', 'assets/units/zerg/image/')
-// ),
+import { PROTOSS_PROBE } from './protoss/probe';
+import { PROTOSS_ZEALOT } from './protoss/zealot';
+import { PROTOSS_STALKER } from './protoss/stalker';
+import { PROTOSS_SENTRY } from './protoss/sentry';
+import { PROTOSS_ADEPT } from './protoss/adept';
+import { PROTOSS_HIGH_TEMPLAR } from './protoss/high-templar';
+import { PROTOSS_DARK_TEMPLAR } from './protoss/dark-templar';
+import { PROTOSS_IMMORTAL } from './protoss/immortal';
+import { PROTOSS_COLOSSUS } from './protoss/colossus';
+import { PROTOSS_DISRUPTOR } from './protoss/disruptor';
+import { PROTOSS_ARCHON } from './protoss/archon';
+import { PROTOSS_OBSERVER } from './protoss/observer';
+import { PROTOSS_WARP_PRISM } from './protoss/warp-prism';
+import { PROTOSS_PHOENIX } from './protoss/phoenix';
+import { PROTOSS_VOID_RAY } from './protoss/void-ray';
+import { PROTOSS_ORACLE } from './protoss/oracle';
+import { PROTOSS_CARRIER } from './protoss/carrier';
+import { PROTOSS_TEMPEST } from './protoss/tempest';
+import { PROTOSS_MOTHERSHIP_CORE } from './protoss/mothership-core';
+import { PROTOSS_MOTHERSHIP } from './protoss/mothership';
+import { ZERG_LARVA } from './zerg/larva';
+import { ZERG_DRONE } from './zerg/drone';
+import { ZERG_QUEEN } from './zerg/queen';
+import { ZERG_ZERGLING } from './zerg/zergling';
+import { ZERG_BANELING } from './zerg/baneling';
+import { ZERG_ROACH } from './zerg/roach';
+import { ZERG_RAVAGER } from './zerg/ravager';
+import { ZERG_HYDRALISK } from './zerg/hydralisk';
+import { ZERG_LURKER } from './zerg/lurker';
+import { ZERG_INFESTOR } from './zerg/infestor';
+import { ZERG_SWARM_HOST } from './zerg/swarm-host';
+import { ZERG_ULTRALISK } from './zerg/ultralisk';
+import { ZERG_LOCUST } from './zerg/locust';
+import { ZERG_BROODLING } from './zerg/broodling';
+import { ZERG_CHANGELING } from './zerg/changeling';
+import { ZERG_NYDUS_WORM } from './zerg/nydus-worm';
+import { ZERG_OVERLORD } from './zerg/overlord';
+import { ZERG_OVERSEER } from './zerg/overseer';
+import { ZERG_MUTALISK } from './zerg/mutalisk';
+import { ZERG_CORRUPTOR } from './zerg/corruptor';
+import { ZERG_BROODLORD } from './zerg/broodlord';
+import { ZERG_VIPER } from './zerg/viper';
 
 export const TERRAN_SCV = new SC2Unit(
     '1342531e-45e0-4d18-b6bd-bad14609514d',
