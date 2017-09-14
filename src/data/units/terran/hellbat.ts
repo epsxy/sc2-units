@@ -1,3 +1,8 @@
+import { TERRAN_MARAUDER } from './marauder';
+import { ZERG_BANELING } from '../zerg/baneling';
+import { PROTOSS_STALKER } from '../protoss/stalker';
+import { ZERG_ZERGLING } from '../zerg/zergling';
+import { PROTOSS_ZEALOT } from '../protoss/zealot';
 import { SC2Unit } from '../../../model/sc2unit';
 import { TERRAN_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -38,7 +43,7 @@ export const TERRAN_HELLBAT = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(PROTOSS_ZEALOT.id), new SC2UnitLink(ZERG_ZERGLING.id)],
+    [new SC2UnitLink(PROTOSS_STALKER.id), new SC2UnitLink(ZERG_BANELING.id), new SC2UnitLink(TERRAN_MARAUDER.id)],
     new SC2Asset('assets/units/terran/thumbnail/hellbat.png', 'assets/units/terran/image/hellbat.jpg')
 );

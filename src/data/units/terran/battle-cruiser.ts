@@ -1,3 +1,9 @@
+import { ZERG_CORRUPTOR } from '../zerg/corruptor';
+import { PROTOSS_VOID_RAY } from '../protoss/void-ray';
+import { TERRAN_VIKING } from './viking';
+import { TERRAN_MARINE } from './marine';
+import { TERRAN_THOR } from './thor';
+import { ZERG_MUTALISK } from '../zerg/mutalisk';
 import { SC2Unit } from '../../../model/sc2unit';
 import { TERRAN_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -31,7 +37,7 @@ export const TERRAN_BATTLE_CRUISER = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(ZERG_MUTALISK.id), new SC2UnitLink(TERRAN_THOR.id), new SC2UnitLink(TERRAN_MARINE.id)],
+    [new SC2UnitLink(PROTOSS_VOID_RAY.id), new SC2UnitLink(ZERG_CORRUPTOR.id), new SC2UnitLink(TERRAN_VIKING.id)],
     new SC2Asset('assets/units/terran/thumbnail/battlecruiser.png', 'assets/units/terran/image/battlecruiser.jpg')
 );

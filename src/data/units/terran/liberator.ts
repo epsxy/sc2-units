@@ -1,3 +1,9 @@
+import { TERRAN_BATTLE_CRUISER } from './battle-cruiser';
+import { ZERG_CORRUPTOR } from '../zerg/corruptor';
+import { PROTOSS_CARRIER } from '../protoss/carrier';
+import { TERRAN_VIKING } from './viking';
+import { ZERG_MUTALISK } from '../zerg/mutalisk';
+import { PROTOSS_PHOENIX } from '../protoss/phoenix';
 import { SC2Unit } from '../../../model/sc2unit';
 import { TERRAN_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -32,7 +38,7 @@ export const TERRAN_LIBERATOR = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(PROTOSS_PHOENIX.id), new SC2UnitLink(ZERG_MUTALISK.id), new SC2UnitLink(TERRAN_VIKING.id)],
+    [new SC2UnitLink(PROTOSS_CARRIER.id), new SC2UnitLink(ZERG_CORRUPTOR.id), new SC2UnitLink(TERRAN_BATTLE_CRUISER.id)],
     new SC2Asset('assets/units/terran/thumbnail/liberator.png', 'assets/units/terran/image/liberator.png')
 );

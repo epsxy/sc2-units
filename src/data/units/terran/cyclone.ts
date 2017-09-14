@@ -1,3 +1,9 @@
+import { ZERG_ZERGLING } from '../zerg/zergling';
+import { TERRAN_MARINE } from './marine';
+import { PROTOSS_ZEALOT } from '../protoss/zealot';
+import { TERRAN_THOR } from './thor';
+import { ZERG_ULTRALISK } from '../zerg/ultralisk';
+import { PROTOSS_IMMORTAL } from '../protoss/immortal';
 import { SC2Unit } from '../../../model/sc2unit';
 import { TERRAN_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -37,7 +43,7 @@ export const TERRAN_CYCLONE = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(PROTOSS_IMMORTAL.id), new SC2UnitLink(ZERG_ULTRALISK.id), new SC2UnitLink(TERRAN_THOR.id)],
+    [new SC2UnitLink(PROTOSS_ZEALOT.id), new SC2UnitLink(ZERG_ZERGLING.id), new SC2UnitLink(TERRAN_MARINE.id)],
     new SC2Asset('assets/units/terran/thumbnail/cyclone.png', 'assets/units/terran/image/cyclone.png')
 );

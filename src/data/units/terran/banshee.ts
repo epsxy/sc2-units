@@ -1,3 +1,9 @@
+import { TERRAN_VIKING } from './viking';
+import { ZERG_HYDRALISK } from '../zerg/hydralisk';
+import { PROTOSS_PHOENIX } from '../protoss/phoenix';
+import { TERRAN_SIEGE_TANK } from './siege-tank';
+import { ZERG_ULTRALISK } from '../zerg/ultralisk';
+import { PROTOSS_COLOSSUS } from '../protoss/colossus';
 import { SC2Unit } from '../../../model/sc2unit';
 import { TERRAN_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -29,7 +35,7 @@ export const TERRAN_BANSHEE = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(PROTOSS_COLOSSUS.id), new SC2UnitLink(ZERG_ULTRALISK.id), new SC2UnitLink(TERRAN_SIEGE_TANK.id)],
+    [new SC2UnitLink(PROTOSS_PHOENIX.id), new SC2UnitLink(ZERG_HYDRALISK.id), new SC2UnitLink(TERRAN_VIKING.id)],
     new SC2Asset('assets/units/terran/thumbnail/banshee.png', 'assets/units/terran/image/banshee.jpg')
 );
