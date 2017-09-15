@@ -1,3 +1,4 @@
+import { ZERG_HYDRALISK_ID } from '../const';
 import { SC2Unit } from "../../../model/sc2unit";
 import { ZERG_RACE } from "../../races/races";
 import { SC2Cost } from "../../../model/sc2cost";
@@ -9,7 +10,7 @@ import { ATTR_BIOLOGICAL, ATTR_LIGHT, KEY_H, HATCHERY } from "../../../model/con
 
 
 export const ZERG_HYDRALISK = new SC2Unit(
-    'bfde4655-c848-43da-9305-4d11e13b9609',
+    ZERG_HYDRALISK_ID,
     'Hydralisk',
     ZERG_RACE,
     'The Hydralisk is a ranged Lair-tech unit that can be after building a Hydralisk Den. The ' +

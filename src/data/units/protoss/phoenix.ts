@@ -1,3 +1,4 @@
+import { PROTOSS_PHOENIX_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -17,7 +18,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_PHOENIX = new SC2Unit(
-    '448cd045-653c-43e9-936a-3878141aa4a8',
+    PROTOSS_PHOENIX_ID,
     'Phoenix',
     PROTOSS_RACE,
     'The Phoenix is a speedy Protoss air-to-air fighter, which warps in at ' +

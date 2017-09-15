@@ -1,3 +1,4 @@
+import { ZERG_ULTRALISK_ID } from '../const';
 import { SC2Unit } from "../../../model/sc2unit";
 import { ZERG_RACE } from "../../races/races";
 import { SC2Cost } from "../../../model/sc2cost";
@@ -9,7 +10,7 @@ import { ATTR_ARMORED, ATTR_MASSIVE, ATTR_BIOLOGICAL, HATCHERY, KEY_U } from "..
 
 
 export const ZERG_ULTRALISK = new SC2Unit(
-    '6a9c23c9-a203-4a0c-b4f6-bbc1490d14b8',
+    ZERG_ULTRALISK_ID,
     'Ultralisk',
     ZERG_RACE,
     'The Ultralisk is the Zerg\'s toughest late-game unit in StarCraft II. It ' +

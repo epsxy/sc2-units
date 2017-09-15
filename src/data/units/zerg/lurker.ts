@@ -1,3 +1,4 @@
+import { ZERG_LURKER_ID } from '../const';
 import { SC2Unit } from "../../../model/sc2unit";
 import { ZERG_RACE } from "../../races/races";
 import { SC2Cost } from "../../../model/sc2cost";
@@ -10,7 +11,7 @@ import { ATTR_ARMORED, ATTR_BIOLOGICAL, HATCHERY, KEY_E } from "../../../model/c
 
 // Sight null ?
 export const ZERG_LURKER = new SC2Unit(
-    '66bcdc15-8b11-425b-bde1-da294bb26647',
+    ZERG_LURKER_ID,
     'Lurker',
     ZERG_RACE,
     'The Lurker is a Zerg unit that may attack only when burrowed, and are able to burrow ' +

@@ -1,6 +1,7 @@
-import { SC2Unit } from '../../../model/sc2unit';
-import { TERRAN_RACE } from '../../races/races';
+import { ATTR_LIGHT, ATTR_MECHANICAL } from '../../../model/const';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Cargo,
     SC2CargoType,
@@ -10,13 +11,21 @@ import {
     SC2Target,
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
-import { ATTR_LIGHT, ATTR_MECHANICAL } from '../../../model/const';
 import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { TERRAN_RACE } from '../../races/races';
+import {
+    PROTOSS_IMMORTAL_ID,
+    PROTOSS_OBSERVER_ID,
+    TERRAN_MARAUDER_ID,
+    TERRAN_RAVEN_ID,
+    TERRAN_WIDOW_WIME_ID,
+    ZERG_OVERSEER_ID,
+    ZERG_ROACH_ID,
+} from '../const';
 
 
 export const TERRAN_WIDOW_MINE = new SC2Unit(
-    '2005de9b-f2b4-40d1-a8f2-5ee4dd9e7cd1',
+    TERRAN_WIDOW_WIME_ID,
     'Widow Mine',
     TERRAN_RACE,
     'A Light Mechanical mine produced from the Factory with a Reactor. Must Burrow into the ground before it ' +
@@ -39,7 +48,7 @@ export const TERRAN_WIDOW_MINE = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(PROTOSS_IMMORTAL_ID), new SC2UnitLink(ZERG_ROACH_ID), new SC2UnitLink(TERRAN_MARAUDER_ID)],
+    [new SC2UnitLink(PROTOSS_OBSERVER_ID), new SC2UnitLink(ZERG_OVERSEER_ID), new SC2UnitLink(TERRAN_RAVEN_ID)],
     new SC2Asset('assets/units/terran/thumbnail/widow-mine.png', 'assets/units/terran/image/widow-mine.jpg')
 );

@@ -1,3 +1,4 @@
+import { PROTOSS_TEMPEST_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -9,7 +10,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_TEMPEST = new SC2Unit(
-    'a0446b8b-65fc-4837-9e22-2e8da3b7cf2c',
+    PROTOSS_TEMPEST_ID,
     'Tempest',
     PROTOSS_RACE,
     'The Tempest is a powerful capital ship for the Protoss that can be built from the Stargate ' +

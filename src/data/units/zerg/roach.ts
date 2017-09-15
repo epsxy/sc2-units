@@ -1,3 +1,4 @@
+import { ZERG_ROACH_ID } from '../const';
 import { SC2Unit } from "../../../model/sc2unit";
 import { ZERG_RACE } from "../../races/races";
 import { SC2Cost } from "../../../model/sc2cost";
@@ -9,7 +10,7 @@ import { ATTR_ARMORED, ATTR_BIOLOGICAL, HATCHERY, KEY_R } from "../../../model/c
 
 
 export const ZERG_ROACH = new SC2Unit(
-    'd41fae3e-c6a7-4d84-81ed-0da67b9de9a5',
+    ZERG_ROACH_ID,
     'Roach',
     ZERG_RACE,
     'The Roach is an Armored-ground unit that can be produced after a Roach Warren has been built. ' +

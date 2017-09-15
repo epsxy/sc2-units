@@ -1,6 +1,7 @@
-import { SC2Unit } from '../../../model/sc2unit';
-import { TERRAN_RACE } from '../../races/races';
+import { ATTR_ARMORED, ATTR_MECHANICAL } from '../../../model/const';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Attack,
     SC2Cargo,
@@ -12,13 +13,21 @@ import {
     SC2Target,
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
-import { ATTR_ARMORED, ATTR_MECHANICAL } from '../../../model/const';
 import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { TERRAN_RACE } from '../../races/races';
+import {
+    PROTOSS_STALKER_ID,
+    PROTOSS_VOID_RAY_ID,
+    TERRAN_BATTLE_CRUISER_ID,
+    TERRAN_MARINE_ID,
+    TERRAN_VIKING_ID,
+    ZERG_CORRUPTOR_ID,
+    ZERG_MUTALISK_ID,
+} from '../const';
 
 
 export const TERRAN_VIKING = new SC2Unit(
-    'e0912697-ba64-4fe6-8122-5014431638e2',
+    TERRAN_VIKING_ID,
     'Viking',
     TERRAN_RACE,
     'The Viking is an anti-air fighter with the ability to transform into an assault walker ' +
@@ -44,7 +53,7 @@ export const TERRAN_VIKING = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(PROTOSS_VOID_RAY_ID), new SC2UnitLink(ZERG_CORRUPTOR_ID), new SC2UnitLink(TERRAN_BATTLE_CRUISER_ID)],
+    [new SC2UnitLink(PROTOSS_STALKER_ID), new SC2UnitLink(ZERG_MUTALISK_ID), new SC2UnitLink(TERRAN_MARINE_ID)],
     new SC2Asset('assets/units/terran/thumbnail/viking.png', 'assets/units/terran/image/viking.jpg')
 );

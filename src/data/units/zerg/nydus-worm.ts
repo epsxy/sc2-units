@@ -1,3 +1,4 @@
+import { ZERG_NYDUS_WORM_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { ZERG_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -8,7 +9,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const ZERG_NYDUS_WORM = new SC2Unit(
-    '9acd24e5-f25f-4f1b-b174-d7a897c6c755',
+    ZERG_NYDUS_WORM_ID,
     'Nydus Worm',
     ZERG_RACE,
     'The Nydus Worm is a Zerg structure used to move units quickly around the map. In ' +

@@ -1,3 +1,4 @@
+import { ZERG_LOCUST_ID } from '../const';
 import { SC2Unit } from "../../../model/sc2unit";
 import { ZERG_RACE } from "../../races/races";
 import { SC2Cost } from "../../../model/sc2cost";
@@ -9,7 +10,7 @@ import { ATTR_LIGHT, ATTR_BIOLOGICAL, HATCHERY, KEY_C } from "../../../model/con
 
 
 export const ZERG_LOCUST = new SC2Unit(
-    '3e80bfee-1cdf-45b3-aa38-4bb1ef50ab9b',
+    ZERG_LOCUST_ID,
     'Locust',
     ZERG_RACE,
     'The Locust is a timed life unit that is spawned in pairs by a Swarm Host. After ' +

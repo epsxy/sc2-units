@@ -1,12 +1,7 @@
-import { ZERG_ZERGLING } from '../zerg/zergling';
-import { TERRAN_MARINE } from './marine';
-import { PROTOSS_ZEALOT } from '../protoss/zealot';
-import { TERRAN_THOR } from './thor';
-import { ZERG_ULTRALISK } from '../zerg/ultralisk';
-import { PROTOSS_IMMORTAL } from '../protoss/immortal';
-import { SC2Unit } from '../../../model/sc2unit';
-import { TERRAN_RACE } from '../../races/races';
+import { ATTR_ARMORED, ATTR_MECHANICAL } from '../../../model/const';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Attack,
     SC2Cargo,
@@ -17,13 +12,21 @@ import {
     SC2Target,
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
-import { ATTR_ARMORED, ATTR_MECHANICAL } from '../../../model/const';
 import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { TERRAN_RACE } from '../../races/races';
+import {
+    PROTOSS_IMMORTAL_ID,
+    PROTOSS_ZEALOT_ID,
+    TERRAN_CYCLONE_ID,
+    TERRAN_MARINE_ID,
+    TERRAN_THOR_ID,
+    ZERG_ULTRALISK_ID,
+    ZERG_ZERGLING_ID,
+} from '../const';
 
 
 export const TERRAN_CYCLONE = new SC2Unit(
-    '0c8e5b4d-7244-4dee-a3ea-8ad5bcace622',
+    TERRAN_CYCLONE_ID,
     'Cyclone',
     TERRAN_RACE,
     'The Cyclone is a fast hit-and-away vehicle produced from the Factory. Has a high spell damage ability ' +
@@ -43,7 +46,7 @@ export const TERRAN_CYCLONE = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(PROTOSS_IMMORTAL.id), new SC2UnitLink(ZERG_ULTRALISK.id), new SC2UnitLink(TERRAN_THOR.id)],
-    [new SC2UnitLink(PROTOSS_ZEALOT.id), new SC2UnitLink(ZERG_ZERGLING.id), new SC2UnitLink(TERRAN_MARINE.id)],
+    [new SC2UnitLink(PROTOSS_IMMORTAL_ID), new SC2UnitLink(ZERG_ULTRALISK_ID), new SC2UnitLink(TERRAN_THOR_ID)],
+    [new SC2UnitLink(PROTOSS_ZEALOT_ID), new SC2UnitLink(ZERG_ZERGLING_ID), new SC2UnitLink(TERRAN_MARINE_ID)],
     new SC2Asset('assets/units/terran/thumbnail/cyclone.png', 'assets/units/terran/image/cyclone.png')
 );

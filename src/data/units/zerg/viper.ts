@@ -1,3 +1,4 @@
+import { ZERG_VIPER_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { ZERG_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -8,7 +9,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const ZERG_VIPER = new SC2Unit(
-    '5e5dfa1a-5137-4183-912d-fbe8c7ef137f',
+    ZERG_VIPER_ID,
     'Viper',
     ZERG_RACE,
     'The Viper is a Zerg flying support caster that requires a Hive. The Viper does not attack. ' +

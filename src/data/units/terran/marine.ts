@@ -1,6 +1,6 @@
-import { SC2Unit } from '../../../model/sc2unit';
-import { TERRAN_RACE } from '../../races/races';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Attack,
     SC2Cargo,
@@ -12,11 +12,20 @@ import {
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
 import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { TERRAN_RACE } from '../../races/races';
+import {
+    PROTOSS_COLOSSUS_ID,
+    PROTOSS_IMMORTAL_ID,
+    TERRAN_MARAUDER_ID,
+    TERRAN_MARINE_ID,
+    TERRAN_SIEGE_TANK_ID,
+    ZERG_BANELING_ID,
+    ZERG_HYDRALISK_ID,
+} from '../const';
 
 
 export const TERRAN_MARINE = new SC2Unit(
-    'c1871f19-cd83-4f3c-a8fd-ca663d384cee',
+    TERRAN_MARINE_ID,
     'Marine',
     TERRAN_RACE,
     'Marines are the all-purpose infantry unit produced from a Barracks with a Reactor. Having the ' +
@@ -37,7 +46,7 @@ export const TERRAN_MARINE = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(PROTOSS_IMMORTAL_ID), new SC2UnitLink(ZERG_HYDRALISK_ID), new SC2UnitLink(TERRAN_MARAUDER_ID)],
+    [new SC2UnitLink(PROTOSS_COLOSSUS_ID), new SC2UnitLink(ZERG_BANELING_ID), new SC2UnitLink(TERRAN_SIEGE_TANK_ID)],
     new SC2Asset('assets/units/terran/thumbnail/marine.png', 'assets/units/terran/image/marine.jpg')
 );

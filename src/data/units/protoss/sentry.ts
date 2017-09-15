@@ -1,3 +1,4 @@
+import { PROTOSS_SENTRY_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -19,7 +20,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_SENTRY = new SC2Unit(
-    '28441b26-4967-4349-9f14-8dbaabcf0086',
+    PROTOSS_SENTRY_ID,
     'Sentry',
     PROTOSS_RACE,
     'The Sentry is an unusual Protoss spell-casting unit produced from the ' +

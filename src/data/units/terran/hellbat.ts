@@ -1,11 +1,7 @@
-import { TERRAN_MARAUDER } from './marauder';
-import { ZERG_BANELING } from '../zerg/baneling';
-import { PROTOSS_STALKER } from '../protoss/stalker';
-import { ZERG_ZERGLING } from '../zerg/zergling';
-import { PROTOSS_ZEALOT } from '../protoss/zealot';
-import { SC2Unit } from '../../../model/sc2unit';
-import { TERRAN_RACE } from '../../races/races';
+import { ATTR_BIOLOGICAL, ATTR_LIGHT, ATTR_MECHANICAL } from '../../../model/const';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Attack,
     SC2Cargo,
@@ -16,13 +12,20 @@ import {
     SC2Target,
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
-import { ATTR_BIOLOGICAL, ATTR_LIGHT, ATTR_MECHANICAL } from '../../../model/const';
 import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { TERRAN_RACE } from '../../races/races';
+import {
+    PROTOSS_STALKER_ID,
+    PROTOSS_ZEALOT_ID,
+    TERRAN_HELLBAT_ID,
+    TERRAN_MARAUDER_ID,
+    ZERG_BANELING_ID,
+    ZERG_ZERGLING_ID,
+} from '../const';
 
 
 export const TERRAN_HELLBAT = new SC2Unit(
-    'a7b67a8f-02e8-4df2-9e18-8c14b1320e79',
+    TERRAN_HELLBAT_ID,
     'Hellbat',
     TERRAN_RACE,
     'A tough melee-range unit with conical splash damage, after finishing an Armory Hellbats can be produced ' +
@@ -43,7 +46,7 @@ export const TERRAN_HELLBAT = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(PROTOSS_ZEALOT.id), new SC2UnitLink(ZERG_ZERGLING.id)],
-    [new SC2UnitLink(PROTOSS_STALKER.id), new SC2UnitLink(ZERG_BANELING.id), new SC2UnitLink(TERRAN_MARAUDER.id)],
+    [new SC2UnitLink(PROTOSS_ZEALOT_ID), new SC2UnitLink(ZERG_ZERGLING_ID)],
+    [new SC2UnitLink(PROTOSS_STALKER_ID), new SC2UnitLink(ZERG_BANELING_ID), new SC2UnitLink(TERRAN_MARAUDER_ID)],
     new SC2Asset('assets/units/terran/thumbnail/hellbat.png', 'assets/units/terran/image/hellbat.jpg')
 );

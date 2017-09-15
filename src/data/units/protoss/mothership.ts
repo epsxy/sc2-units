@@ -1,3 +1,4 @@
+import { PROTOSS_MOTHERSHIP_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -16,7 +17,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_MOTHERSHIP = new SC2Unit(
-    'eabd93e7-c5e3-4a07-9222-9c2c4d519246',
+    PROTOSS_MOTHERSHIP_ID,
     'Mothership',
     PROTOSS_RACE,
     'The Mothership is the most powerful unit in the Protoss arsenal: Once a Fleet Beacon ' +

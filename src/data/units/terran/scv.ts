@@ -1,6 +1,6 @@
-import { SC2Unit } from '../../../model/sc2unit';
-import { TERRAN_RACE } from '../../races/races';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Attack,
     SC2Cargo,
@@ -11,12 +11,12 @@ import {
     SC2Target,
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
-import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { TERRAN_RACE } from '../../races/races';
+import { TERRAN_SCV_ID } from '../const';
 
 
 export const TERRAN_SCV = new SC2Unit(
-    '1342531e-45e0-4d18-b6bd-bad14609514d',
+    TERRAN_SCV_ID,
     'SCV',
     TERRAN_RACE,
     'The SCV (Space Construction Vehicle) is the Terran worker unit. It harvests resources, ' +
@@ -38,7 +38,7 @@ export const TERRAN_SCV = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [],
+    [],
     new SC2Asset('assets/units/terran/thumbnail/scv.png', 'assets/units/terran/image/scv.jpg')
 );

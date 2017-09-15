@@ -1,20 +1,23 @@
-import { ZERG_CORRUPTOR } from '../zerg/corruptor';
-import { PROTOSS_VOID_RAY } from '../protoss/void-ray';
-import { TERRAN_VIKING } from './viking';
-import { TERRAN_MARINE } from './marine';
-import { TERRAN_THOR } from './thor';
-import { ZERG_MUTALISK } from '../zerg/mutalisk';
-import { SC2Unit } from '../../../model/sc2unit';
-import { TERRAN_RACE } from '../../races/races';
-import { SC2Cost } from '../../../model/sc2cost';
-import { SC2Attack, SC2Defence, SC2Sight, SC2Speed, SC2Target, SC2UnitInformation } from '../../../model/sc2unitinformation';
 import { ATTR_ARMORED, ATTR_MASSIVE, ATTR_MECHANICAL } from '../../../model/const';
-import { SC2UnitLink } from '../../../model/sc2unitlink';
 import { SC2Asset } from '../../../model/sc2asset';
+import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
+import { SC2Attack, SC2Defence, SC2Sight, SC2Speed, SC2Target, SC2UnitInformation } from '../../../model/sc2unitinformation';
+import { SC2UnitLink } from '../../../model/sc2unitlink';
+import { TERRAN_RACE } from '../../races/races';
+import {
+    PROTOSS_VOID_RAY_ID,
+    TERRAN_BATTLE_CRUISER_ID,
+    TERRAN_MARINE_ID,
+    TERRAN_THOR_ID,
+    TERRAN_VIKING_ID,
+    ZERG_CORRUPTOR_ID,
+    ZERG_MUTALISK_ID,
+} from '../const';
 
 
 export const TERRAN_BATTLE_CRUISER = new SC2Unit(
-    'ce481091-38c3-4633-8e9a-b2205f34d104',
+    TERRAN_BATTLE_CRUISER_ID,
     'Battlecruiser',
     TERRAN_RACE,
     'he Battlecruiser is the Terran\'s capital ship. In LotV the Battlecruiser has been granted the ' +
@@ -37,7 +40,7 @@ export const TERRAN_BATTLE_CRUISER = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(ZERG_MUTALISK.id), new SC2UnitLink(TERRAN_THOR.id), new SC2UnitLink(TERRAN_MARINE.id)],
-    [new SC2UnitLink(PROTOSS_VOID_RAY.id), new SC2UnitLink(ZERG_CORRUPTOR.id), new SC2UnitLink(TERRAN_VIKING.id)],
+    [new SC2UnitLink(ZERG_MUTALISK_ID), new SC2UnitLink(TERRAN_THOR_ID), new SC2UnitLink(TERRAN_MARINE_ID)],
+    [new SC2UnitLink(PROTOSS_VOID_RAY_ID), new SC2UnitLink(ZERG_CORRUPTOR_ID), new SC2UnitLink(TERRAN_VIKING_ID)],
     new SC2Asset('assets/units/terran/thumbnail/battlecruiser.png', 'assets/units/terran/image/battlecruiser.jpg')
 );

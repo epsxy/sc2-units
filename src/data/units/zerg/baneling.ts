@@ -1,3 +1,4 @@
+import { ZERG_BANELING_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { ZERG_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -17,7 +18,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const ZERG_BANELING = new SC2Unit(
-    'c40959e8-31ae-49bf-8a3a-eb6e127c58f6',
+    ZERG_BANELING_ID,
     'Baneling',
     ZERG_RACE,
     'The Baneling is a suicide bomber unit morphed from Zerglings after a Baneling Nest has been ' +

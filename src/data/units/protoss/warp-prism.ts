@@ -1,3 +1,4 @@
+import { PROTOSS_WARP_PRISM_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -16,7 +17,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_WARP_PRISM = new SC2Unit(
-    'c7963890-f3b2-46e6-b86d-8ae1668d2ade',
+    PROTOSS_WARP_PRISM_ID,
     'Warp Prism',
     PROTOSS_RACE,
     'The Warp Prism is a Protoss transport unit, produced at the Robotics Facility. In Legacy of the ' +

@@ -1,3 +1,4 @@
+import { ZERG_ZERGLING_ID } from '../const';
 import { SC2Unit } from "../../../model/sc2unit";
 import { ZERG_RACE } from "../../races/races";
 import { SC2Cost } from "../../../model/sc2cost";
@@ -9,7 +10,7 @@ import { ATTR_LIGHT, ATTR_BIOLOGICAL, HATCHERY, KEY_Z } from "../../../model/con
 
 
 export const ZERG_ZERGLING = new SC2Unit(
-    'c1a2f2ca-a586-4c4f-b40e-3485c0de8c20',
+    ZERG_ZERGLING_ID,
     'Zergling',
     ZERG_RACE,
     'The Zergling is a small and fast melee attacker and the backbone of the Zerg ' +

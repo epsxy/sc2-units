@@ -158,6 +158,7 @@ export class UnitPage {
     if(unitsMatchingId.length > 1) {
       // > 1 unit matching provided id
       console.log('Multiple units matching provided id!');
+      console.log(unitsMatchingId);
       return null
     } 
     else if (unitsMatchingId.length == -1) {

@@ -1,12 +1,7 @@
-import { TERRAN_MARAUDER } from './marauder';
-import { ZERG_ZERGLING } from '../zerg/zergling';
-import { PROTOSS_STALKER } from '../protoss/stalker';
-import { TERRAN_RAVEN } from './raven';
-import { ZERG_INFESTOR } from '../zerg/infestor';
-import { PROTOSS_HIGH_TEMPLAR } from '../protoss/high-templar';
-import { SC2Unit } from '../../../model/sc2unit';
-import { TERRAN_RACE } from '../../races/races';
+import { ATTR_BIOLOGICAL, ATTR_PSIONIC } from '../../../model/const';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Attack,
     SC2Cargo,
@@ -18,13 +13,21 @@ import {
     SC2Target,
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
-import { ATTR_BIOLOGICAL, ATTR_PSIONIC } from '../../../model/const';
 import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { TERRAN_RACE } from '../../races/races';
+import {
+    PROTOSS_HIGH_TEMPLAR_ID,
+    PROTOSS_STALKER_ID,
+    TERRAN_GHOST_ID,
+    TERRAN_MARAUDER_ID,
+    TERRAN_RAVEN_ID,
+    ZERG_INFESTOR_ID,
+    ZERG_ZERGLING_ID,
+} from '../const';
 
 
 export const TERRAN_GHOST = new SC2Unit(
-    '7947077d-2f67-453f-acea-fe413b5873cd',
+    TERRAN_GHOST_ID,
     'Ghost',
     TERRAN_RACE,
     'The Ghost is a specialized infantry unit built from a Barracks with an attached Tech Lab once a ' +
@@ -43,7 +46,7 @@ export const TERRAN_GHOST = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(PROTOSS_HIGH_TEMPLAR.id), new SC2UnitLink(ZERG_INFESTOR.id), new SC2UnitLink(TERRAN_RAVEN.id)],
-    [new SC2UnitLink(PROTOSS_STALKER.id), new SC2UnitLink(ZERG_ZERGLING.id), new SC2UnitLink(TERRAN_MARAUDER.id)],
+    [new SC2UnitLink(PROTOSS_HIGH_TEMPLAR_ID), new SC2UnitLink(ZERG_INFESTOR_ID), new SC2UnitLink(TERRAN_RAVEN_ID)],
+    [new SC2UnitLink(PROTOSS_STALKER_ID), new SC2UnitLink(ZERG_ZERGLING_ID), new SC2UnitLink(TERRAN_MARAUDER_ID)],
     new SC2Asset('assets/units/terran/thumbnail/ghost.png', 'assets/units/terran/image/ghost.jpg')
 );

@@ -1,3 +1,4 @@
+import { ZERG_MUTALISK_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { ZERG_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -8,7 +9,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const ZERG_MUTALISK = new SC2Unit(
-    '31719cf6-32b8-44a3-8669-6eacec963093',
+    ZERG_MUTALISK_ID,
     'Mutalisk',
     ZERG_RACE,
     'The Mutalisk is an extremely fast air attack unit capable of attacking both air and ' +

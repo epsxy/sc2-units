@@ -1,6 +1,7 @@
-import { SC2Unit } from '../../../model/sc2unit';
-import { TERRAN_RACE } from '../../races/races';
+import { ATTR_ARMORED, ATTR_MECHANICAL } from '../../../model/const';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Cargo,
     SC2CargoType,
@@ -10,13 +11,12 @@ import {
     SC2Speed,
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
-import { ATTR_ARMORED, ATTR_MECHANICAL } from '../../../model/const';
-import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { TERRAN_RACE } from '../../races/races';
+import { TERRAN_MEDIVAC_ID } from '../const';
 
 
 export const TERRAN_MEDIVAC = new SC2Unit(
-    '9389a6f9-c9f8-4219-a2bc-9ff5efc6be6c',
+    TERRAN_MEDIVAC_ID,
     'Medivac',
     TERRAN_RACE,
     'A dual purpose Dropship and Healer (12.6 Health per second) and can be produced right away ' +
@@ -36,7 +36,7 @@ export const TERRAN_MEDIVAC = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [],
+    [],
     new SC2Asset('assets/units/terran/thumbnail/medivac.png', 'assets/units/terran/image/medivac.jpg')
 );

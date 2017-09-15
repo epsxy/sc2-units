@@ -1,3 +1,4 @@
+import { ZERG_SWARM_HOST_ID } from '../const';
 import { SC2Unit } from "../../../model/sc2unit";
 import { ZERG_RACE } from "../../races/races";
 import { SC2Cost } from "../../../model/sc2cost";
@@ -9,7 +10,7 @@ import { ATTR_ARMORED, ATTR_BIOLOGICAL, KEY_A, HATCHERY } from "../../../model/c
 
 
 export const ZERG_SWARM_HOST = new SC2Unit(
-    'e1f0f8ec-3976-4efb-bc52-fbc5cf2600a2',
+    ZERG_SWARM_HOST_ID,
     'Swarm Host',
     ZERG_RACE,
     'The Swarm Host is a Zerg siege unit that requires an Infestation Pit. It attacks ' +

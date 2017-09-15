@@ -1,3 +1,4 @@
+import { ZERG_CORRUPTOR_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { ZERG_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -8,7 +9,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const ZERG_CORRUPTOR = new SC2Unit(
-    'db05e2df-47f1-404f-a99c-a962f3bc81e5',
+    ZERG_CORRUPTOR_ID,
     'Corruptor',
     ZERG_RACE,
     'The Corruptor is a flying Zerg unit that has strong anti-air capabilities but slow speed. ' +

@@ -1,14 +1,23 @@
-import { SC2Unit } from '../../../model/sc2unit';
-import { TERRAN_RACE } from '../../races/races';
-import { SC2Cost } from '../../../model/sc2cost';
-import { SC2Defence, SC2Energy, SC2Sight, SC2Speed, SC2Target, SC2UnitInformation } from '../../../model/sc2unitinformation';
 import { ATTR_DETECTOR, ATTR_LIGHT, ATTR_MECHANICAL } from '../../../model/const';
-import { SC2UnitLink } from '../../../model/sc2unitlink';
 import { SC2Asset } from '../../../model/sc2asset';
+import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
+import { SC2Defence, SC2Energy, SC2Sight, SC2Speed, SC2Target, SC2UnitInformation } from '../../../model/sc2unitinformation';
+import { SC2UnitLink } from '../../../model/sc2unitlink';
+import { TERRAN_RACE } from '../../races/races';
+import {
+    PROTOSS_DARK_TEMPLAR_ID,
+    PROTOSS_PHOENIX_ID,
+    TERRAN_BANSHEE_ID,
+    TERRAN_RAVEN_ID,
+    ZERG_CORRUPTOR_ID,
+    ZERG_ROACH_ID,
+} from '../const';
+import { TERRAN_GHOST } from './ghost';
 
 
 export const TERRAN_RAVEN = new SC2Unit(
-    '15b477ac-a5bb-4dc3-b62d-0eefe69d9b09',
+    TERRAN_RAVEN_ID,
     'Raven',
     TERRAN_RACE,
     'The Raven is a flying support craft with detection. It provides both defensive and offensive capabilities ' +
@@ -31,7 +40,7 @@ export const TERRAN_RAVEN = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(PROTOSS_DARK_TEMPLAR_ID), new SC2UnitLink(ZERG_ROACH_ID), new SC2UnitLink(TERRAN_BANSHEE_ID)],
+    [new SC2UnitLink(PROTOSS_PHOENIX_ID), new SC2UnitLink(ZERG_CORRUPTOR_ID), new SC2UnitLink(TERRAN_GHOST.id)],
     new SC2Asset('assets/units/terran/thumbnail/raven.png', 'assets/units/terran/image/raven.jpg')
 );

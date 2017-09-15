@@ -1,3 +1,4 @@
+import { ZERG_LARVA_ID } from '../const';
 import { SC2Unit } from "../../../model/sc2unit";
 import { ZERG_RACE } from "../../races/races";
 import { SC2Cost } from "../../../model/sc2cost";
@@ -10,7 +11,7 @@ import { ATTR_LIGHT, ATTR_BIOLOGICAL, HATCHERY, KEY_S } from "../../../model/con
 
 
 export const ZERG_LARVA = new SC2Unit(
-    '71239ff5-a24e-4d17-b103-65660b190642',
+    ZERG_LARVA_ID,
     'Larva',
     ZERG_RACE,
     'The Larva is the base unit for Zerg. It can morph into a lot of units.' +

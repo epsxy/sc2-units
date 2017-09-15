@@ -1,3 +1,4 @@
+import { ZERG_BROODLORD_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { ZERG_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -8,7 +9,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const ZERG_BROODLORD = new SC2Unit(
-    '0c28d5dc-8e40-404c-9845-0bd9c5aebe49',
+    ZERG_BROODLORD_ID,
     'Brood Lord',
     ZERG_RACE,
     'The Brood Lord is a flying heavy-assault Zerg air-to-ground unit that spawns Broodlings ' +

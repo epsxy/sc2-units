@@ -1,3 +1,4 @@
+import { PROTOSS_IMMORTAL_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -18,7 +19,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_IMMORTAL = new SC2Unit(
-    '3a9fac08-2181-46d8-bedd-cd593e1f11cd',
+    PROTOSS_IMMORTAL_ID,
     'Immortal',
     PROTOSS_RACE,
     'The Immortal is a powerful, ranged, mechanized assault strider for the Protoss' +

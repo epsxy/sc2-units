@@ -1,3 +1,4 @@
+import { PROTOSS_DARK_TEMPLAR_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -18,7 +19,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_DARK_TEMPLAR = new SC2Unit(
-    'b12440c6-dfd8-4ee8-b6ec-4fa377153d4b',
+    PROTOSS_DARK_TEMPLAR_ID,
     'Dark Templar',
     PROTOSS_RACE,
     'The Dark Templar (often abbreviated to DT) is a permanently cloaked ' +

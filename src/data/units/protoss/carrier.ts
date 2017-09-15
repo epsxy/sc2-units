@@ -1,3 +1,4 @@
+import { PROTOSS_CARRIER_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -10,7 +11,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 // // TODO: Better handle carrier interceptors and whatever
 export const PROTOSS_CARRIER = new SC2Unit(
-    '91844ecd-4e4d-4a09-ae51-e957cb91a539',
+    PROTOSS_CARRIER_ID,
     'Carrier',
     PROTOSS_RACE,
     'Carriers are the capital ships in the Protoss air force, built at the Stargate with the ' +

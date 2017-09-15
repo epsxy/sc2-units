@@ -1,3 +1,4 @@
+import { PROTOSS_ZEALOT_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -18,7 +19,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_ZEALOT = new SC2Unit(
-    '99eb6ce7-b9d7-401a-ae87-69d4a7317b8a',
+    PROTOSS_ZEALOT_ID,
     'Zealot',
     PROTOSS_RACE,
     'The first and strongest unit of direct army attacks. ' +

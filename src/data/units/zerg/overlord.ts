@@ -1,3 +1,4 @@
+import { ZERG_OVERLORD_ID } from '../const';
 import { SC2Unit } from "../../../model/sc2unit";
 import { ZERG_RACE } from "../../races/races";
 import { SC2Cost } from "../../../model/sc2cost";
@@ -9,7 +10,7 @@ import { ATTR_ARMORED, ATTR_BIOLOGICAL, HATCHERY, KEY_V } from "../../../model/c
 
 
 export const ZERG_OVERLORD = new SC2Unit(
-    'a0d0978d-bacd-45b4-b325-4db81cdd1bc0',
+    ZERG_OVERLORD_ID,
     'Overlord',
     ZERG_RACE,
     'The Overlord is the Zerg\'s supply unit and is the equivalent of the Terran\'s Supply Depot ' +

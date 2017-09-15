@@ -1,3 +1,4 @@
+import { PROTOSS_ORACLE_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -17,7 +18,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_ORACLE = new SC2Unit(
-    '17c76d99-a451-4987-9346-55971a5a8ab3',
+    PROTOSS_ORACLE_ID,
     'Oracle',
     PROTOSS_RACE,
     'The Oracle is a flying harassment and support caster for the Protoss that is produced ' +

@@ -1,3 +1,4 @@
+import { PROTOSS_PROBE_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -18,7 +19,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_PROBE = new SC2Unit(
-    '40afdbd9-9b18-455d-9b54-d55c568685ec',
+    PROTOSS_PROBE_ID,
     'Probe',
     PROTOSS_RACE,
     'The Probe is the Protoss worker unit, warped in at the Nexus. ' +

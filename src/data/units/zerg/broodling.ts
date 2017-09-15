@@ -1,3 +1,4 @@
+import { ZERG_BROODLING_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { ZERG_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -8,7 +9,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const ZERG_BROODLING = new SC2Unit(
-    '42995dff-9e7c-4f43-a1c8-fdb7305dd80e',
+    ZERG_BROODLING_ID,
     'Broodling',
     ZERG_RACE,
     'The Broodling is a small Zerg unit that is spawned when either a Zerg tech building, ' +

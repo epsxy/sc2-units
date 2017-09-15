@@ -1,3 +1,4 @@
+import { PROTOSS_ARCHON_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -18,7 +19,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_ARCHON = new SC2Unit(
-    '2a1a54cc-0d57-4a7c-a6eb-f411c7ae2d2e',
+    PROTOSS_ARCHON_ID,
     'Archon',
     PROTOSS_RACE,
     'The Archon is a powerful Protoss short-range unit. It excels against ' +

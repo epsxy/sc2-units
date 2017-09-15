@@ -1,3 +1,4 @@
+import { ZERG_RAVAGER_ID } from '../const';
 import { SC2Unit } from "../../../model/sc2unit";
 import { ZERG_RACE } from "../../races/races";
 import { SC2Cost } from "../../../model/sc2cost";
@@ -9,7 +10,7 @@ import { ATTR_BIOLOGICAL, HATCHERY, KEY_V } from "../../../model/const";
 
 
 export const ZERG_RAVAGER = new SC2Unit(
-    'fbd2f216-7310-47b4-8b46-23e12983e455',
+    ZERG_RAVAGER_ID,
     'Ravager',
     ZERG_RACE,
     'The Ravager is a ground Zerg unit, morphed out of the Roach. Its effectiveness heavily relies ' +

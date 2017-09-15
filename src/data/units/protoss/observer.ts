@@ -1,3 +1,4 @@
+import { PROTOSS_OBSERVER_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -9,7 +10,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_OBSERVER = new SC2Unit(
-    '16a3798f-f30d-4514-abc8-2baae2373318',
+    PROTOSS_OBSERVER_ID,
     'Observer',
     PROTOSS_RACE,
     'The Observer is a flying cloaked spy drone and Detector for the Protoss, ' +

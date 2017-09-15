@@ -1,3 +1,4 @@
+import { PROTOSS_STALKER_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -18,7 +19,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_STALKER = new SC2Unit(
-    '51365784-a83d-4b13-b201-cc9b47832665',
+    PROTOSS_STALKER_ID,
     'Stalker',
     PROTOSS_RACE,
     'The Stalker is a fast-moving, ranged Protoss ground unit, ' +

@@ -1,3 +1,4 @@
+import { PROTOSS_VOID_RAY_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -9,7 +10,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_VOID_RAY = new SC2Unit(
-    '1516d125-d178-4053-9c56-f7c06030209c',
+    PROTOSS_VOID_RAY_ID,
     'Void Ray',
     PROTOSS_RACE,
     'The Void Ray is an airborne siege cannon for the Protoss ' +

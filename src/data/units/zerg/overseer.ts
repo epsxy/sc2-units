@@ -1,3 +1,4 @@
+import { ZERG_OVERSEER_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { ZERG_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -8,7 +9,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const ZERG_OVERSEER = new SC2Unit(
-    '774abc95-9b07-4908-97ee-c09fc8c892f4',
+    ZERG_OVERSEER_ID,
     'Overseer',
     ZERG_RACE,
     'The Overseer is a Zerg unit that is morphed from an Overlord. The Overseer has some ' +

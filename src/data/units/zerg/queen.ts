@@ -1,3 +1,4 @@
+import { ZERG_QUEEN_ID } from '../const';
 import { SC2Unit } from "../../../model/sc2unit";
 import { ZERG_RACE } from "../../races/races";
 import { SC2Cost } from "../../../model/sc2cost";
@@ -9,7 +10,7 @@ import { ATTR_BIOLOGICAL, ATTR_PSIONIC, HATCHERY, KEY_Q } from "../../../model/c
 
 
 export const ZERG_QUEEN = new SC2Unit(
-    '41a6dd8a-1913-47fb-9825-d13dff723ebb',
+    ZERG_QUEEN_ID,
     'Queen',
     ZERG_RACE,
     'The Queen is an essential unit for the Zerg base, capable of being spawned ' +

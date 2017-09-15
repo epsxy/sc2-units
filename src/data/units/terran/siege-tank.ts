@@ -1,6 +1,7 @@
-import { SC2Unit } from '../../../model/sc2unit';
-import { TERRAN_RACE } from '../../races/races';
+import { ATTR_ARMORED, ATTR_MECHANICAL } from '../../../model/const';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Attack,
     SC2Cargo,
@@ -11,13 +12,21 @@ import {
     SC2Target,
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
-import { ATTR_ARMORED, ATTR_MECHANICAL } from '../../../model/const';
 import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { TERRAN_RACE } from '../../races/races';
+import {
+    PROTOSS_IMMORTAL_ID,
+    PROTOSS_STALKER_ID,
+    TERRAN_BANSHEE_ID,
+    TERRAN_MARINE_ID,
+    TERRAN_SIEGE_TANK_ID,
+    ZERG_HYDRALISK_ID,
+    ZERG_MUTALISK_ID,
+} from '../const';
 
 
 export const TERRAN_SIEGE_TANK = new SC2Unit(
-    'f20e2af3-97fd-4a9b-987a-e126647d60e0',
+    TERRAN_SIEGE_TANK_ID,
     'Siege Tank',
     TERRAN_RACE,
     'The long-ranged Siege Tank is a Mechanical unit built from a Factory with an attached Tech Lab ' +
@@ -39,7 +48,7 @@ export const TERRAN_SIEGE_TANK = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(PROTOSS_STALKER_ID), new SC2UnitLink(ZERG_HYDRALISK_ID), new SC2UnitLink(TERRAN_MARINE_ID)],
+    [new SC2UnitLink(PROTOSS_IMMORTAL_ID), new SC2UnitLink(ZERG_MUTALISK_ID), new SC2UnitLink(TERRAN_BANSHEE_ID)],
     new SC2Asset('assets/units/terran/thumbnail/siege-tank.png', 'assets/units/terran/image/siege-tank.jpg')
 );

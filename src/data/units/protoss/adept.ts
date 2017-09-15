@@ -1,3 +1,4 @@
+import { PROTOSS_ADEPT_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -18,7 +19,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_ADEPT = new SC2Unit(
-    '10efe000-4a8b-42cd-a59f-419a1923ce5e',
+    PROTOSS_ADEPT_ID,
     'Adept',
     PROTOSS_RACE,
     'The Adept is a ranged Protoss ground unit with a ground-only ' +

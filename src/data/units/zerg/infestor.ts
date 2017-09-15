@@ -1,3 +1,4 @@
+import { ZERG_INFESTOR_ID } from '../const';
 import { SC2Unit } from "../../../model/sc2unit";
 import { ZERG_RACE } from "../../races/races";
 import { SC2Cost } from "../../../model/sc2cost";
@@ -9,7 +10,7 @@ import { ATTR_ARMORED, ATTR_PSIONIC, ATTR_BIOLOGICAL, HATCHERY, KEY_H } from "..
 
 
 export const ZERG_INFESTOR = new SC2Unit(
-    'afadd0eb-d5a4-4ae7-9dac-1accc3cd8799',
+    ZERG_INFESTOR_ID,
     'Infestor',
     ZERG_RACE,
     'The Infestor is an offensive spellcaster, meaning that its abilities are used to ' +

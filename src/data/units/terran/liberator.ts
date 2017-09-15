@@ -1,20 +1,23 @@
-import { TERRAN_BATTLE_CRUISER } from './battle-cruiser';
-import { ZERG_CORRUPTOR } from '../zerg/corruptor';
-import { PROTOSS_CARRIER } from '../protoss/carrier';
-import { TERRAN_VIKING } from './viking';
-import { ZERG_MUTALISK } from '../zerg/mutalisk';
-import { PROTOSS_PHOENIX } from '../protoss/phoenix';
-import { SC2Unit } from '../../../model/sc2unit';
-import { TERRAN_RACE } from '../../races/races';
-import { SC2Cost } from '../../../model/sc2cost';
-import { SC2Attack, SC2Defence, SC2Sight, SC2Speed, SC2Target, SC2UnitInformation } from '../../../model/sc2unitinformation';
 import { ATTR_ARMORED, ATTR_MECHANICAL } from '../../../model/const';
-import { SC2UnitLink } from '../../../model/sc2unitlink';
 import { SC2Asset } from '../../../model/sc2asset';
+import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
+import { SC2Attack, SC2Defence, SC2Sight, SC2Speed, SC2Target, SC2UnitInformation } from '../../../model/sc2unitinformation';
+import { SC2UnitLink } from '../../../model/sc2unitlink';
+import { TERRAN_RACE } from '../../races/races';
+import {
+    PROTOSS_CARRIER_ID,
+    PROTOSS_PHOENIX_ID,
+    TERRAN_BATTLE_CRUISER_ID,
+    TERRAN_LIBERATOR_ID,
+    TERRAN_VIKING_ID,
+    ZERG_CORRUPTOR_ID,
+    ZERG_MUTALISK_ID,
+} from '../const';
 
 
 export const TERRAN_LIBERATOR = new SC2Unit(
-    'c30399f0-57e9-4faa-8810-95724f949190',
+    TERRAN_LIBERATOR_ID,
     'Liberator',
     TERRAN_RACE,
     'The Liberator can switch between two Gunship roles called Defender Mode as a Stationary Siege ' +
@@ -38,7 +41,7 @@ export const TERRAN_LIBERATOR = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(PROTOSS_PHOENIX.id), new SC2UnitLink(ZERG_MUTALISK.id), new SC2UnitLink(TERRAN_VIKING.id)],
-    [new SC2UnitLink(PROTOSS_CARRIER.id), new SC2UnitLink(ZERG_CORRUPTOR.id), new SC2UnitLink(TERRAN_BATTLE_CRUISER.id)],
+    [new SC2UnitLink(PROTOSS_PHOENIX_ID), new SC2UnitLink(ZERG_MUTALISK_ID), new SC2UnitLink(TERRAN_VIKING_ID)],
+    [new SC2UnitLink(PROTOSS_CARRIER_ID), new SC2UnitLink(ZERG_CORRUPTOR_ID), new SC2UnitLink(TERRAN_BATTLE_CRUISER_ID)],
     new SC2Asset('assets/units/terran/thumbnail/liberator.png', 'assets/units/terran/image/liberator.png')
 );

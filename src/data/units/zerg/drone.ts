@@ -1,3 +1,4 @@
+import { ZERG_DRONE_ID } from '../const';
 import { SC2Unit } from "../../../model/sc2unit";
 import { ZERG_RACE } from "../../races/races";
 import { SC2Cost } from "../../../model/sc2cost";
@@ -9,7 +10,7 @@ import { ATTR_LIGHT, ATTR_BIOLOGICAL, HATCHERY, KEY_D } from "../../../model/con
 
 
 export const ZERG_DRONE = new SC2Unit(
-    '696afffa-a536-4360-a737-a0ca28e25471',
+    ZERG_DRONE_ID,
     'Drone',
     ZERG_RACE,
     'The Drone is the basic worker unit for Zerg. It can harvest Minerals and ' +

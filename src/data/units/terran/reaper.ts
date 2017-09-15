@@ -1,6 +1,7 @@
-import { SC2Unit } from '../../../model/sc2unit';
-import { TERRAN_RACE } from '../../races/races';
+import { ATTR_BIOLOGICAL, ATTR_LIGHT } from '../../../model/const';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Attack,
     SC2Cargo,
@@ -11,13 +12,21 @@ import {
     SC2Target,
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
-import { ATTR_BIOLOGICAL, ATTR_LIGHT } from '../../../model/const';
 import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { TERRAN_RACE } from '../../races/races';
+import {
+    PROTOSS_PROBE_ID,
+    PROTOSS_STALKER_ID,
+    TERRAN_MARAUDER_ID,
+    TERRAN_REAPER_ID,
+    TERRAN_SCV_ID,
+    ZERG_DRONE_ID,
+    ZERG_ROACH_ID,
+} from '../const';
 
 
 export const TERRAN_REAPER = new SC2Unit(
-    '30e8b536-20f4-45b8-b04c-9c0c08aca19e',
+    TERRAN_REAPER_ID,
     'Reaper',
     TERRAN_RACE,
     'The Reaper is a Lightly Armored scouting units with excellent freedom of movement, with an ' +
@@ -37,7 +46,7 @@ export const TERRAN_REAPER = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(PROTOSS_PROBE_ID), new SC2UnitLink(ZERG_DRONE_ID), new SC2UnitLink(TERRAN_SCV_ID)],
+    [new SC2UnitLink(PROTOSS_STALKER_ID), new SC2UnitLink(ZERG_ROACH_ID), new SC2UnitLink(TERRAN_MARAUDER_ID)],
     new SC2Asset('assets/units/terran/thumbnail/reaper.png', 'assets/units/terran/image/reaper.jpg')
 );

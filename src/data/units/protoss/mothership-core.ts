@@ -1,3 +1,4 @@
+import { PROTOSS_MOTHERSHIP_CORE_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -17,7 +18,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_MOTHERSHIP_CORE = new SC2Unit(
-    'fcfbc539-5ba0-4a01-a4fe-ec579414ddb4',
+    PROTOSS_MOTHERSHIP_CORE_ID,
     'Mothership Core',
     PROTOSS_RACE,
     'The Mothership Core is a flying support caster for the Protoss that can be built ' +

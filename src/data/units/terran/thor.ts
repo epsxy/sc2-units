@@ -1,6 +1,6 @@
-import { SC2Unit } from '../../../model/sc2unit';
-import { TERRAN_RACE } from '../../races/races';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Attack,
     SC2Cargo,
@@ -13,11 +13,20 @@ import {
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
 import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { TERRAN_RACE } from '../../races/races';
+import {
+    PROTOSS_IMMORTAL_ID,
+    PROTOSS_STALKER_ID,
+    TERRAN_MARAUDER_ID,
+    TERRAN_MARINE_ID,
+    TERRAN_THOR_ID,
+    ZERG_MUTALISK_ID,
+    ZERG_ZERGLING_ID,
+} from '../const';
 
 
 export const TERRAN_THOR = new SC2Unit(
-    '09b552dc-575d-46a3-92ff-0d6ad7801c65',
+    TERRAN_THOR_ID,
     'Thor',
     TERRAN_RACE,
     'The Thor is a Massive Terran walking Gun-Battery with strong single target ground attack and a ' +
@@ -39,7 +48,7 @@ export const TERRAN_THOR = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(PROTOSS_STALKER_ID), new SC2UnitLink(ZERG_MUTALISK_ID), new SC2UnitLink(TERRAN_MARINE_ID)],
+    [new SC2UnitLink(PROTOSS_IMMORTAL_ID), new SC2UnitLink(ZERG_ZERGLING_ID), new SC2UnitLink(TERRAN_MARAUDER_ID)],
     new SC2Asset('assets/units/terran/thumbnail/thor.png', 'assets/units/terran/image/thor.jpg')
 );

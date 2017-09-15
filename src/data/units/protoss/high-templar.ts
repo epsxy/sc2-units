@@ -1,3 +1,4 @@
+import { PROTOSS_HIGH_TEMPLAR_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -18,7 +19,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_HIGH_TEMPLAR = new SC2Unit(
-    'fa2fdf4c-68c0-4e7f-b484-65f03fb93582',
+    PROTOSS_HIGH_TEMPLAR_ID,
     'High Templar',
     PROTOSS_RACE,
     'The High Templar (often abbreviated to HT) is a spell-casting unit for the Protoss. ' +

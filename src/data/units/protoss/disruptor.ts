@@ -1,3 +1,4 @@
+import { PROTOSS_DISRUPTOR_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { PROTOSS_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -17,7 +18,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const PROTOSS_DISRUPTOR = new SC2Unit(
-    'dd04db1e-92e5-4310-94ac-920f52ac069c',
+    PROTOSS_DISRUPTOR_ID,
     'Disruptor',
     PROTOSS_RACE,
     'The Disruptor is a robotic disruption unit. The Disruptor is extremely potent ' +

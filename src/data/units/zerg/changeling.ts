@@ -1,3 +1,4 @@
+import { ZERG_CHANGELING_ID } from '../const';
 import { SC2Unit } from '../../../model/sc2unit';
 import { ZERG_RACE } from '../../races/races';
 import { SC2Cost } from '../../../model/sc2cost';
@@ -8,7 +9,7 @@ import { SC2Asset } from '../../../model/sc2asset';
 
 
 export const ZERG_CHANGELING = new SC2Unit(
-    'd8784044-1f70-453c-b715-0e8adc3f6a72',
+    ZERG_CHANGELING_ID,
     'Changeling',
     ZERG_RACE,
     'The Changeling is a temporary Zerg unit spawned by an Overseer that lasts for 150 ' +
