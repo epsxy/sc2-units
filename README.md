@@ -4,13 +4,13 @@ This app has been created for educational purpose. I just wanted to learn Ionic 
 
 ## Release 1.0 
 
-- [ ] Home page finished with 3 races
-- [ ] About page finished: Blizzard / Liquipedia disclaimers
+- [x] Home page finished with 3 races
+- [x] About page finished: Blizzard / Liquipedia disclaimers
 - [x] All pictures of all units
 - [ ] All basic informations on units for 3 races
-    - [ ] Should support multiple stats (attack #1, attack #2, ... -> [SC2Attack])
-    - [ ] Be able to add a unit source (not only a building source)
-    - [ ] Type SC2Cargo (null, cargo capacity, cargo size)
+    - [x] Should support multiple stats (attack #1, attack #2, ... -> [SC2Attack])
+    - [x] Be able to add a unit source (not only a building source)
+    - [x] Type SC2Cargo (null, cargo capacity, cargo size)
 - [ ] Add some unit testing 
 
 ## Release 2.0
@@ -27,8 +27,8 @@ This app has been created for educational purpose. I just wanted to learn Ionic 
 
 ## Todo
 
-- [ ] Disclaimer page
-- [ ] Home page
+- [x] Disclaimer page
+- [x] Home page
 - [x] Download images for races
 - [ ] Handle special units. Include them?
 - [ ] Finalize types and unit page (CSS, Infos to display)
