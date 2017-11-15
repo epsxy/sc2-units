@@ -132,7 +132,8 @@
             </ion-grid>
         </ion-card-content>
     </ion-card>
-    <ion-card>
+    <!-- TODO -->
+    <!-- <ion-card>
         <ion-card-content>
             <ion-card-title text-center>Upgrades</ion-card-title>
         </ion-card-content>
@@ -141,8 +142,8 @@
         <ion-card-content>
             <ion-card-title text-center>Abilities</ion-card-title>
         </ion-card-content>
-    </ion-card>
-    <ion-card>
+    </ion-card> -->
+    <ion-card *ngIf='hasPros'>
         <ion-card-content>
             <ion-card-title text-center>Strong against</ion-card-title>
             <ion-list>
@@ -157,7 +158,7 @@
             </ion-list>
         </ion-card-content>
     </ion-card>
-    <ion-card>
+    <ion-card *ngIf='hasCons'>
         <ion-card-content>
             <ion-card-title text-center>Weak against</ion-card-title>
             <ion-list>

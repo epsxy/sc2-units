@@ -31,6 +31,8 @@ export class UnitPage {
   hasBuilding: boolean;
   canAttackAirUnits: boolean;
   canAttackGroundUnits: boolean;
+  hasPros: boolean;
+  hasCons: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.nav = navCtrl
@@ -50,18 +52,8 @@ export class UnitPage {
       this.initTargets();
       this.initAssets();
       this.initBuilding();
-      for(let link of this.unit.strongAgainst) {
-        let strongUnit = this.getUnitFromId(link.id)
-        if (strongUnit != null) {
-          this.strongAgainst.push(strongUnit);
-        }
-      }
-      for(let link of this.unit.weakAgainst) {
-        let weakUnit = this.getUnitFromId(link.id)
-        if (weakUnit != null) {
-          this.weakAgainst.push(weakUnit);
-        }
-      }
+      this.initPros();
+      this.initCons();
     }
   }
 
@@ -135,6 +127,26 @@ export class UnitPage {
     }
     else {
       this.hasBuilding = true;
+    }
+  }
+
+  initPros() {
+    this.hasPros = this.unit.strongAgainst.length > 0;
+    for(let link of this.unit.strongAgainst) {
+      let strongUnit = this.getUnitFromId(link.id)
+      if (strongUnit != null) {
+        this.strongAgainst.push(strongUnit);
+      }
+    }
+  }
+
+  initCons() {
+    this.hasCons = this.unit.weakAgainst.length > 0;
+    for(let link of this.unit.weakAgainst) {
+      let weakUnit = this.getUnitFromId(link.id)
+      if (weakUnit != null) {
+        this.weakAgainst.push(weakUnit);
+      }
     }
   }
 
