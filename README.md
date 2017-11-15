@@ -2,37 +2,16 @@
 
 This app has been created for educational purpose. I just wanted to learn Ionic 2 / Angular 2 / Typescript. This app may become available on the Google Store and it is the case, it will be 100% free and add-free. 
 
-## Release 1.0 
+## Todo
 
 - [x] Home page finished with 3 races
 - [x] About page finished: Blizzard / Liquipedia disclaimers
 - [x] All pictures of all units
-- [ ] All basic informations on units for 3 races
-    - [x] Should support multiple stats (attack #1, attack #2, ... -> [SC2Attack])
+- [x] All basic informations on units for 3 races
+    - [x] Should support multiple stats
     - [x] Be able to add a unit source (not only a building source)
     - [x] Type SC2Cargo (null, cargo capacity, cargo size)
-- [ ] Add some unit testing 
-
-## Release 2.0
-
-- [ ] All abilities for all units 
-- [ ] All upgrades for all units
-- [ ] Add counters and advices for units
-
-## Release 3.0 
-
-- [ ] Add classical BOs
-- [ ] Allow BOs parsing from links (?)
-- [ ] Add your own BOs
-
-## Todo
-
-- [x] Disclaimer page
-- [x] Home page
-- [x] Download images for races
-- [ ] Handle special units. Include them?
-- [ ] Finalize types and unit page (CSS, Infos to display)
-- [ ] Clean model files, add constants and ids for buildings?
+- [x] Add counters and advices for units
 
 ## Docker 
 
