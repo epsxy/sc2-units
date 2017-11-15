@@ -1,11 +1,19 @@
-import { ZERG_BROODLORD_ID } from '../const';
-import { SC2Unit } from '../../../model/sc2unit';
-import { ZERG_RACE } from '../../races/races';
-import { SC2Cost } from '../../../model/sc2cost';
-import { SC2Attack, SC2Defence, SC2Sight, SC2Speed, SC2Target, SC2UnitInformation } from '../../../model/sc2unitinformation';
 import { ATTR_ARMORED, ATTR_BIOLOGICAL, ATTR_MASSIVE } from '../../../model/const';
-import { SC2UnitLink } from '../../../model/sc2unitlink';
 import { SC2Asset } from '../../../model/sc2asset';
+import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
+import { SC2Attack, SC2Defence, SC2Sight, SC2Speed, SC2Target, SC2UnitInformation } from '../../../model/sc2unitinformation';
+import { SC2UnitLink } from '../../../model/sc2unitlink';
+import { ZERG_RACE } from '../../races/races';
+import {
+    PROTOSS_STALKER_ID,
+    PROTOSS_VOID_RAY_ID,
+    TERRAN_MARINE_ID,
+    TERRAN_VIKING_ID,
+    ZERG_BROODLORD_ID,
+    ZERG_CORRUPTOR_ID,
+    ZERG_HYDRALISK_ID,
+} from '../const';
 
 
 export const ZERG_BROODLORD = new SC2Unit(
@@ -28,7 +36,7 @@ export const ZERG_BROODLORD = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(TERRAN_MARINE_ID), new SC2UnitLink(ZERG_HYDRALISK_ID), new SC2UnitLink(PROTOSS_STALKER_ID)],
+    [new SC2UnitLink(TERRAN_VIKING_ID), new SC2UnitLink(ZERG_CORRUPTOR_ID), new SC2UnitLink(PROTOSS_VOID_RAY_ID)],
     new SC2Asset('assets/units/zerg/thumbnail/brood-lord.png', 'assets/units/zerg/image/brood-lord.jpg')
 );

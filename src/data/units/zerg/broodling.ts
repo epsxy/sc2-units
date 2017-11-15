@@ -1,11 +1,10 @@
-import { ZERG_BROODLING_ID } from '../const';
-import { SC2Unit } from '../../../model/sc2unit';
-import { ZERG_RACE } from '../../races/races';
-import { SC2Cost } from '../../../model/sc2cost';
-import { SC2Attack, SC2Defence, SC2Sight, SC2Speed, SC2Target, SC2UnitInformation } from '../../../model/sc2unitinformation';
 import { ATTR_BIOLOGICAL, ATTR_LIGHT } from '../../../model/const';
-import { SC2UnitLink } from '../../../model/sc2unitlink';
 import { SC2Asset } from '../../../model/sc2asset';
+import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
+import { SC2Attack, SC2Defence, SC2Sight, SC2Speed, SC2Target, SC2UnitInformation } from '../../../model/sc2unitinformation';
+import { ZERG_RACE } from '../../races/races';
+import { ZERG_BROODLING_ID } from '../const';
 
 
 export const ZERG_BROODLING = new SC2Unit(
@@ -29,7 +28,7 @@ export const ZERG_BROODLING = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [],
+    [],
     new SC2Asset('assets/units/zerg/thumbnail/broodling.png', 'assets/units/zerg/image/broodling.jpg')
 );

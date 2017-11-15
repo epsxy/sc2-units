@@ -1,11 +1,19 @@
-import { ZERG_VIPER_ID } from '../const';
-import { SC2Unit } from '../../../model/sc2unit';
-import { ZERG_RACE } from '../../races/races';
-import { SC2Cost } from '../../../model/sc2cost';
-import { SC2Defence, SC2Energy, SC2Sight, SC2Speed, SC2UnitInformation } from '../../../model/sc2unitinformation';
 import { ATTR_ARMORED, ATTR_BIOLOGICAL, ATTR_PSIONIC } from '../../../model/const';
-import { SC2UnitLink } from '../../../model/sc2unitlink';
 import { SC2Asset } from '../../../model/sc2asset';
+import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
+import { SC2Defence, SC2Energy, SC2Sight, SC2Speed, SC2UnitInformation } from '../../../model/sc2unitinformation';
+import { SC2UnitLink } from '../../../model/sc2unitlink';
+import { ZERG_RACE } from '../../races/races';
+import {
+    PROTOSS_COLOSSUS_ID,
+    PROTOSS_PHOENIX_ID,
+    TERRAN_SIEGE_TANK_ID,
+    TERRAN_VIKING_ID,
+    ZERG_HYDRALISK_ID,
+    ZERG_MUTALISK_ID,
+    ZERG_VIPER_ID,
+} from '../const';
 
 
 export const ZERG_VIPER = new SC2Unit(
@@ -30,7 +38,7 @@ export const ZERG_VIPER = new SC2Unit(
     ),
     null,
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(TERRAN_SIEGE_TANK_ID), new SC2UnitLink(PROTOSS_COLOSSUS_ID), new SC2UnitLink(ZERG_HYDRALISK_ID)],
+    [new SC2UnitLink(TERRAN_VIKING_ID), new SC2UnitLink(ZERG_MUTALISK_ID), new SC2UnitLink(PROTOSS_PHOENIX_ID)],
     new SC2Asset('assets/units/zerg/thumbnail/viper.png', 'assets/units/zerg/image/viper.jpg')
 );

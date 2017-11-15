@@ -1,12 +1,27 @@
-import { ZERG_SWARM_HOST_ID } from '../const';
-import { SC2Unit } from "../../../model/sc2unit";
-import { ZERG_RACE } from "../../races/races";
-import { SC2Cost } from "../../../model/sc2cost";
-import { SC2UnitInformation, SC2Defence, SC2Speed, SC2Sight, SC2Cargo, SC2CargoType } from "../../../model/sc2unitinformation";
-import { SC2Source, SourceType } from "../../../model/sc2source";
-import { SC2UnitLink } from "../../../model/sc2unitlink";
-import { SC2Asset } from "../../../model/sc2asset";
-import { ATTR_ARMORED, ATTR_BIOLOGICAL, KEY_A, HATCHERY } from "../../../model/const";
+import { ATTR_ARMORED, ATTR_BIOLOGICAL, HATCHERY, KEY_A } from '../../../model/const';
+import { SC2Asset } from '../../../model/sc2asset';
+import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Source, SourceType } from '../../../model/sc2source';
+import { SC2Unit } from '../../../model/sc2unit';
+import {
+    SC2Cargo,
+    SC2CargoType,
+    SC2Defence,
+    SC2Sight,
+    SC2Speed,
+    SC2UnitInformation,
+} from '../../../model/sc2unitinformation';
+import { SC2UnitLink } from '../../../model/sc2unitlink';
+import { ZERG_RACE } from '../../races/races';
+import {
+    PROTOSS_ARCHON_ID,
+    PROTOSS_STALKER_ID,
+    TERRAN_HELLION_ID,
+    TERRAN_MARINE_ID,
+    ZERG_BANELING_ID,
+    ZERG_ROACH_ID,
+    ZERG_SWARM_HOST_ID,
+} from '../const';
 
 
 export const ZERG_SWARM_HOST = new SC2Unit(
@@ -31,7 +46,7 @@ export const ZERG_SWARM_HOST = new SC2Unit(
     ),
     null,
     new SC2Source(HATCHERY, SourceType.BUILDING, KEY_A),
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(TERRAN_MARINE_ID), new SC2UnitLink(PROTOSS_STALKER_ID), new SC2UnitLink(ZERG_ROACH_ID)],
+    [new SC2UnitLink(ZERG_BANELING_ID), new SC2UnitLink(TERRAN_HELLION_ID), new SC2UnitLink(PROTOSS_ARCHON_ID)],
     new SC2Asset('assets/units/zerg/thumbnail/swarm-host.png', 'assets/units/zerg/image/swarm-host.jpg')
 );
