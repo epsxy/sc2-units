@@ -1,7 +1,8 @@
-import { PROTOSS_WARP_PRISM_ID } from '../const';
-import { SC2Unit } from '../../../model/sc2unit';
-import { PROTOSS_RACE } from '../../races/races';
+import { ATTR_ARMORED, ATTR_MECHANICAL, ATTR_PSIONIC, KEY_A, ROBOTICS } from '../../../model/const';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Source, SourceType } from '../../../model/sc2source';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Cargo,
     SC2CargoType,
@@ -10,10 +11,8 @@ import {
     SC2Speed,
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
-import { ATTR_ARMORED, ATTR_MECHANICAL, ATTR_PSIONIC, KEY_A, ROBOTICS } from '../../../model/const';
-import { SC2Source, SourceType } from '../../../model/sc2source';
-import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { PROTOSS_RACE } from '../../races/races';
+import { PROTOSS_WARP_PRISM_ID } from '../const';
 
 
 export const PROTOSS_WARP_PRISM = new SC2Unit(
