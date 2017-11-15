@@ -1,7 +1,7 @@
-import { PROTOSS_MOTHERSHIP_ID } from '../const';
-import { SC2Unit } from '../../../model/sc2unit';
-import { PROTOSS_RACE } from '../../races/races';
+import { ATTR_ARMORED, ATTR_MASSIVE, ATTR_MECHANICAL, ATTR_PSIONIC } from '../../../model/const';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Attack,
     SC2Defence,
@@ -11,9 +11,9 @@ import {
     SC2Target,
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
-import { ATTR_ARMORED, ATTR_MASSIVE, ATTR_MECHANICAL, ATTR_PSIONIC } from '../../../model/const';
 import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { PROTOSS_RACE } from '../../races/races';
+import { PROTOSS_MOTHERSHIP_ID, PROTOSS_VOID_RAY_ID, TERRAN_VIKING_ID, ZERG_CORRUPTOR_ID } from '../const';
 
 
 export const PROTOSS_MOTHERSHIP = new SC2Unit(
@@ -37,7 +37,7 @@ export const PROTOSS_MOTHERSHIP = new SC2Unit(
     null,
     // TODO: Add source for mothership
     null,
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(TERRAN_VIKING_ID), new SC2UnitLink(ZERG_CORRUPTOR_ID), new SC2UnitLink(PROTOSS_VOID_RAY_ID)],
+    [],
     new SC2Asset('assets/units/protoss/thumbnail/mothership.png', 'assets/units/protoss/image/mothership.jpg')
 );

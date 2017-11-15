@@ -40,7 +40,7 @@ export const PROTOSS_WARP_PRISM = new SC2Unit(
     ),
     null,
     new SC2Source(ROBOTICS, SourceType.BUILDING, KEY_A),
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [],
+    [],
     new SC2Asset('assets/units/protoss/thumbnail/warp-prism.png', 'assets/units/protoss/image/warp-prism.jpg')
 );

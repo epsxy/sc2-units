@@ -1,12 +1,12 @@
-import { PROTOSS_OBSERVER_ID } from '../const';
-import { SC2Unit } from '../../../model/sc2unit';
-import { PROTOSS_RACE } from '../../races/races';
-import { SC2Cost } from '../../../model/sc2cost';
-import { SC2Defence, SC2Sight, SC2Speed, SC2UnitInformation } from '../../../model/sc2unitinformation';
 import { ATTR_DETECTOR, ATTR_LIGHT, ATTR_MECHANICAL, KEY_B, ROBOTICS } from '../../../model/const';
-import { SC2Source, SourceType } from '../../../model/sc2source';
-import { SC2UnitLink } from '../../../model/sc2unitlink';
 import { SC2Asset } from '../../../model/sc2asset';
+import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Source, SourceType } from '../../../model/sc2source';
+import { SC2Unit } from '../../../model/sc2unit';
+import { SC2Defence, SC2Sight, SC2Speed, SC2UnitInformation } from '../../../model/sc2unitinformation';
+import { SC2UnitLink } from '../../../model/sc2unitlink';
+import { PROTOSS_RACE } from '../../races/races';
+import { PROTOSS_DARK_TEMPLAR_ID, PROTOSS_OBSERVER_ID, TERRAN_BANSHEE_ID, ZERG_ROACH_ID } from '../const';
 
 
 export const PROTOSS_OBSERVER = new SC2Unit(
@@ -29,7 +29,7 @@ export const PROTOSS_OBSERVER = new SC2Unit(
     ),
     null,
     new SC2Source(ROBOTICS, SourceType.BUILDING, KEY_B),
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(TERRAN_BANSHEE_ID), new SC2UnitLink(ZERG_ROACH_ID), new SC2UnitLink(PROTOSS_DARK_TEMPLAR_ID)],
+    [],
     new SC2Asset('assets/units/protoss/thumbnail/observer.png', 'assets/units/protoss/image/observer.jpg')
 );

@@ -1,7 +1,8 @@
-import { PROTOSS_ZEALOT_ID } from '../const';
-import { SC2Unit } from '../../../model/sc2unit';
-import { PROTOSS_RACE } from '../../races/races';
+import { ATTR_LIGHT, ATTR_MECHANICAL, GATEWAY, KEY_Z } from '../../../model/const';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Source, SourceType } from '../../../model/sc2source';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Attack,
     SC2Cargo,
@@ -12,10 +13,17 @@ import {
     SC2Target,
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
-import { ATTR_LIGHT, ATTR_MECHANICAL, GATEWAY, KEY_Z } from '../../../model/const';
-import { SC2Source, SourceType } from '../../../model/sc2source';
 import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { PROTOSS_RACE } from '../../races/races';
+import {
+    PROTOSS_COLOSSUS_ID,
+    PROTOSS_IMMORTAL_ID,
+    PROTOSS_ZEALOT_ID,
+    TERRAN_HELLION_ID,
+    TERRAN_MARAUDER_ID,
+    ZERG_ROACH_ID,
+    ZERG_ZERGLING_ID,
+} from '../const';
 
 
 export const PROTOSS_ZEALOT = new SC2Unit(
@@ -38,14 +46,14 @@ export const PROTOSS_ZEALOT = new SC2Unit(
     null,
     new SC2Source(GATEWAY, SourceType.BUILDING, KEY_Z),
     [
-        new SC2UnitLink('f064ac69-e4c1-4d23-90dd-26002bba354f'),
-        new SC2UnitLink('3a9fac08-2181-46d8-bedd-cd593e1f11cd'),
-        new SC2UnitLink('c1a2f2ca-a586-4c4f-b40e-3485c0de8c20')
+        new SC2UnitLink(TERRAN_MARAUDER_ID),
+        new SC2UnitLink(ZERG_ZERGLING_ID),
+        new SC2UnitLink(PROTOSS_IMMORTAL_ID)
     ],
     [
-        new SC2UnitLink('4100a23b-9d42-42b1-9958-06c022e85cc4'),
-        new SC2UnitLink('d41fae3e-c6a7-4d84-81ed-0da67b9de9a5'),
-        new SC2UnitLink('d2aba0bd-4644-4858-b235-db41f5bb5bab')
+        new SC2UnitLink(TERRAN_HELLION_ID),
+        new SC2UnitLink(ZERG_ROACH_ID),
+        new SC2UnitLink(PROTOSS_COLOSSUS_ID)
     ],
     new SC2Asset('assets/units/protoss/thumbnail/zealot.png', 'assets/units/protoss/image/zealot.jpg')
 );

@@ -1,7 +1,8 @@
-import { PROTOSS_ADEPT_ID } from '../const';
-import { SC2Unit } from '../../../model/sc2unit';
-import { PROTOSS_RACE } from '../../races/races';
+import { ATTR_BIOLOGICAL, ATTR_LIGHT, GATEWAY, KEY_H } from '../../../model/const';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Source, SourceType } from '../../../model/sc2source';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Attack,
     SC2Cargo,
@@ -12,10 +13,17 @@ import {
     SC2Target,
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
-import { ATTR_BIOLOGICAL, ATTR_LIGHT, GATEWAY, KEY_H } from '../../../model/const';
-import { SC2Source, SourceType } from '../../../model/sc2source';
 import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { PROTOSS_RACE } from '../../races/races';
+import {
+    PROTOSS_ADEPT_ID,
+    PROTOSS_STALKER_ID,
+    PROTOSS_ZEALOT_ID,
+    TERRAN_MARAUDER_ID,
+    TERRAN_MARINE_ID,
+    ZERG_ROACH_ID,
+    ZERG_ZERGLING_ID,
+} from '../const';
 
 
 export const PROTOSS_ADEPT = new SC2Unit(
@@ -37,7 +45,7 @@ export const PROTOSS_ADEPT = new SC2Unit(
     ),
     null,
     new SC2Source(GATEWAY, SourceType.BUILDING, KEY_H),
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(ZERG_ZERGLING_ID), new SC2UnitLink(PROTOSS_ZEALOT_ID), new SC2UnitLink(TERRAN_MARINE_ID)],
+    [new SC2UnitLink(ZERG_ROACH_ID), new SC2UnitLink(PROTOSS_STALKER_ID), new SC2UnitLink(TERRAN_MARAUDER_ID)],
     new SC2Asset('assets/units/protoss/thumbnail/adept.png', 'assets/units/protoss/image/adept.png')
 );

@@ -1,7 +1,8 @@
-import { PROTOSS_DARK_TEMPLAR_ID } from '../const';
-import { SC2Unit } from '../../../model/sc2unit';
-import { PROTOSS_RACE } from '../../races/races';
+import { ATTR_BIOLOGICAL, ATTR_LIGHT, ATTR_PSIONIC, GATEWAY, KEY_D } from '../../../model/const';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Source, SourceType } from '../../../model/sc2source';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Attack,
     SC2Cargo,
@@ -12,10 +13,17 @@ import {
     SC2Target,
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
-import { ATTR_BIOLOGICAL, ATTR_LIGHT, ATTR_PSIONIC, GATEWAY, KEY_D } from '../../../model/const';
-import { SC2Source, SourceType } from '../../../model/sc2source';
 import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { PROTOSS_RACE } from '../../races/races';
+import {
+    PROTOSS_DARK_TEMPLAR_ID,
+    PROTOSS_OBSERVER_ID,
+    PROTOSS_PROBE_ID,
+    TERRAN_RAVEN_ID,
+    TERRAN_SCV_ID,
+    ZERG_DRONE_ID,
+    ZERG_OVERSEER_ID,
+} from '../const';
 
 
 export const PROTOSS_DARK_TEMPLAR = new SC2Unit(
@@ -38,7 +46,7 @@ export const PROTOSS_DARK_TEMPLAR = new SC2Unit(
     ),
     null,
     new SC2Source(GATEWAY, SourceType.BUILDING, KEY_D),
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(TERRAN_SCV_ID), new SC2UnitLink(ZERG_DRONE_ID), new SC2UnitLink(PROTOSS_PROBE_ID)],
+    [new SC2UnitLink(TERRAN_RAVEN_ID), new SC2UnitLink(ZERG_OVERSEER_ID), new SC2UnitLink(PROTOSS_OBSERVER_ID)],
     new SC2Asset('assets/units/protoss/thumbnail/dark-templar.png', 'assets/units/protoss/image/dark-templar.jpg')
 );

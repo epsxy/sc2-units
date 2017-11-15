@@ -1,7 +1,8 @@
-import { PROTOSS_ARCHON_ID } from '../const';
-import { SC2Unit } from '../../../model/sc2unit';
-import { PROTOSS_RACE } from '../../races/races';
+import { ATTR_MASSIVE, ATTR_PSIONIC, KEY_C } from '../../../model/const';
+import { SC2Asset } from '../../../model/sc2asset';
 import { SC2Cost } from '../../../model/sc2cost';
+import { SC2Source, SourceType } from '../../../model/sc2source';
+import { SC2Unit } from '../../../model/sc2unit';
 import {
     SC2Attack,
     SC2Cargo,
@@ -12,10 +13,9 @@ import {
     SC2Target,
     SC2UnitInformation,
 } from '../../../model/sc2unitinformation';
-import { ATTR_MASSIVE, ATTR_PSIONIC, KEY_C } from '../../../model/const';
-import { SC2Source, SourceType } from '../../../model/sc2source';
 import { SC2UnitLink } from '../../../model/sc2unitlink';
-import { SC2Asset } from '../../../model/sc2asset';
+import { PROTOSS_RACE } from '../../races/races';
+import { PROTOSS_ARCHON_ID, PROTOSS_IMMORTAL_ID, TERRAN_THOR_ID, ZERG_MUTALISK_ID, ZERG_ULTRALISK_ID } from '../const';
 
 
 export const PROTOSS_ARCHON = new SC2Unit(
@@ -40,7 +40,7 @@ export const PROTOSS_ARCHON = new SC2Unit(
     ),
     null,
     new SC2Source('Dark templar / High templar', SourceType.UNIT, KEY_C),
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
-    [new SC2UnitLink(''), new SC2UnitLink(''), new SC2UnitLink('')],
+    [new SC2UnitLink(ZERG_MUTALISK_ID)],
+    [new SC2UnitLink(TERRAN_THOR_ID), new SC2UnitLink(ZERG_ULTRALISK_ID), new SC2UnitLink(PROTOSS_IMMORTAL_ID)],
     new SC2Asset('assets/units/protoss/thumbnail/archon.png', 'assets/units/protoss/image/archon.jpg')
 );
