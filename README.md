@@ -1,7 +1,5 @@
 # SC2 Units
 
-This app has been created for educational purpose. I just wanted to learn Ionic 2 / Angular 2 / Typescript. This app may become available on the Google Store and it is the case, it will be 100% free and add-free. 
-
 ## Todo
 
 - [x] Home page finished with 3 races
